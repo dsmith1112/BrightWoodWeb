@@ -67,12 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="wwwroot\Index.html" />
-    <Content Include="wwwroot\roi-calculator.html" />
-    <Content Include="wwwroot\Style.css" />
+    <Content Include="Index.html" />
+    <Content Include="roi-calculator.html" />
+    <Content Include="Style.css" />
     <Content Include="Web.config" />
     <Content Include="wwwroot\images\logo-transparente.png" />
-    <Content Include="wwwroot\inventory‐planning.html" />
+    <Content Include="inventory‐planning.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
