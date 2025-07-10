@@ -1,11 +1,13 @@
 ﻿:root {
-    --color-bg: #121212; /* Fondo general */
-    --color-header: #1E1E1E; /* Barra de navegación y dropdowns */
-    --color-hero-bg: #181818; /* Sección hero */
-    --color-section: #121212; /* Fondo de secciones internas */
-    --color-accent: #ED5603; /* Naranja vibrante */
-    --color-text: #F4F3F1; /* Blanco-crema */
-    --color-muted: #888888; /* Gris medio */
+    --color-bg: #121212;
+    --color-header: #1E1E1E;
+    --color-hero-bg: #181818;
+    --color-section: #121212;
+    --color-accent: #ED5603;
+    --color-text: #F4F3F1;
+    --color-muted: #888888;
+    --color-card-bg: #F4F3F1;
+    --color-on-card-text: #1D2A33;
     --font-base: 'Inter', sans-serif;
 }
 
@@ -28,7 +30,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Logo y nav juntos */
+    justify-content: flex-start;
     padding: 20px 40px;
     background: var(--color-header);
 }
@@ -38,12 +40,10 @@ header {
     width: auto;
 }
 
-/* CENTRAR NAVEGACIÓN */
 nav {
     margin: 0 auto;
 }
 
-/* MENÚ PRINCIPAL */
 .nav-list {
     list-style: none;
     display: flex;
@@ -57,7 +57,6 @@ nav {
         padding: 8px 12px;
     }
 
-    /* DROPDOWNS */
     .nav-list li {
         position: relative;
     }
@@ -141,20 +140,6 @@ nav {
         margin: 0 auto;
     }
 
-/* CONTACTO (fondo oscuro igual a sección) */
-#contact {
-    background: var(--color-section);
-    color: var(--color-text);
-}
-
-    #contact h2 {
-        color: var(--color-accent);
-    }
-
-    #contact p {
-        color: var(--color-text);
-    }
-
 /* FOOTER */
 .main-footer {
     background: var(--color-header);
@@ -185,22 +170,20 @@ nav {
     margin-right: 12px;
 }
 
-.footer-left a,
-.footer-right a {
+.footer-left a, .footer-right a {
     color: var(--color-text);
     text-decoration: none;
     font-weight: 600;
 }
 
-.footer-left p,
-.footer-right p {
+.footer-left p, .footer-right p {
     margin: 0;
     font-size: 0.9rem;
     color: var(--color-text);
 }
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width:768px) {
     header, .footer-content {
         flex-direction: column;
         align-items: flex-start;
@@ -220,32 +203,31 @@ nav {
         margin-bottom: 8px;
     }
 }
-/* ————————————————————————————————————————
-   Inventory Planning
-   ———————————————————————————————————————— */
 
-/* Hero de inventario: fondo oscuro */
+/* ————————————————————————————————————————————————————
+   Inventory Planning
+   ———————————————————————————————————————————————————— */
+
 .inventory-hero {
-    background: var(--color-section); /* #121212 */
-    color: var(--color-text); /* #F4F3F1 */
+    background: var(--color-section);
+    color: var(--color-text);
     padding: 60px 40px;
 }
 
     .inventory-hero h1 {
-        color: var(--color-accent); /* #ED5603 */
+        color: var(--color-accent);
         font-size: 2.4rem;
         margin-bottom: 1rem;
     }
 
     .inventory-hero p {
-        color: var(--color-text-secondary, #E2E8F0);
+        color: var(--color-text);
         font-size: 1rem;
         margin-bottom: 2rem;
         max-width: 600px;
         line-height: 1.6;
     }
 
-/* Grid de texto + formulario */
 .inventory-content {
     display: grid;
     grid-template-columns: 1fr minmax(350px,1fr);
@@ -253,40 +235,35 @@ nav {
     align-items: start;
 }
 
-/* Formulario ROI: tarjeta clara sobre fondo oscuro */
-.roi-form {
-    background: var(--color-card-bg); /* #F4F3F1 */
-    color: var(--color-on-card-text); /* #1D2A33 */
+/* Tarjeta ROI dentro de inventory-planning */
+.roi-box {
+    background: var(--color-card-bg);
+    color: var(--color-on-card-text);
     border: 1px solid rgba(29,42,51,0.2);
     border-radius: 8px;
     padding: 20px;
 }
 
-    .roi-form h2 {
-        color: var(--color-on-card-text);
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-    }
-
-    .roi-form label {
+    .roi-box label {
         display: block;
-        margin-top: 12px;
-        color: var(--color-on-card-text);
+        margin-top: 1rem;
         font-weight: 600;
+        color: var(--color-on-card-text);
     }
 
-    .roi-form input {
+    .roi-box input {
         width: 100%;
         padding: 8px;
-        margin-top: 4px 0 12px;
+        margin-top: 4px;
         border: 1px solid rgba(29,42,51,0.2);
         border-radius: 4px;
         background: #fff;
         color: #000;
     }
 
-    .roi-form button {
+    .roi-box button {
         width: 100%;
+        margin-top: 1.5rem;
         padding: 12px;
         background: var(--color-accent);
         color: var(--color-text);
@@ -296,11 +273,16 @@ nav {
         cursor: pointer;
     }
 
-        .roi-form button:hover {
+        .roi-box button:hover {
             opacity: 0.9;
         }
 
-/* Acordeón: fondo oscuro y tarjetas claras */
+#roiResultInv {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Acordeón de inventory-planning */
 .accordion-section {
     background: var(--color-section);
     padding: 60px 40px;
@@ -351,14 +333,14 @@ nav {
         color: var(--color-on-card-text);
     }
 
-/* ---------------------------------------------------
-   ROI SECTION: texto izq + tarjeta calculadora derecha
-   --------------------------------------------------- */
+/* ————————————————————————————————————————————————————
+   ROI SECTION (texto izq + tarjeta der)
+   ———————————————————————————————————————————————————— */
 
 .roi-section {
-    background: var(--color-section); /* #121212 */
+    text-align: left;
+    background: var(--color-section);
     padding: 60px 40px;
-    color: var(--color-text); /* #F4F3F1 */
 }
 
     .roi-section h2 {
@@ -373,17 +355,14 @@ nav {
     align-items: flex-start;
 }
 
-/* Texto a la izquierda */
 .roi-text {
     flex: 1;
-    text-align: left;
 }
 
-/* Calculadora en tarjeta a la derecha */
 .roi-box {
     flex: 0 0 360px;
-    background: var(--color-card-bg); /* #F4F3F1 */
-    color: var(--color-on-card-text); /* #1D2A33 */
+    background: var(--color-card-bg);
+    color: var(--color-on-card-text);
     border: 1px solid rgba(29,42,51,0.2);
     border-radius: 8px;
     padding: 20px;
@@ -427,13 +406,117 @@ nav {
     text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .roi-container {
-        flex-direction: column;
+/* ————————————————————————————————————————————————————
+   ROI WIZARD (step 1)
+   ———————————————————————————————————————————————————— */
+
+.roi-wizard {
+    background: var(--color-section);
+    padding: 60px 40px;
+    color: var(--color-text);
+}
+
+    .roi-wizard h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
 
-    .roi-box {
-        width: 100%;
+.option-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+    .option-grid.industries .option {
+        flex: 1 1 calc((100% - 4rem)/5);
+    }
+
+    .option-grid.measure .option {
+        flex: 1 1 calc((100% - 1rem)/2);
+    }
+
+    .option-grid.accuracy .option {
+        flex: 1 1 calc((100% - 6rem)/7);
+        text-align: center;
+    }
+
+.option {
+    background: var(--color-header);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color .2s, color .2s;
+}
+
+    .option img {
+        max-width: 48px;
+        margin-bottom: 0.5rem;
+    }
+
+    .option p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .option:hover,
+    .option.selected {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+
+.wizard-action {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-primary {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .button-primary:hover {
+        opacity: 0.9;
+    }
+
+.steps-indicator {
+    display: inline-flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+    .step.active {
+        background: var(--color-accent);
+    }
+
+@media (max-width:768px) {
+    .option-grid.industries .option,
+    .option-grid.measure .option,
+    .option-grid.accuracy .option {
+        flex: 1 1 100%;
+    }
+
+    .wizard-action {
+        margin-top: 1rem;
     }
 }
