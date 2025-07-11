@@ -520,3 +520,194 @@ nav {
         margin-top: 1rem;
     }
 }
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--color-header);
+}
+
+/* Empuja este bloque todo a la derecha */
+.header-cta {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Estilo de los botones del header */
+.btn-header {
+    background: var(--color-accent);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+    .btn-header:hover {
+        opacity: 0.9;
+    }
+
+/* Responsive: en móvil apilar o reducir tamaño */
+@media (max-width: 768px) {
+    .header-cta {
+        display: none; /* o cambiar a block/column si prefieres */
+    }
+}
+
+/* —————————————————————
+   Our Services Grid
+   ————————————————————— */
+.services-section {
+    /* reutiliza el fondo y padding de .section */
+    background: var(--color-section);
+    padding: 60px 40px;
+}
+
+    .services-section h2 {
+        color: var(--color-accent);
+    }
+
+    .services-section p {
+        color: var(--color-text);
+    }
+
+/* grid de 3 columnas (se encoge a 1 en móvil) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* tarjeta individual */
+.service-card {
+    background: var(--color-card-bg);
+    color: var(--color-on-card-text);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* título dentro de cada card */
+    .service-card h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    /* texto descriptivo */
+    .service-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        flex: 1;
+    }
+
+/* Responsive: menos columnas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ————————————————————————————————————————
+   RESPONSIVE: móvil / pantallas pequeñas
+   ———————————————————————————————————————— */
+@media (max-width: 768px) {
+    /* 1) Header: logo, nav y CTA en columna */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+    /* Oculta o reemplaza CTAs del header si quieres un menú hamburguesa */
+    .header-cta {
+        margin-top: 12px;
+    }
+    /* 2) Menú principal apilado */
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+        .nav-list a {
+            padding: 8px;
+        }
+    /* 3) Hero: texto más pequeño y botones apilados */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* 4) Secciones generales: quitar centrar, fluidizar */
+    .section {
+        padding: 40px 20px;
+        text-align: left;
+    }
+
+        .section h2 {
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+        }
+
+    /* 5) Our Services grid: 1 columna */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 6) Inventory Planning: grid a 1 columna */
+    .inventory-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 7) ROI Section: flex a columna */
+    .roi-container {
+        flex-direction: column;
+    }
+
+    .roi-box {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    /* 8) Wizard step: apilar todas las opciones */
+    .option-grid.industries .option,
+    .option-grid.measure .option,
+    .option-grid.accuracy .option {
+        flex: 1 1 100%;
+    }
+
+    /* 9) Acordeones: ancho completo */
+    .accordion {
+        width: 100%;
+    }
+}
+
+/* Opcional: para muy pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-cta .btn-header,
+    .cta-buttons .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
