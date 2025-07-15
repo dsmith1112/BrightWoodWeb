@@ -1,0 +1,713 @@
+﻿:root {
+    --color-bg: #121212;
+    --color-header: #1E1E1E;
+    --color-hero-bg: #181818;
+    --color-section: #121212;
+    --color-accent: #ED5603;
+    --color-text: #F4F3F1;
+    --color-muted: #888888;
+    --color-card-bg: #F4F3F1;
+    --color-on-card-text: #1D2A33;
+    --font-base: 'Inter', sans-serif;
+}
+
+/* RESET */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BASE */
+body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-base), Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 40px;
+    background: var(--color-header);
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+}
+
+nav {
+    margin: 0 auto;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+    .nav-list a {
+        color: var(--color-text);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 12px;
+    }
+
+    .nav-list li {
+        position: relative;
+    }
+
+    .nav-list .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--color-header);
+        list-style: none;
+        padding: 8px 0;
+        border-radius: 4px;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+        .nav-list .dropdown-menu a {
+            display: block;
+            padding: 8px 16px;
+            color: var(--color-text);
+        }
+
+            .nav-list .dropdown-menu a:hover {
+                background: var(--color-hero-bg);
+            }
+
+    .nav-list .dropdown:hover > .dropdown-menu {
+        display: block;
+    }
+
+/* HERO */
+.hero {
+    background: var(--color-hero-bg);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+    .hero h1 {
+        color: var(--color-accent);
+        font-size: 2.8em;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+    }
+
+.cta-buttons a {
+    display: inline-block;
+    margin: 0 8px;
+    background: var(--color-accent);
+    color: var(--color-text);
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .cta-buttons a:hover {
+        opacity: 0.9;
+    }
+
+/* SECCIONES GENERALES */
+.section {
+    background: var(--color-section);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+    .section h2 {
+        color: var(--color-accent);
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .section p {
+        font-size: 1.1em;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+/* FOOTER */
+.main-footer {
+    background: var(--color-header);
+    padding: 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left, .footer-right {
+    flex: 1 1 300px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-right: 12px;
+}
+
+.footer-left a, .footer-right a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-left p, .footer-right p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+/* RESPONSIVE */
+@media (max-width:768px) {
+    header, .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cta-buttons a {
+        display: block;
+        margin: 8px auto;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-logo {
+        margin-bottom: 8px;
+    }
+}
+
+/* ————————————————————————————————————————————————————
+   Inventory Planning
+   ———————————————————————————————————————————————————— */
+
+.inventory-hero {
+    background: var(--color-section);
+    color: var(--color-text);
+    padding: 60px 40px;
+}
+
+    .inventory-hero h1 {
+        color: var(--color-accent);
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .inventory-hero p {
+        color: var(--color-text);
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        line-height: 1.6;
+    }
+
+.inventory-content {
+    display: grid;
+    grid-template-columns: 1fr minmax(350px,1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Tarjeta ROI dentro de inventory-planning */
+.roi-box {
+    background: var(--color-card-bg);
+    color: var(--color-on-card-text);
+    border: 1px solid rgba(29,42,51,0.2);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+    .roi-box label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: 600;
+        color: var(--color-on-card-text);
+    }
+
+    .roi-box input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        border: 1px solid rgba(29,42,51,0.2);
+        border-radius: 4px;
+        background: #fff;
+        color: #000;
+    }
+
+    .roi-box button {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding: 12px;
+        background: var(--color-accent);
+        color: var(--color-text);
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .roi-box button:hover {
+            opacity: 0.9;
+        }
+
+#roiResultInv {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Acordeón de inventory-planning */
+.accordion-section {
+    background: var(--color-section);
+    padding: 60px 40px;
+}
+
+    .accordion-section h2 {
+        color: var(--color-accent);
+        margin-bottom: 1rem;
+    }
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .accordion details {
+        background: var(--color-card-bg);
+        color: var(--color-on-card-text);
+        border: 1px solid rgba(29,42,51,0.2);
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+
+    .accordion summary {
+        padding: 12px 16px;
+        cursor: pointer;
+        font-weight: 600;
+        list-style: none;
+        color: var(--color-on-card-text);
+    }
+
+        .accordion summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .accordion summary::after {
+            content: "+";
+            float: right;
+        }
+
+    .accordion details[open] > summary::after {
+        content: "−";
+    }
+
+    .accordion p {
+        padding: 0 16px 16px;
+        margin: 0;
+        color: var(--color-on-card-text);
+    }
+
+/* ————————————————————————————————————————————————————
+   ROI SECTION (texto izq + tarjeta der)
+   ———————————————————————————————————————————————————— */
+
+.roi-section {
+    text-align: left;
+    background: var(--color-section);
+    padding: 60px 40px;
+}
+
+    .roi-section h2 {
+        color: var(--color-accent);
+        font-size: 2em;
+        margin-bottom: 1.5rem;
+    }
+
+.roi-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.roi-text {
+    flex: 1;
+}
+
+.roi-box {
+    flex: 0 0 360px;
+    background: var(--color-card-bg);
+    color: var(--color-on-card-text);
+    border: 1px solid rgba(29,42,51,0.2);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+    .roi-box label {
+        display: block;
+        margin-top: 1rem;
+        font-weight: 600;
+        color: var(--color-on-card-text);
+    }
+
+    .roi-box input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        border: 1px solid rgba(29,42,51,0.2);
+        border-radius: 4px;
+        background: #fff;
+        color: #000;
+    }
+
+    .roi-box button {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding: 12px;
+        background: var(--color-accent);
+        color: var(--color-text);
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+        .roi-box button:hover {
+            opacity: 0.9;
+        }
+
+#roiResult {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* ————————————————————————————————————————————————————
+   ROI WIZARD (step 1)
+   ———————————————————————————————————————————————————— */
+
+.roi-wizard {
+    background: var(--color-section);
+    padding: 60px 40px;
+    color: var(--color-text);
+}
+
+    .roi-wizard h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+.option-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+    .option-grid.industries .option {
+        flex: 1 1 calc((100% - 4rem)/5);
+    }
+
+    .option-grid.measure .option {
+        flex: 1 1 calc((100% - 1rem)/2);
+    }
+
+    .option-grid.accuracy .option {
+        flex: 1 1 calc((100% - 6rem)/7);
+        text-align: center;
+    }
+
+.option {
+    background: var(--color-header);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color .2s, color .2s;
+}
+
+    .option img {
+        max-width: 48px;
+        margin-bottom: 0.5rem;
+    }
+
+    .option p {
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+
+    .option:hover,
+    .option.selected {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+
+.wizard-action {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.button-primary {
+    background: var(--color-accent);
+    color: #fff;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+    .button-primary:hover {
+        opacity: 0.9;
+    }
+
+.steps-indicator {
+    display: inline-flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.step {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+    .step.active {
+        background: var(--color-accent);
+    }
+
+@media (max-width:768px) {
+    .option-grid.industries .option,
+    .option-grid.measure .option,
+    .option-grid.accuracy .option {
+        flex: 1 1 100%;
+    }
+
+    .wizard-action {
+        margin-top: 1rem;
+    }
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--color-header);
+}
+
+/* Empuja este bloque todo a la derecha */
+.header-cta {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Estilo de los botones del header */
+.btn-header {
+    background: var(--color-accent);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+    .btn-header:hover {
+        opacity: 0.9;
+    }
+
+/* Responsive: en móvil apilar o reducir tamaño */
+@media (max-width: 768px) {
+    .header-cta {
+        display: none; /* o cambiar a block/column si prefieres */
+    }
+}
+
+/* —————————————————————
+   Our Services Grid
+   ————————————————————— */
+.services-section {
+    /* reutiliza el fondo y padding de .section */
+    background: var(--color-section);
+    padding: 60px 40px;
+}
+
+    .services-section h2 {
+        color: var(--color-accent);
+    }
+
+    .services-section p {
+        color: var(--color-text);
+    }
+
+/* grid de 3 columnas (se encoge a 1 en móvil) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* tarjeta individual */
+.service-card {
+    background: var(--color-card-bg);
+    color: var(--color-on-card-text);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* título dentro de cada card */
+    .service-card h3 {
+        margin: 0 0 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+    }
+
+    /* texto descriptivo */
+    .service-card p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        flex: 1;
+    }
+
+/* Responsive: menos columnas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ————————————————————————————————————————
+   RESPONSIVE: móvil / pantallas pequeñas
+   ———————————————————————————————————————— */
+@media (max-width: 768px) {
+    /* 1) Header: logo, nav y CTA en columna */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+    }
+    /* Oculta o reemplaza CTAs del header si quieres un menú hamburguesa */
+    .header-cta {
+        margin-top: 12px;
+    }
+    /* 2) Menú principal apilado */
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+        .nav-list a {
+            padding: 8px;
+        }
+    /* 3) Hero: texto más pequeño y botones apilados */
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* 4) Secciones generales: quitar centrar, fluidizar */
+    .section {
+        padding: 40px 20px;
+        text-align: left;
+    }
+
+        .section h2 {
+            font-size: 1.5rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+        }
+
+    /* 5) Our Services grid: 1 columna */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 6) Inventory Planning: grid a 1 columna */
+    .inventory-content {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 7) ROI Section: flex a columna */
+    .roi-container {
+        flex-direction: column;
+    }
+
+    .roi-box {
+        width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    /* 8) Wizard step: apilar todas las opciones */
+    .option-grid.industries .option,
+    .option-grid.measure .option,
+    .option-grid.accuracy .option {
+        flex: 1 1 100%;
+    }
+
+    /* 9) Acordeones: ancho completo */
+    .accordion {
+        width: 100%;
+    }
+}
+
+/* Opcional: para muy pantallas extra pequeñas */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-cta .btn-header,
+    .cta-buttons .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
+
