@@ -575,20 +575,24 @@ header {
 
 /* grid de 3 columnas (se encoge a 1 en móvil) */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
     gap: 1.5rem;
-    margin-top: 2rem;
+    column-gap: 2.5rem;
+    margin-top: 2.5rem;
 }
 
 /* tarjeta individual */
 .service-card {
-    background: var(--color-card-bg);
+background: var(--color-card-bg);
     color: var(--color-on-card-text);
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
 }
 
     /* título dentro de cada card */
