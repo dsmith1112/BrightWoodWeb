@@ -22,16 +22,16 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Solutions</a>
                     <div class="dropdown-content">
-                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
-                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
-                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
+                        <a href="BRIGHT_FORECAST.html">BrightForecastâ„¢</a>
+                        <a href="BRIGHT_REVENUE.html">BrightRevenueâ„¢</a>
+                        <a href="BRIGHT_PRICE.html">BrightPriceâ„¢</a>
                     </div>
                 </li>
 
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Resources</a>
                     <div class="dropdown-content">
-                        <a href="AIM.html">AIM³ Framework</a>
+                        <a href="AIM.html">AIMâ„¢ Framework</a>
                         <a href="index.html#roi-calculator">ROI Calculator</a>
                         <a href="index.html#assessment">Assessment</a>
                     </div>
@@ -46,11 +46,80 @@
         </div>
     </header>
 
+    <section class="hero-contact">
+        <h1>Letâ€™s Talk AI That Works for Your Business</h1>
+        <p>Whether you're exploring an idea or scoping a project, we're here to help you move fastâ€”with clarity.</p>
+    </section>
 
-    <section class="section">
-        <h2>Contact Us</h2>
-        <p>This page provides contact information, a contact form, and details on how to get in touch with Brightwood AI.</p>
-        <p>Include phone numbers, email addresses, and location maps here.</p>
+    <section class="contact-form-container">
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form id="contactForm">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+
+                <label for="workEmail">Work Email</label>
+                <input type="email" id="workEmail" name="workEmail" required>
+
+                <label for="companyName">Company Name</label>
+                <input type="text" id="companyName" name="companyName" required>
+
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" name="jobTitle">
+
+                <label for="companySize">Company Size</label>
+                <select id="companySize" name="companySize" required>
+                    <option value="">Select an option</option>
+                    <option value="<50">&lt;50 employees</option>
+                    <option value="50-200">50-200 employees</option>
+                    <option value="200-500">200-500 employees</option>
+                    <option value="500+">500+ employees</option>
+                </select>
+
+                <label>Project Type / Interest Area</label>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="projectType" value="Forecasting"> Forecasting
+                    </label>
+                    <label>
+                        <input type="checkbox" name="projectType" value="Revenue Ops"> Revenue Ops
+                    </label>
+                    <label>
+                        <input type="checkbox" name="projectType" value="Pricing Optimization"> Pricing Optimization
+                    </label>
+                    <label>
+                        <input type="checkbox" name="projectType" value="Custom AI"> Custom AI
+                    </label>
+                    <label>
+                        <input type="checkbox" name="projectType" value="AIM3 Assessment"> AIMÂ³ Assessment
+                    </label>
+                    <label>
+                        <input type="checkbox" name="projectType" value="AI Monitor"> AI Monitor
+                    </label>
+                    <label>
+                        <input type="checkbox" name="projectType" value="Other"> Other
+                    </label>
+                </div>
+
+                <label for="challengeGoal">Describe Your Challenge or Goal (Optional)</label>
+                <textarea id="challengeGoal" name="challengeGoal"></textarea>
+
+                <label for="urgency">Urgency or Timeline</label>
+                <select id="urgency" name="urgency" required>
+                    <option value="">Select an option</option>
+                    <option value="just_exploring">Just exploring</option>
+                    <option value="planning_90_days">Planning next 90 days</option>
+                    <option value="actively_scoping">Actively scoping</option>
+                    <option value="need_help_now">Need help now</option>
+                </select>
+
+                <button type="submit" class="btn-orange">Submit Request</button>
+            </form>
+
+            <div id="confirmationMessage" class="confirmation-message">
+                <p>Thanks for reaching out. A member of the Brightwood team will respond within 1 business day. If your request is urgent, you can also email us directly at <a href="mailto:contact@brightwood.ai">contact@brightwood.ai</a>.</p>
+            </div>
+        </div>
     </section>
 
     <footer class="main-footer">
@@ -65,6 +134,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            document.getElementById('contactForm').style.display = 'none'; // Oculta el formulario
+            document.getElementById('confirmationMessage').style.display = 'block'; // Muestra el mensaje
+        });
+    </script>
 
 </body>
 </html>

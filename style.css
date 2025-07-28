@@ -824,3 +824,1962 @@ background: var(--color-card-bg);
 }
 
 
+
+
+
+
+
+
+
+
+/*for*/
+/* style.css - Hoja de Estilos Principal de Brightwood AI */
+/* --- Variables de Color --- */
+:root {
+    --dark-background: #1a1a1a; /* Fondo muy oscuro, casi negro */
+    --orange-bright: #FF5722; /* Naranja principal para CTA y acentos */
+    --orange-dark: #e64a19; /* Naranja más oscuro para hover */
+    --yellow-accent: #FFD700; /* Dorado/Amarillo para texto de navegación y enlaces */
+    --light-text: #ffffff; /* Texto blanco para fondos oscuros */
+    --dark-text: #333333; /* Texto oscuro para fondos claros (usar con precaución en este diseño) */
+    --light-gray-bg: #f8f8f8; /* Fondo gris claro (no se usa mucho en este diseño oscuro) */
+    --card-background: #2a2a2a; /* Fondo de tarjetas de métricas/elementos en cuadrículas oscuras */
+    --border-color: #444444; /* Borde sutil para elementos interactivos */
+    --input-bg: #2a2a2a; /* Fondo específico para campos de formulario */
+    --input-text-color: #ffffff; /* Color de texto en inputs */
+    --placeholder-color: #aaaaaa; /* Color del placeholder en inputs */
+    --success-message-bg: #3a3a3a; /* Fondo del mensaje de confirmación */
+    --success-message-text: #a0ffa0; /* Texto del mensaje de confirmación */
+    --text-on-dark: #e0e0e0; /* Un blanco roto/gris claro para texto general sobre fondos oscuros */
+}
+
+/* --- Estilos Generales y Reseteo Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-background); /* Fondo oscuro principal */
+    color: var(--text-on-dark); /* Color de texto por defecto para fondos oscuros */
+    scroll-behavior: smooth; /* Desplazamiento suave para anclas */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--light-text); /* Títulos en blanco */
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    color: var(--text-on-dark); /* Color por defecto para párrafos */
+}
+
+a {
+    text-decoration: none;
+    color: var(--yellow-accent); /* Enlaces en amarillo */
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: var(--orange-bright); /* Hover de enlaces en naranja */
+    }
+
+/* --- Botones Genéricos --- */
+.btn-orange, .btn-primary {
+    display: inline-block;
+    background-color: var(--orange-bright);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Asegura que no haya borde por defecto */
+    cursor: pointer;
+}
+
+    .btn-orange:hover, .btn-primary:hover {
+        background-color: var(--orange-dark);
+        transform: translateY(-2px);
+    }
+
+.btn-bold {
+    font-weight: 700;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--dark-background);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+}
+
+.logo img {
+    height: 40px; /* Ajusta según sea necesario */
+    filter: brightness(0) invert(1); /* Si el logo es oscuro y necesitas que se vea blanco */
+}
+
+.navbar .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .navbar .nav-list li {
+        margin-left: 30px;
+    }
+
+    .navbar .nav-list a {
+        color: var(--yellow-accent); /* Texto de navegación en amarillo */
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+        .navbar .nav-list a:hover {
+            color: var(--orange-bright); /* Hover de navegación en naranja */
+        }
+
+/* Dropdown Navigation */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark-background); /* Fondo del dropdown oscuro */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+    top: calc(100% + 10px); /* Espacio debajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+    .dropdown-content a {
+        color: var(--yellow-accent); /* Texto de dropdown en amarillo */
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        white-space: nowrap; /* Evita que el texto se rompa */
+    }
+
+        .dropdown-content a:hover {
+            background-color: var(--orange-dark); /* Hover de dropdown en naranja oscuro */
+            color: var(--light-text); /* Texto de dropdown hover en blanco */
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Section Genérica (.section) --- */
+.section {
+    padding: 60px 5%;
+    background-color: var(--dark-background); /* Asegura fondo oscuro */
+    color: var(--text-on-dark); /* Texto claro sobre fondo oscuro */
+    text-align: center; /* Por defecto centrado, ajustar en secciones específicas si es necesario */
+}
+
+    .section h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: var(--light-text); /* Títulos en blanco */
+    }
+
+    .section h3 {
+        font-size: 1.8em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: var(--light-text); /* Títulos en blanco */
+    }
+
+    /* --- Estilos de ABOUT.html (texto lineal y justificado) --- */
+    .section p {
+        text-align: justify; /* Justificará el texto de los párrafos en .section */
+        line-height: 1.6;
+        margin-bottom: 1em;
+    }
+
+    /* Excepción para títulos en About, si se desean centrados */
+    .section h2,
+    .section h3 {
+        text-align: center;
+    }
+
+/* --- Estilos de SERVICE.html --- */
+.hero-service {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+    .hero-service h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .hero-service p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--light-text);
+    }
+
+    .hero-service .btn { /* Usando .btn en vez de .btn-primary para este botón específico si es diferente */
+        display: inline-block;
+        background-color: var(--orange-bright);
+        color: var(--light-text);
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+        .hero-service .btn:hover {
+            background-color: var(--orange-dark);
+        }
+
+.services-grid-container {
+    padding: 60px 5%;
+    background-color: var(--dark-background); /* Fondo oscuro consistente */
+    color: var(--text-on-dark);
+}
+
+    .services-grid-container h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .services-grid-container > p {
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--text-on-dark);
+    }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--card-background); /* Fondo de tarjeta oscuro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color); /* Borde sutil */
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: var(--light-text);
+    }
+
+    .service-card p {
+        font-size: 1em;
+        line-height: 1.6;
+        color: var(--text-on-dark);
+        text-align: justify;
+    }
+
+/* --- Estilos de CONTAC.html (Formulario Elegante) --- */
+.hero-contact {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+    .hero-contact h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .hero-contact p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--light-text);
+        line-height: 1.6;
+    }
+
+.contact-form-container {
+    padding: 60px 5%;
+    background-color: var(--dark-background);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    background-color: var(--input-bg); /* Fondo del formulario más claro que el fondo general pero oscuro */
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid var(--border-color);
+}
+
+    .contact-form h2 {
+        text-align: center;
+        color: var(--light-text);
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+
+    .contact-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: var(--light-text);
+        font-size: 0.95em;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form select,
+    .contact-form textarea {
+        width: calc(100% - 24px); /* Ajuste para el padding */
+        padding: 12px;
+        margin-bottom: 25px;
+        background-color: var(--dark-background); /* Fondo de input más oscuro que el formulario */
+        color: var(--input-text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 1em;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: var(--orange-bright);
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3);
+            outline: none;
+        }
+
+    .contact-form textarea {
+        min-height: 120px;
+    }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--placeholder-color);
+            opacity: 1;
+        }
+
+    .contact-form select option {
+        background-color: var(--dark-background);
+        color: var(--input-text-color);
+    }
+
+    .contact-form select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2C146.2l-14.3-14.3-116.8%2C116.8L39.7%2C131.9%2L25.4%2C146.2l122.5%2C122.5L287%2C146.2z%22%2F%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px top 50%;
+        background-size: 12px auto;
+    }
+
+    .contact-form .checkbox-group label {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 15px;
+        font-weight: 400;
+        color: var(--light-text);
+        cursor: pointer;
+    }
+
+    .contact-form .checkbox-group input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--border-color);
+        border-radius: 3px;
+        background-color: var(--dark-background);
+        margin-right: 10px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+        .contact-form .checkbox-group input[type="checkbox"]:checked {
+            background-color: var(--orange-bright);
+            border-color: var(--orange-bright);
+        }
+
+            .contact-form .checkbox-group input[type="checkbox"]:checked::after {
+                content: '✔';
+                font-size: 14px;
+                color: var(--light-text);
+            }
+
+    .contact-form button[type="submit"] {
+        background-color: var(--orange-bright);
+        color: var(--light-text);
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: var(--orange-dark);
+            transform: translateY(-2px);
+        }
+
+.confirmation-message {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--success-message-bg);
+    color: var(--success-message-text);
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: none;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+    .confirmation-message a {
+        color: var(--success-message-text);
+        text-decoration: underline;
+    }
+
+/* --- Estilos de BRIGHT_FORECAST.html --- */
+.hero-brightforecast {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 80px 5%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    min-height: 450px;
+}
+
+    .hero-brightforecast .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-brightforecast h1 {
+        font-size: 3.8em;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        color: var(--light-text);
+    }
+
+    .hero-brightforecast p {
+        font-size: 1.3em;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        color: var(--text-on-dark);
+        max-width: 700px;
+    }
+
+/* how it works section */
+.how-it-works {
+    background-color: var(--dark-background);
+    padding: 60px 5%;
+    text-align: center;
+    color: var(--text-on-dark);
+}
+
+    .how-it-works h2 {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+        color: var(--light-text);
+        text-align: left;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .how-it-works .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.steps-grid .step-item {
+    padding: 20px;
+    text-align: center;
+}
+
+    .steps-grid .step-item img {
+        height: 70px;
+        margin-bottom: 15px;
+        filter: brightness(0) invert(1); /* Para que los iconos se vean blancos sobre fondo oscuro */
+    }
+
+    .steps-grid .step-item h3 {
+        font-size: 1.4em;
+        color: var(--light-text);
+        margin: 0;
+    }
+
+.how-it-works .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+}
+
+.metrics-grid .metric-card {
+    background-color: var(--card-background); /* Fondo de tarjeta de métrica oscuro */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid var(--orange-bright);
+}
+
+    .metrics-grid .metric-card .label {
+        font-size: 0.9em;
+        font-weight: 700;
+        color: var(--orange-bright);
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .metrics-grid .metric-card .value {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: var(--light-text);
+        margin-bottom: 5px;
+        line-height: 1.1;
+    }
+
+    .metrics-grid .metric-card .description {
+        font-size: 1em;
+        color: var(--text-on-dark);
+    }
+
+/* Minimal Lift, Fast Time to Value & What You Get Section */
+.value-proposition {
+    background-color: var(--dark-background);
+    padding: 60px 5%;
+    color: var(--text-on-dark);
+}
+
+    .value-proposition .value-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: flex-start;
+    }
+
+    .value-proposition h2 {
+        font-size: 2.2em;
+        color: var(--light-text);
+        margin-bottom: 25px;
+    }
+
+    .value-proposition p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+.what-you-get ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+    .what-you-get ul li {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 25px;
+        line-height: 1.6;
+        color: var(--text-on-dark);
+    }
+
+        .what-you-get ul li::before {
+            content: '•';
+            color: var(--orange-bright);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -3px;
+            line-height: 1;
+        }
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); /* Para que el logo se vea blanco */
+}
+
+.main-footer p {
+    margin: 5px 0;
+    color: var(--light-text);
+}
+
+.main-footer a {
+    color: var(--yellow-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .main-footer a:hover {
+        color: var(--orange-bright);
+    }
+
+/* --- Media Queries Generales y Responsividad --- */
+@media (max-width: 1024px) {
+    .hero-brightforecast h1 {
+        font-size: 3em;
+    }
+
+    .hero-brightforecast p {
+        font-size: 1.1em;
+    }
+
+    .value-proposition .value-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    .navbar {
+        display: none; /* Oculta la navegación en móviles, podrías implementar un menú hamburguesa */
+    }
+
+    .header-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+    }
+
+        .header-cta .btn-orange {
+            margin-left: 0;
+        }
+
+    /* Hero Sections */
+    .hero-service h1, .hero-contact h1, .hero-brightforecast h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-service p, .hero-contact p, .hero-brightforecast p {
+        font-size: 1em;
+    }
+
+    /* Service Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 25px;
+    }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+        }
+
+    .checkbox-group label {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* BrightForecast Sections */
+    .how-it-works h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .how-it-works .steps-grid,
+    .how-it-works .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid .metric-card {
+        text-align: center;
+    }
+
+    .value-proposition h2 {
+        font-size: 1.8em;
+    }
+
+    .value-proposition p, .what-you-get ul li {
+        font-size: 0.95em;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        text-align: center;
+    }
+}
+
+
+
+
+/*PRICE*/
+/* style.css - Hoja de Estilos Principal de Brightwood AI */
+
+/* --- Variables de Color --- */
+:root {
+    --dark-background: #1a1a1a; /* Fondo muy oscuro, casi negro */
+    --orange-bright: #FF5722; /* Naranja principal para CTA y acentos */
+    --orange-dark: #e64a19; /* Naranja más oscuro para hover */
+    --yellow-accent: #FFD700; /* Dorado/Amarillo para texto de navegación y enlaces */
+    --light-text: #ffffff; /* Texto blanco para fondos oscuros */
+    --dark-text: #333333; /* Texto oscuro para fondos claros (usar con precaución en este diseño) */
+    --light-gray-bg: #f8f8f8; /* Fondo gris claro (no se usa mucho en este diseño oscuro) */
+    --card-background: #2a2a2a; /* Fondo de tarjetas de métricas/elementos en cuadrículas oscuras */
+    --border-color: #444444; /* Borde sutil para elementos interactivos */
+    --input-bg: #2a2a2a; /* Fondo específico para campos de formulario */
+    --input-text-color: #ffffff; /* Color de texto en inputs */
+    --placeholder-color: #aaaaaa; /* Color del placeholder en inputs */
+    --success-message-bg: #3a3a3a; /* Fondo del mensaje de confirmación */
+    --success-message-text: #a0ffa0; /* Texto del mensaje de confirmación */
+    --text-on-dark: #e0e0e0; /* Un blanco roto/gris claro para texto general sobre fondos oscuros */
+    --brighprice-hero-bg: var(--dark-background); /* Usando el mismo gris oscuro principal */
+}
+
+/* --- Estilos Generales y Reseteo Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-background); /* Fondo oscuro principal */
+    color: var(--text-on-dark); /* Color de texto por defecto para fondos oscuros */
+    scroll-behavior: smooth; /* Desplazamiento suave para anclas */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--light-text); /* Títulos en blanco */
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+    color: var(--text-on-dark); /* Color por defecto para párrafos */
+}
+
+a {
+    text-decoration: none;
+    color: var(--yellow-accent); /* Enlaces en amarillo */
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: var(--orange-bright); /* Hover de enlaces en naranja */
+    }
+
+/* --- Botones Genéricos --- */
+.btn-orange, .btn-primary {
+    display: inline-block;
+    background-color: var(--orange-bright);
+    color: var(--light-text);
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Asegura que no haya borde por defecto */
+    cursor: pointer;
+}
+
+    .btn-orange:hover, .btn-primary:hover {
+        background-color: var(--orange-dark);
+        transform: translateY(-2px);
+    }
+
+.btn-bold {
+    font-weight: 700;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--dark-background);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+}
+
+.logo img {
+    height: 40px; /* Ajusta según sea necesario */
+    filter: brightness(0) invert(1); /* Si el logo es oscuro y necesitas que se vea blanco */
+}
+
+.navbar .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    .navbar .nav-list li {
+        margin-left: 30px;
+    }
+
+    .navbar .nav-list a {
+        color: var(--yellow-accent); /* Texto de navegación en amarillo */
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+        .navbar .nav-list a:hover {
+            color: var(--orange-bright); /* Hover de navegación en naranja */
+        }
+
+/* Dropdown Navigation */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--dark-background); /* Fondo del dropdown oscuro */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 1;
+    border-radius: 5px;
+    padding: 10px 0;
+    top: calc(100% + 10px); /* Espacio debajo del botón */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+    .dropdown-content a {
+        color: var(--yellow-accent); /* Texto de dropdown en amarillo */
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        white-space: nowrap; /* Evita que el texto se rompa */
+    }
+
+        .dropdown-content a:hover {
+            background-color: var(--orange-dark); /* Hover de dropdown en naranja oscuro */
+            color: var(--light-text); /* Texto de dropdown hover en blanco */
+        }
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Section Genérica (.section) --- */
+.section {
+    padding: 60px 5%;
+    background-color: var(--dark-background); /* Asegura fondo oscuro */
+    color: var(--text-on-dark); /* Texto claro sobre fondo oscuro */
+    text-align: center; /* Por defecto centrado, ajustar en secciones específicas si es necesario */
+}
+
+    .section h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: var(--light-text); /* Títulos en blanco */
+    }
+
+    .section h3 {
+        font-size: 1.8em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: var(--light-text); /* Títulos en blanco */
+    }
+
+    /* --- Estilos de ABOUT.html (texto lineal y justificado) --- */
+    .section p {
+        text-align: justify; /* Justificará el texto de los párrafos en .section */
+        line-height: 1.6;
+        margin-bottom: 1em;
+    }
+
+    /* Excepción para títulos en About, si se desean centrados */
+    .section h2,
+    .section h3 {
+        text-align: center;
+    }
+
+/* --- Estilos de SERVICE.html --- */
+.hero-service {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+    .hero-service h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .hero-service p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--light-text);
+    }
+
+    .hero-service .btn {
+        display: inline-block;
+        background-color: var(--orange-bright);
+        color: var(--light-text);
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+
+        .hero-service .btn:hover {
+            background-color: var(--orange-dark);
+        }
+
+.services-grid-container {
+    padding: 60px 5%;
+    background-color: var(--dark-background); /* Fondo oscuro consistente */
+    color: var(--text-on-dark);
+}
+
+    .services-grid-container h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .services-grid-container > p {
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 50px;
+        color: var(--text-on-dark);
+    }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: var(--card-background); /* Fondo de tarjeta oscuro */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+    padding: 30px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--border-color); /* Borde sutil */
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .service-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: var(--light-text);
+    }
+
+    .service-card p {
+        font-size: 1em;
+        line-height: 1.6;
+        color: var(--text-on-dark);
+        text-align: justify;
+    }
+
+/* --- Estilos de CONTAC.html (Formulario Elegante) --- */
+.hero-contact {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 80px 5%;
+    text-align: center;
+}
+
+    .hero-contact h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .hero-contact p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--light-text);
+        line-height: 1.6;
+    }
+
+.contact-form-container {
+    padding: 60px 5%;
+    background-color: var(--dark-background);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    background-color: var(--input-bg); /* Fondo del formulario más claro que el fondo general pero oscuro */
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 40px;
+    width: 100%;
+    max-width: 650px;
+    border: 1px solid var(--border-color);
+}
+
+    .contact-form h2 {
+        text-align: center;
+        color: var(--light-text);
+        margin-bottom: 30px;
+        font-size: 2em;
+    }
+
+    .contact-form label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: var(--light-text);
+        font-size: 0.95em;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form select,
+    .contact-form textarea {
+        width: calc(100% - 24px); /* Ajuste para el padding */
+        padding: 12px;
+        margin-bottom: 25px;
+        background-color: var(--dark-background); /* Fondo de input más oscuro que el formulario */
+        color: var(--input-text-color);
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 1em;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: var(--orange-bright);
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.3);
+            outline: none;
+        }
+
+    .contact-form textarea {
+        min-height: 120px;
+    }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--placeholder-color);
+            opacity: 1;
+        }
+
+    .contact-form select option {
+        background-color: var(--dark-background);
+        color: var(--input-text-color);
+    }
+
+    .contact-form select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2C146.2l-14.3-14.3-116.8%2C116.8L39.7%2C131.9%2L25.4%2C146.2l122.5%2C122.5L287%2C146.2z%22%2F%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px top 50%;
+        background-size: 12px auto;
+    }
+
+    .contact-form .checkbox-group label {
+        display: inline-flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 15px;
+        font-weight: 400;
+        color: var(--light-text);
+        cursor: pointer;
+    }
+
+    .contact-form .checkbox-group input[type="checkbox"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid var(--border-color);
+        border-radius: 3px;
+        background-color: var(--dark-background);
+        margin-right: 10px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+        .contact-form .checkbox-group input[type="checkbox"]:checked {
+            background-color: var(--orange-bright);
+            border-color: var(--orange-bright);
+        }
+
+            .contact-form .checkbox-group input[type="checkbox"]:checked::after {
+                content: '✔';
+                font-size: 14px;
+                color: var(--light-text);
+            }
+
+    .contact-form button[type="submit"] {
+        background-color: var(--orange-bright);
+        color: var(--light-text);
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1em;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: var(--orange-dark);
+            transform: translateY(-2px);
+        }
+
+.confirmation-message {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--success-message-bg);
+    color: var(--success-message-text);
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: none;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+    .confirmation-message a {
+        color: var(--success-message-text);
+        text-decoration: underline;
+    }
+
+/* --- Estilos de BRIGHT_FORECAST.html --- */
+.hero-brightforecast {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 80px 5%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    min-height: 450px;
+}
+
+    .hero-brightforecast .hero-content {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .hero-brightforecast h1 {
+        font-size: 3.8em;
+        line-height: 1.1;
+        margin-bottom: 25px;
+        color: var(--light-text);
+    }
+
+    .hero-brightforecast p {
+        font-size: 1.3em;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        color: var(--text-on-dark);
+        max-width: 700px;
+    }
+
+/* how it works section (BrightForecast) */
+.how-it-works {
+    background-color: var(--dark-background);
+    padding: 60px 5%;
+    text-align: center;
+    color: var(--text-on-dark);
+}
+
+    .how-it-works h2 {
+        font-size: 2.5em;
+        margin-bottom: 50px;
+        color: var(--light-text);
+        text-align: left;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .how-it-works .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.steps-grid .step-item {
+    padding: 20px;
+    text-align: center;
+}
+
+    .steps-grid .step-item img {
+        height: 70px;
+        margin-bottom: 15px;
+        filter: brightness(0) invert(1); /* Para que los iconos se vean blancos sobre fondo oscuro */
+    }
+
+    .steps-grid .step-item h3 {
+        font-size: 1.4em;
+        color: var(--light-text);
+        margin: 0;
+    }
+
+.how-it-works .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+}
+
+.metrics-grid .metric-card {
+    background-color: var(--card-background); /* Fondo de tarjeta de métrica oscuro */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-top: 5px solid var(--orange-bright);
+}
+
+    .metrics-grid .metric-card .label {
+        font-size: 0.9em;
+        font-weight: 700;
+        color: var(--orange-bright);
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .metrics-grid .metric-card .value {
+        font-size: 2.5em;
+        font-weight: 800;
+        color: var(--light-text);
+        margin-bottom: 5px;
+        line-height: 1.1;
+    }
+
+    .metrics-grid .metric-card .description {
+        font-size: 1em;
+        color: var(--text-on-dark);
+    }
+
+/* Minimal Lift, Fast Time to Value & What You Get Section (BrightForecast) */
+.value-proposition {
+    background-color: var(--dark-background);
+    padding: 60px 5%;
+    color: var(--text-on-dark);
+}
+
+    .value-proposition .value-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: flex-start;
+    }
+
+    .value-proposition h2 {
+        font-size: 2.2em;
+        color: var(--light-text);
+        margin-bottom: 25px;
+    }
+
+    .value-proposition p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+.what-you-get ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+    .what-you-get ul li {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        position: relative;
+        padding-left: 25px;
+        line-height: 1.6;
+        color: var(--text-on-dark);
+    }
+
+        .what-you-get ul li::before {
+            content: '•';
+            color: var(--orange-bright);
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -3px;
+            line-height: 1;
+        }
+
+/* --- Estilos de BRIGHT_PRICE.html (NUEVO) --- */
+.hero-brightprice {
+    background-color: var(--brighprice-hero-bg); /* Fondo específico del hero de BrightPrice */
+    color: var(--light-text);
+    padding: 80px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+    .hero-brightprice .hero-content {
+        flex: 1;
+        min-width: 400px; /* Ancho mínimo para el contenido de texto */
+    }
+
+    .hero-brightprice h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+        line-height: 1.1;
+    }
+
+    .hero-brightprice p {
+        font-size: 1.2em;
+        margin-bottom: 40px;
+        color: var(--text-on-dark);
+    }
+
+    .hero-brightprice .hero-image {
+        flex: 1;
+        min-width: 300px; /* Ancho mínimo para la imagen */
+        text-align: center;
+    }
+
+        .hero-brightprice .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+.brightprice-feature-section {
+    background-color: var(--dark-background);
+    padding: 60px 5%;
+    color: var(--text-on-dark);
+}
+
+    .brightprice-feature-section .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 60px;
+        align-items: flex-start;
+    }
+
+    .brightprice-feature-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .brightprice-feature-section h3 {
+        font-size: 1.6em;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        color: var(--light-text);
+    }
+
+    .brightprice-feature-section p {
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .brightprice-feature-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .brightprice-feature-section ul li {
+            font-size: 1em;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.5;
+            color: var(--text-on-dark);
+        }
+
+            .brightprice-feature-section ul li::before {
+                content: '•'; /* Bullet point */
+                color: var(--orange-bright);
+                font-size: 1.2em;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+.how-brightprice-works {
+    background-color: var(--card-background); /* Un fondo ligeramente diferente para esta sección */
+    padding: 60px 5%;
+    color: var(--text-on-dark);
+}
+
+    .how-brightprice-works h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 50px;
+        color: var(--light-text);
+    }
+
+    .how-brightprice-works .works-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .how-brightprice-works .works-item {
+        background-color: var(--dark-background); /* Fondo oscuro para las tarjetas internas */
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-color);
+        text-align: left;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+        .how-brightprice-works .works-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .how-brightprice-works .works-item h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: var(--orange-bright); /* Títulos de los pasos en naranja */
+        }
+
+        .how-brightprice-works .works-item p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: var(--text-on-dark);
+        }
+
+.why-ai-pricing {
+    background-color: var(--dark-background);
+    padding: 60px 5%;
+    color: var(--text-on-dark);
+    text-align: center; /* Centrado general para esta sección */
+}
+
+    .why-ai-pricing h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: var(--light-text);
+    }
+
+    .why-ai-pricing p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+    }
+
+    .why-ai-pricing ul {
+        list-style: none;
+        padding: 0;
+        margin: 30px auto 40px auto;
+        max-width: 800px;
+        text-align: left; /* Alinea los puntos de la lista a la izquierda */
+    }
+
+        .why-ai-pricing ul li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            line-height: 1.6;
+            color: var(--text-on-dark);
+        }
+
+            .why-ai-pricing ul li::before {
+                content: '•';
+                color: var(--orange-bright);
+                font-size: 1.5em;
+                position: absolute;
+                left: 0;
+                top: -3px;
+                line-height: 1;
+            }
+
+    .why-ai-pricing .cta-bottom {
+        margin-top: 50px;
+        padding-top: 30px;
+        border-top: 1px solid var(--border-color); /* Separador sutil */
+    }
+
+        .why-ai-pricing .cta-bottom h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--dark-background);
+    color: var(--light-text);
+    padding: 40px 5%;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-right {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); /* Para que el logo se vea blanco */
+}
+
+.main-footer p {
+    margin: 5px 0;
+    color: var(--light-text);
+}
+
+.main-footer a {
+    color: var(--yellow-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    .main-footer a:hover {
+        color: var(--orange-bright);
+    }
+
+/* --- Media Queries Generales y Responsividad --- */
+@media (max-width: 1024px) {
+    .hero-brightforecast h1, .hero-brightprice h1 {
+        font-size: 3em;
+    }
+
+    .hero-brightforecast p, .hero-brightprice p {
+        font-size: 1.1em;
+    }
+
+    .value-proposition .value-content, .brightprice-feature-section .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-brightprice {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        .hero-brightprice .hero-content {
+            min-width: unset;
+        }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    .navbar {
+        display: none; /* Oculta la navegación en móviles, podrías implementar un menú hamburguesa */
+    }
+
+    .header-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+    }
+
+        .header-cta .btn-orange {
+            margin-left: 0;
+        }
+
+    /* Hero Sections */
+    .hero-service h1, .hero-contact h1, .hero-brightforecast h1, .hero-brightprice h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-service p, .hero-contact p, .hero-brightforecast p, .hero-brightprice p {
+        font-size: 1em;
+    }
+
+    /* Service Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 25px;
+    }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+        }
+
+    .checkbox-group label {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    /* BrightForecast Sections */
+    .how-it-works h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .how-it-works .steps-grid,
+    .how-it-works .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid .metric-card {
+        text-align: center;
+    }
+
+    .value-proposition h2 {
+        font-size: 1.8em;
+    }
+
+    .value-proposition p, .what-you-get ul li {
+        font-size: 0.95em;
+    }
+
+    /* BrightPrice Sections */
+    .brightprice-feature-section .feature-grid, .how-brightprice-works .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brightprice-feature-section h2, .brightprice-feature-section h3, .how-brightprice-works h2, .how-brightprice-works .works-item h3 {
+        text-align: center;
+    }
+
+    .why-ai-pricing ul {
+        text-align: center;
+    }
+
+        .why-ai-pricing ul li {
+            padding-left: 0;
+            text-align: left; /* Mantener la lista alineada a la izquierda en el elemento de la lista */
+        }
+
+            .why-ai-pricing ul li::before {
+                position: static; /* Ajustar posición para que no se superponga */
+                margin-right: 5px;
+            }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        text-align: center;
+    }
+    
+
+
+
+
+
+<style >
+/* Estilos específicos para esta página, si no están ya en style.css about */
+/* Estilos para la sección Hero (si necesitas ajustar colores o tamaños específicos para esta página) */
+.hero-service {
+    background-color: #1a1a1a; /* Color de fondo oscuro similar al de la imagen */
+    color: #ffffff; /* Texto blanco */
+    padding: 80px 5%; /* Espaciado superior e inferior, y a los lados */
+    text-align: center;
+}
+
+.hero-service h1 {
+    font-size: 3.5em; /* Tamaño de la cabecera principal */
+    margin-bottom: 20px;
+    color: #ffffff; /* Asegurar que el título sea blanco */
+    text-align: center; /* Centrar el título */
+}
+
+.hero-service p {
+    font-size: 1.2em; /* Tamaño de la subcabecera */
+    margin-bottom: 40px;
+    max-width: 800px; /* Ancho máximo para el párrafo */
+    margin-left: auto;
+    margin-right: auto;
+    color: #ffffff; /* Asegurar que el párrafo sea blanco */
+    text-align: center; /* Centrar el párrafo */
+}
+
+.hero-service .btn {
+    display: inline-block;
+    background-color: #FF5722; /* Naranja para el botón */
+    color: #ffffff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+    .hero-service .btn:hover {
+        background-color: #e64a19; /* Naranja más oscuro al pasar el ratón */
+    }
+
+/* Sección de Servicios */
+.services-grid-container {
+    padding: 60px 5%;
+    background-color: #f8f8f8; /* Un fondo más claro para la sección de servicios */
+    color: #333; /* Color de texto oscuro */
+}
+
+    .services-grid-container h2 {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .services-grid-container > p { /* Párrafo debajo del título principal de servicios */
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #555;
+    }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 columnas en pantallas grandes */
+    gap: 30px; /* Espacio entre las tarjetas de servicio */
+    max-width: 1200px; /* Ancho máximo para la cuadrícula */
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: left; /* Alineación del texto dentro de la tarjeta */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .service-card p {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #666;
+        text-align: justify; /* Justificar el texto dentro de las descripciones */
+    }
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .hero-service h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-service p {
+        font-size: 1em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+</style >
+
+
+/*ser*/
