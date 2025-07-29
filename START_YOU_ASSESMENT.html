@@ -22,16 +22,16 @@
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Solutions</a>
                     <div class="dropdown-content">
-                        <a href="BRIGHT_FORECAST.html">BrightForecast�</a>
-                        <a href="BRIGHT_REVENUE.html">BrightRevenue�</a>
-                        <a href="BRIGHT_PRICE.html">BrightPrice�</a>
+                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
+                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
+                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
                     </div>
                 </li>
 
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Resources</a>
                     <div class="dropdown-content">
-                        <a href="AIM.html">AIM� Framework</a>
+                        <a href="#" onclick="alert('AIM³ Framework clicked!')">AIM³ Framework</a>
                         <a href="index.html#roi-calculator">ROI Calculator</a>
                         <a href="index.html#assessment">Assessment</a>
                     </div>
@@ -46,16 +46,103 @@
         </div>
     </header>
 
-    <section class="section">
-        <h2>Start Your Assessment</h2>
-        <p>This is where users can begin their assessment with Brightwood AI. You can embed a form or provide instructions here.</p>
-        <p>Guide them through the first steps of identifying their AI needs.</p>
+    <section class="assessment-hero">
+        <div class="hero-content">
+            <h1>Discover Where AI Can Move the Needle—Fast</h1>
+            <p>Get a tailored assessment using our AIM³ Framework to identify your best-fit AI opportunities—no commitment, no complexity.</p>
+        </div>
+    </section>
+
+    <section class="assessment-content">
+        <div class="form-section">
+            <h2>Start Your Assessment</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="workEmail">Work Email</label>
+                    <input type="email" id="workEmail" name="workEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Ops">Ops</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Supply Chain">Supply Chain</option>
+                        <option value="RevOps">RevOps</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="primaryChallenge">Primary Challenge Area</label>
+                    <select id="primaryChallenge" name="primaryChallenge" required>
+                        <option value="">Select Challenge</option>
+                        <option value="Forecasting">Forecasting</option>
+                        <option value="Pricing">Pricing</option>
+                        <option value="Revenue">Revenue</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="estimatedRevenue">Estimated Revenue</label>
+                    <select id="estimatedRevenue" name="estimatedRevenue">
+                        <option value="">Select Revenue (Optional)</option>
+                        <option value="50M-100M">50M–100M</option>
+                        <option value="100M-200M">100M–200M</option>
+                        <option value="200M-500M">200M–500M</option>
+                        <option value="Not Sure">Not Sure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="employeeCount">Employee Count</label>
+                    <select id="employeeCount" name="employeeCount">
+                        <option value="">Select Employee Count (Optional)</option>
+                        <option value="<100">&lt;100</option>
+                        <option value="100-500">100–500</option>
+                        <option value="500-1000">500–1000</option>
+                        <option value="1000-2000">1000–2000</option>
+                        <option value="2000+">2000+</option>
+                    </select>
+                </div>
+                <button type="submit">Submit Assessment</button>
+            </form>
+        </div>
+
+        <div class="info-section">
+            <h3>What You'll Receive</h3>
+            <ul>
+                <li>Custom-tailored AI opportunity map</li>
+                <li>Clarity on where AI fits in your team’s workflow</li>
+                <li>Optional walkthrough call with one of our Delivery Directors</li>
+            </ul>
+
+            <div class="trust-box">
+                <h4>Why Trust Brightwood AI?</h4>
+                <ul>
+                    <li>Used to guide 15+ successful AI engagements</li>
+                    <li>Built by a team with decades of enterprise software experience</li>
+                    <li>Fully confidential and vendor-agnostic</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-bottom">
+        <p>Not ready yet? <a href="#" class="btn-link">Download an explainer PDF instead</a></p>
+        <p>Just want to talk? <a href="https://calendly.com/yourcompany/discovery-call" target="_blank" class="btn-link">Schedule a discovery call</a></p>
     </section>
 
     <footer class="main-footer">
         <div class="footer-content container">
             <div class="footer-left">
-                <img src="BRIGHTWOODAI\wwwroot\images\logo-transparente.png" alt="Brightwood AI" class="footer-logo">
+                <img src="wwwroot/images/logo-transparente.png" alt="Brightwood AI" class="footer-logo">
                 <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
             </div>
             <div class="footer-right">
