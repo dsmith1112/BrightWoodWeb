@@ -418,9 +418,16 @@
             const userResponses = {};
 
             questions.forEach(question => {
-                const name = question.querySelector('input[type="radio"]').name;
+                const firstRadio = question.querySelector('input[type="radio"]');
+                if (!firstRadio) {
+                    console.warn('Pregunta sin radios encontrada:', question);
+                    return; // Salta esta pregunta
+                }
+                const name = firstRadio.name;
                 const selectedOption = question.querySelector(`input[name="${name}"]:checked`);
-
+                /*const name = question.querySelector('input[type="radio"]').name;
+                const selectedOption = question.querySelector(`input[name="${name}"]:checked`);
+                */
                 if (selectedOption) {
                     const score = parseInt(selectedOption.value);
                     const weight = weights[name] || 1; // Usa el peso definido o 1 por defecto
@@ -492,6 +499,8 @@
             console.log('Total Score:', totalWeightedScore);
             console.log('Normalized Score:', normalizedScore);
             console.log('Tier:', tierName);
+
+            alert(userResponses);
         });
     </script>
 
