@@ -25,7 +25,6 @@
             text-align: center;
             padding: 40px 20px;
         }
-
         .score-meter {
             width: 150px;
             height: 150px;
@@ -66,6 +65,12 @@
         .cta-result {
             margin-top: 30px;
         }
+        input[type="radio"] {
+  transform: scale(1.5); /* Aumenta el tamaño del radio */
+  margin-right: 10px;    /* Separa el radio del texto */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
     </style>
 </head>
 <body>
@@ -111,7 +116,24 @@
             <p>Get a tailored assessment using our AIM³ Framework to identify your best-fit AI opportunities—no commitment, no complexity.</p>
         </div>
     </section>
-
+    <Section class="assessment-content">
+        <div class="info-section">
+            <h3>What You'll Receive</h3>
+            <ul>
+                <li>Custom-tailored AI opportunity map</li>
+                <li>Clarity on where AI fits in your team’s workflow</li>
+                <li>Optional walkthrough call with one of our Delivery Directors</li>
+            </ul>
+            <div class="trust-box">
+                <h3>Why Trust Brightwood AI?</h4>
+                <ul>
+                    <li>Used to guide 15+ successful AI engagements</li>
+                    <li>Built by a team with decades of enterprise software experience</li>
+                    <li>Fully confidential and vendor-agnostic</li>
+                </ul>
+            </div>
+        </div>
+    </Section>
     <section class="assessment-content">
         <div class="form-section">
             <h2 id="formTitle">Start Your Assessment</h2>
@@ -170,7 +192,7 @@
                         <option value="Prefer not to say">Prefer not to say</option>
                     </select>
                 </div>
-                <button type="button" id="showQuestionsBtn">Submit Assessment</button>
+                <button class="btn-orange" type="button" id="showQuestionsBtn">Submit Assessment</button>
             </form>
 
             <form id="questionnaireForm" class="hidden-form" action="#" method="POST">
@@ -310,12 +332,12 @@
                     </div>
                 </div>
 
-                <div class="form-group question">
+                <!-- <div class="form-group question">
                     <label for="anything_else">Anything else you would like to share</label>
                     <textarea id="anything_else" name="anything_else" rows="4"></textarea>
-                </div>
+                </div>-->
 
-                <button type="button" id="getScoreBtn">Get Your Score</button>
+                <button class="btn-orange" type="button" id="getScoreBtn">Get Your Score</button>
             </form>
 
             <div id="resultsPage" class="hidden-form">
@@ -333,33 +355,19 @@
                 </div>
             </div>
         </div>
-        <div class="info-section">
-            <h3>What You'll Receive</h3>
-            <ul>
-                <li>Custom-tailored AI opportunity map</li>
-                <li>Clarity on where AI fits in your team’s workflow</li>
-                <li>Optional walkthrough call with one of our Delivery Directors</li>
-            </ul>
-            <div class="trust-box">
-                <h4>Why Trust Brightwood AI?</h4>
-                <ul>
-                    <li>Used to guide 15+ successful AI engagements</li>
-                    <li>Built by a team with decades of enterprise software experience</li>
-                    <li>Fully confidential and vendor-agnostic</li>
-                </ul>
-            </div>
-        </div>
+
     </section>
 
     <section class="cta-bottom">
-        <p>Not ready yet? <a href="#" class="btn-link">Download an explainer PDF instead</a></p>
-        <p>Just want to talk? <a href="https://calendly.com/yourcompany/discovery-call" target="_blank" class="btn-link">Schedule a discovery call</a></p>
+        <p>Not ready yet? <a href="#" class="btn-orange">Download an explainer PDF instead</a></p>
+        <p>Just want to talk? <a href="https://calendly.com/yourcompany/discovery-call" target="_blank" class="btn-orange">Schedule a discovery call</a></p>
     </section>
 
     <footer class="main-footer">
         <div class="footer-content container">
             <div class="footer-left">
-                <img src="wwwroot/images/logo-transparente.png" alt="Brightwood AI" class="footer-logo">
+                <!--"wwwroot/images/logo-transparente.png"-->
+                <img src= "BRIGHTWOODAI/wwwroot/images/logo-transparente.png" alt="Brightwood AI" class="footer-logo">
                 <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
             </div>
             <div class="footer-right">
