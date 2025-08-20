@@ -1670,7 +1670,7 @@ header {
 
 
 /*you*/
-<style >
+
 /* Estilos básicos para este contenido. Lo ideal es mover esto a style.css */
 .assessment-hero {
     text-align: center;
@@ -1882,44 +1882,6 @@ header {
         margin-bottom: 15px;
     }
 }
-
-</style >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*PRICE*/
 /* style.css - Hoja de Estilos Principal de Brightwood AI */
@@ -2958,56 +2920,6 @@ header {
 
 
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background-color: #1c1c1c;
-  color: #fff;
-  padding: 40px 20px;
-  flex-wrap: wrap;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-  margin: 10px;
-}
-
-.logo {
-  width: 60px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.company-info h2 {
-  margin: 0;
-  font-size: 1.5em;
-}
-
-.contact-info a {
-  color: #ff9900;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a {
-  margin-right: 10px;
-  color: #ff9900;
-  font-size: 1.2em;
-  text-decoration: none;
-}
-
-.social-icons a:hover {
-  color: #fff;
-}
 
 
 
@@ -3024,7 +2936,7 @@ header {
 
 
 
-    <style >
+
     /* Estilos específicos para esta página, si no están ya en style.css about */
     /* Estilos para la sección Hero (si necesitas ajustar colores o tamaños específicos para esta página) */
     .hero-service {
@@ -3136,13 +3048,11 @@ header {
             grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
         }
     }
-
-    </style >
     
 
 
     /*yuo*/
-    <style >
+
     /* Estilos básicos para este contenido. Lo ideal es mover esto a style.css */
     .assessment-hero {
         text-align: center;
@@ -3564,7 +3474,7 @@ header {
         }
     }
 
-    </style >
+
 
 
 
