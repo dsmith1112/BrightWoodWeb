@@ -1777,7 +1777,10 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
-
+.column {
+  flex: 1 1 45%;
+  color: #fff;
+}
     .info-section h3 {
         color: #ff9900;
         margin-bottom: 20px;
@@ -1785,22 +1788,20 @@ header {
     }
 
     .info-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Centra horizontalmente los <li> */
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        margin-bottom: 30px;
+        align-items: center;
+
+
         }
 
             .info-section ul li {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Centra el contenido dentro del <li> */
-            margin-bottom: 15px;
-            font-size: 1.05em;
-            position: relative;
+             margin-bottom: 15px;
+             font-size: 1.05em;
+             text-align: center
             }
 
                 .info-section ul li::before {
@@ -3152,32 +3153,40 @@ header {
             background-color: #e68a00;
         }
 
-    .info-section {
-        flex: 1 1 450px;
-        background-color: #333;
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+.info-section {
+    flex: 1 1 450px;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.column {
+  flex: 1 1 45%;
+  color: #fff;
+}
+    .info-section h3 {
+        color: #ff9900;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-        .info-section h3 {
-            color: #ff9900;
-            margin-bottom: 20px;
-            text-align: center;
-        }
+    .info-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-        .info-section ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 30px;
+
         }
 
             .info-section ul li {
-                margin-bottom: 15px;
-                padding-left: 25px;
-                position: relative;
-                font-size: 1.05em;
+             margin-bottom: 15px;
+             font-size: 1.05em;
+             text-align: center
             }
+
 
                 .info-section ul li::before {
                     content: '✔️'; /* O un ícono de tu elección, si tienes Font Awesome, por ejemplo */
@@ -3359,40 +3368,40 @@ header {
             background-color: #e68a00;
         }
 
-    .info-section {
-        flex: 1 1 450px;
-        background-color: #333;
-        padding: 30px;
-        border-radius: 8px;
-        padding: 30px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+.info-section {
+    flex: 1 1 450px;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.column {
+  flex: 1 1 45%;
+  color: #fff;
+}
+    .info-section h3 {
+        color: #ff9900;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-        .info-section h3 {
-            color: #ff9900;
-            margin-bottom: 20px;
-            text-align: center;
+    .info-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
         }
 
+            .info-section ul li {
+             margin-bottom: 15px;
+             font-size: 1.05em;
+             text-align: center
+            }
 
-            .info-section ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center; /* Centra horizontalmente los <li> */
-                padding: 0;
-                margin: 0;
-                list-style: none;
-                margin-bottom: 30px;
-                }
-
-                    .info-section ul li {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center; /* Centra el contenido dentro del <li> */
-                    margin-bottom: 15px;
-                    font-size: 1.05em;
-                    position: relative;
-                    }
 
                         .info-section ul li::before {
                         content: '✔️';
@@ -3405,6 +3414,8 @@ header {
         margin-top: 30px;
         padding-top: 20px;
         border-top: 1px solid #555;
+        border-radius: 6px;
+
     }
 
         .trust-box h4 {
@@ -3458,6 +3469,7 @@ header {
         .form-section, .info-section {
             flex: 1 1 100%; /* Ocupa todo el ancho en pantallas pequeñas */
             max-width: 500px; /* Límite para que no sea demasiado ancho en móviles */
+            flex-direction: column;
         }
 
         .assessment-hero h1 {
@@ -3478,3 +3490,4 @@ header {
 
 
 
+}
