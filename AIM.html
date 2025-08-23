@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brightwood AI | AIM³ Framework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    /*alm*/
+    <style>
+        /* Estilos específicos para la página AIM³.
+           Idealmente, estos estilos deberían ir en style.css */
+        .hero-aim {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #2a2a2a;
+            color: #fff;
+        }
+
+            .hero-aim h1 {
+                font-size: 2.8em;
+                margin-bottom: 15px;
+                color: #ff9900;
+            }
+
+            .hero-aim p {
+                font-size: 1.2em;
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 1.6;
+            }
+
+        .aim-intro, .aim-phases, .why-aim, .cta-section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .aim-intro {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+
+            .aim-intro p {
+                font-size: 1.1em;
+                line-height: 1.6;
+            }
+
+        .aim-phases {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+            .aim-phases h2, .why-aim h2 {
+                text-align: center;
+                font-size: 2.2em;
+                margin-bottom: 40px;
+                color: #ff9900;
+            }
+
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .phase-item {
+            background-color: #333;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+            .phase-item h3 {
+                color: #fff;
+                margin-bottom: 10px;
+            }
+
+                .phase-item h3 span {
+                    color: #ff9900;
+                    font-weight: 800;
+                }
+
+        .why-aim {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+
+            .why-aim .text-block {
+                max-width: 700px;
+                margin: 0 auto 30px;
+            }
+
+            .why-aim ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 20px;
+            }
+
+                .why-aim ul li {
+                    background-color: #333;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                }
+
+        .cta-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #2a2a2a;
+            color: #fff;
+        }
+
+            .cta-section h2 {
+                font-size: 2em;
+                margin-bottom: 25px;
+            }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #ff9900;
+            color: #1a1a1a;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn-primary:hover {
+                background-color: #e68a00;
+            }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-aim h1 {
+                font-size: 2.2em;
+            }
+
+            .why-aim ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="BRIGHTWOODAI\wwwroot\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="SERVICE.html">Services</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
+                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
+                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="AIM.html">AIM³ Framework</a>
+                        <a href="index.html#roi-calculator">ROI Calculator</a>
+                        <a href="index.html#assessment">Assessment</a>
+                    </div>
+                </li>
+                <li><a href="ABOUT.html">About</a></li>
+                <li><a href="CONTAC.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="START_YOU_ASSESMENT.html" class="btn-orange">Start your Assessment</a>
+            <a href="index.html#cta" class="btn-orange btn-bold">CTAs</a>
+        </div>
+    </header>
+
+    <section class="hero-aim">
+        <div class="hero-content">
+            <h1>AIM³ Framework: Structured AI Success for Operational Teams</h1>
+            <p>Enterprise-grade AI, delivered without the complexity.</p>
+        </div>
+    </section>
+
+    <section class="aim-intro">
+        <p>The AIM³ Framework is our structured, repeatable process for delivering AI that drives measurable business outcomes—not just models. It helps growing businesses move fast, stay aligned, and avoid the risk, waste, or confusion that often accompanies large-scale AI deployments.</p>
+    </section>
+
+    <section class="aim-phases">
+        <h2>The 3 Core Phases</h2>
+        <div class="phases-grid">
+            <div class="phase-item">
+                <h3>1. Assess – <span>AI Maturity & Opportunity Mapping</span></h3>
+                <p>We evaluate your data, workflows, team structure, and goals—identifying where AI can generate value quickly and sustainably.</p>
+            </div>
+            <div class="phase-item">
+                <h3>2. Implement – <span>Solution Design & Deployment</span></h3>
+                <p>We design and deploy modular, business-aligned AI solutions using the right models, tools, and methods for your operational reality.</p>
+            </div>
+            <div class="phase-item">
+                <h3>3. Manage – <span>AI Monitor for Continuous Learning</span></h3>
+                <p>Our post-deployment process includes performance monitoring, user feedback loops, and model retraining to ensure your AI adapts and improves over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-aim">
+        <h2>Why AIM³?</h2>
+        <div class="text-block">
+            <p>The name isn’t just a label—it’s a blueprint for how we deliver outcomes:</p>
+        </div>
+        <ul>
+            <li>
+                <h4>Maturity</h4>
+                <p>Know where AI fits in your business</p>
+            </li>
+            <li>
+                <h4>Modeling</h4>
+                <p>Design fit-for-purpose AI solutions</p>
+            </li>
+            <li>
+                <h4>Monitoring</h4>
+                <p>Continuously evolve for long-term value</p>
+            </li>
+        </ul>
+        <p style="margin-top: 30px; font-weight: bold; font-size: 1.2em; color: #ff9900;">Assess. Implement. Manage.</p>
+        <p>That’s how we help growing businesses turn AI into operational advantage.</p>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to discover where AI will move the needle in your operations?</h2>
+        <a href="START_YOU_ASSESMENT.html" class="btn-primary">Start Your Assessment</a>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <div class="footer-left">
+                <img src="BRIGHTWOODAI\wwwroot\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">             
+            </div>
+            <div class="footer-right">
+                <p>1234 Example St., Suite 567<br>Sampletown, USA</p>
+                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
