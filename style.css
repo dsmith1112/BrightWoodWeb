@@ -44,8 +44,8 @@ header {
 }
 
 .logo-img {
-    height: 300px;
-    width: 300;
+    height: 400px;
+    width: 400;
 }
 
 nav {
@@ -909,7 +909,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--light-text); /* Títulos en blanco */
+    color:#f3500f;
     line-height: 1.2;
     margin-bottom: 0.5em;
 }
@@ -1928,7 +1928,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--light-text); /* Títulos en blanco */
+    color: #f3500f !important;
     line-height: 1.2;
     margin-bottom: 0.5em;
 }
@@ -1974,7 +1974,7 @@ a {
 /* --- Header --- */
 header {
     background-color: var(--dark-background);
-    padding: 20px 5%;
+    padding: 5px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1985,7 +1985,7 @@ header {
 }
 
 .logo img {
-    height: 40px; /* Ajusta según sea necesario */
+    height: 100px; /* Ajusta según sea necesario */
     filter: brightness(0) invert(1); /* Si el logo es oscuro y necesitas que se vea blanco */
 }
 
@@ -2768,7 +2768,7 @@ header {
 }
 
 .footer-logo {
-    height: 40px;
+    height: 50px;
     margin-bottom: 15px;
     filter: brightness(0) invert(1); /* Para que el logo se vea blanco */
 }
