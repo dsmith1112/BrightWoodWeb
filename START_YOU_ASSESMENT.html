@@ -389,6 +389,25 @@
                     <a id="ctaButton" href="#" class="btn-orange"></a>
                 </div>
             </div>
+        
+        <!-- modify this form HTML and place wherever you want your form -->
+            <form
+            id="my-form"
+            action="https://formspree.io/f/xgvyrwkb"
+            method="POST"
+            >
+            <label style="display: none;">
+                Your email:
+                <input id="otherEmail" type="email" name="email" value="@">
+            </label>
+            <label style="display: none;">
+                Your message:
+                <textarea name="message" id="messageresponse"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button class="btn-orange !important" style="display: none; width: 300px;" id="submitBtn" type="submit">Send your info responses</button>
+            </form>
+
         </div>
 
     </section>
@@ -463,6 +482,8 @@
             document.getElementById('formTitle').textContent = 'Your AI Readiness Assessment';
             // Muestra el cuestionario
             document.getElementById('questionnaireForm').classList.remove('hidden-form');
+
+            document.getElementById("otherEmail").value = email;            
         });
 
         document.getElementById('getScoreBtn').addEventListener('click', function () {
@@ -518,7 +539,7 @@
                 tierDescription = "You’ve laid the groundwork. You’re AI-ready—but strategic focus matters.";
                 tierQuote = "Now’s the time to prioritize use cases with fast ROI and low technical complexity.";
                 ctaText = "Schedule a Discovery Session";
-                ctaLink = "https://calendly.com/brightwoodai/discovery-session";
+                ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
                 tierClass = "momentum-tier";
             } else {
                 tierName = "Acceleration Phase";
@@ -526,12 +547,13 @@
                 tierDescription = "You’re in an excellent position to scale AI across business functions.";
                 tierQuote = "Focus on replicable pilots, cross-functional collaboration, and change management.";
                 ctaText = "Book a Strategic Planning Session";
-                ctaLink = "https://calendly.com/brightwoodai/strategy-session";
+                ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
                 tierClass = "acceleration-tier";
             }
 
             // Oculta el cuestionario
             document.getElementById('questionnaireForm').style.display = 'none';
+            document.getElementById("submitBtn").style.display = "inline-block"; // o "block"
 
             // Muestra y actualiza la página de resultados
             document.getElementById('resultsPage').classList.remove('hidden-form');
@@ -551,12 +573,32 @@
             ctaButton.href = ctaLink;
 
             // Aquí puedes agregar la lógica para enviar los datos al servidor para la notificación interna
-            console.log('User Responses:', userResponses);
+            console.log('User Responses:', userResponses.value);
             console.log('Total Score:', totalWeightedScore);
             console.log('Normalized Score:', normalizedScore);
             console.log('Tier:', tierName);
+            const seleccion = document.getElementById("industry").value;
 
-            //alert(userResponses);
+            // Función para capitalizar y formatear
+            function formatResponses(obj) {
+            let resultado = "";
+            for (const key in obj) {
+                const label = key.replace(/_/g, " ") // reemplaza guiones bajos por espacios
+                                .replace(/\b\w/g, c => c.toUpperCase()); // capitaliza cada palabra
+                resultado += `${label} = ${obj[key]}\n`;
+            }
+            return resultado;
+            }
+            const allresponse = formatResponses(userResponses);
+
+            const contenido = 
+            "Industry :" + seleccion + "\n \n"+
+            "User Responses: " + "\n" + allresponse + "\n" +
+            "Total Score: " + totalWeightedScore + "\n" +
+            "Normalized Score : " + normalizedScore + "\n" + 
+            "Tier: " + tierName;
+
+            document.getElementById("messageresponse").value =  contenido;
         });
     </script>
 
