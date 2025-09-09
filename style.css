@@ -1754,8 +1754,8 @@ header {
     }
 
 .form-section button {
-    background-color: #ff9900;
-    color: #1a1a1a;
+    background-color: var(--orange-bright);
+    color: #fff;
     padding: 15px 30px;
     border: none;
     border-radius: 5px;
@@ -3137,8 +3137,8 @@ header {
         }
 
     .form-section button {
-        background-color: #ff9900;
-        color: #1a1a1a;
+        background-color: var(--orange-bright);
+        color: #fff;
         padding: 15px 30px;
         border: none;
         border-radius: 5px;
@@ -3352,8 +3352,8 @@ header {
         }
 
     .form-section button {
-        background-color: #ff9900;
-        color: #1a1a1a;
+        background-color: var(--orange-bright);
+        color: #fff;
         padding: 15px 30px;
         border: none;
         border-radius: 5px;
