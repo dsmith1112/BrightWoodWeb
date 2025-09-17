@@ -10,6 +10,10 @@
     <link href="_FOOTER.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- Calendly link widget begin -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <!-- Calendly link widget end -->
     <style>
         .info-section {
         display: flex;
@@ -394,7 +398,12 @@
                     <a id="ctaButton" href="#" class="btn-orange"></a>
                 </div>
             </div>
-
+        <div>
+            <!-- Calendly inline widget begin -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/davidsmith-uva-09/test-meeting" style="min-width:320px;height:800px; background: #333;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            <!-- Calendly inline widget end -->
+        </div>
         <!-- modify this form HTML and place wherever you want your form -->
             <form
             id="contactForm"
@@ -417,8 +426,10 @@
     </section>
 
     <section class="cta-bottom">
+
         <p>Not ready yet? <a href="#" class="btn-orange">Download an explainer PDF instead</a></p>
         <p>Just want to talk? <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});return true;" target="_blank" class="btn-orange">Schedule a discovery call</a></p>
+        <p>Just want to talk? <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});return false;" target="_blank" class="btn-orange" id="getScoreBtn">Schedule a discovery call</a></p>
     </section>
 
 
@@ -591,6 +602,27 @@
 
             document.getElementById("messageresponse").value =  contenido;
         });
+
+        actualizarDescripcionDesdeUserResponses(userResponses);
+        
+        function actualizarDescripcionDesdeUserResponses(userResponses) {
+        // Construye el texto que quieres mostrar
+            //alert(userResponses);
+                let mensaje = '';
+                for (const clave in userResponses) {
+                mensaje += `${clave}: ${userResponses[clave]}\n`;
+                }
+                //alert(mensaje);
+            // Selecciona el <p> dentro del div con clases específicas
+            const parrafo = document.querySelector('.WOJ1sxVGkm6QvTCaMjvN.cCyK2lFKTd_WHz_EreGl p');
+
+            // Verifica que exista y actualiza su contenido
+            if (parrafo && parrafo.textContent.trim() === 'Add description') {
+                parrafo.textContent = mensaje;
+            }
+        }
+
+
     </script>
     <script src="Formspree.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
