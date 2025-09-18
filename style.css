@@ -773,14 +773,6 @@ background: var(--color-card-bg);
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
     }
-
-    .info-section ul li::before {
-                    content: ''; /* O un ícono de tu elección, si tienes Font Awesome, por ejemplo */
-                    position: absolute;
-                    left: 0;
-                    color: #ff9900;
-                    font-size: 1.2em;
-                }
 }
 .main-header {
     background-color: #1a1a1a;
@@ -789,6 +781,10 @@ background: var(--color-card-bg);
     justify-content: space-between;
     padding: 15px 40px;
     flex-wrap: wrap;
+}
+
+.logo-img {
+    height: 40px;
 }
 
 .navbar .nav-list {
@@ -803,7 +799,7 @@ background: var(--color-card-bg);
     text-decoration: none;
     color: #ffff66;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .header-cta {
@@ -970,7 +966,7 @@ header {
 }
 
 .logo img {
-    height: 100px; /* Ajusta según sea necesario */
+    height: 40px; /* Ajusta según sea necesario */
     filter: brightness(0) invert(1); /* Si el logo es oscuro y necesitas que se vea blanco */
 }
 
@@ -1171,7 +1167,7 @@ header {
 .hero-contact {
     background-color: var(--dark-background);
     color: var(--light-text);
-    padding: 50px 5% 20px;
+    padding: 80px 5%;
     text-align: center;
 }
 
@@ -1192,7 +1188,7 @@ header {
     }
 
 .contact-form-container {
-    padding: 10px 5%;
+    padding: 60px 5%;
     background-color: var(--dark-background);
     display: flex;
     justify-content: center;
@@ -2190,7 +2186,7 @@ header {
 .hero-contact {
     background-color: var(--dark-background);
     color: var(--light-text);
-    padding: 20px 5%;
+    padding: 80px 5%;
     text-align: center;
 }
 
@@ -2211,7 +2207,7 @@ header {
     }
 
 .contact-form-container {
-    padding: 10px 5%;
+    padding: 60px 5%;
     background-color: var(--dark-background);
     display: flex;
     justify-content: center;
@@ -3052,7 +3048,6 @@ header {
         .services-grid {
             grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
         }
-        
     }
     
 
