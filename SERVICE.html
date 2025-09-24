@@ -6,6 +6,8 @@
     <title>Brightwood AI | Our Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
 
 
@@ -30,12 +32,6 @@
                         color: #fff;
 
         }
-
-                .logo-img {
-                        height: 35px; /* Ajusta el tamaño del logo si es necesario */
-
-        }
-
                 .navbar .nav-list {
                         list-style: none;
                         display: flex;
@@ -143,22 +139,6 @@
 
         }
 
-                .service-card {
-                        background-color: #fff; /* Fondo blanco */
-                        border: 2px solid #ccc; /* Borde gris claro */
-                        padding: 30px;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-                        transition: transform 0.3s ease, box-shadow 0.3s ease;
-                        color: #1a1a1a; /* Texto oscuro */
-
-        }
-
-                    .service-card:hover {
-                            transform: translateY(-5px);
-                            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-
-            }
 
                     .service-card h3 {
                             font-size: 1.2em;
@@ -171,79 +151,10 @@
 
                     .service-card p {
                             font-size: 0.95em;
-                            color: #333; /* Párrafo más claro, pero aún oscuro */
+                            color: #fff; /* Párrafo más claro, pero aún oscuro */
                             line-height: 1.5;
 
             }
-
-
-        /* Estilos del pie de página (CORREGIDOS) */
-                .main-footer {
-                        background-color: #1a1a1a;
-                        color: #FF5E1F; /* Texto base del footer en naranja */
-                        padding: 60px 20px;
-
-        }
-
-                .footer-content {
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        gap: 40px;
-
-        }
-
-                .footer-column {
-                        min-width: 150px;
-
-        }
-
-                    .footer-column h2 {
-                            font-size: 1.2em;
-                            margin-top: 0;
-                            margin-bottom: 20px;
-                            color: #FF5E1F; /* Títulos en naranja */
-                            font-weight: 700;
-
-            }
-
-                    .footer-column p {
-                            margin: 0;
-                            margin-bottom: 10px;
-                            font-size: 0.9em;
-                            color: #FF5E1F; /* Párrafos en naranja */
-
-            }
-
-                    .footer-column a {
-                            text-decoration: none;
-                            color: #FF5E1F; /* Enlaces en naranja */
-                            transition: color 0.3s ease;
-
-            }
-
-                        .footer-column a:hover {
-                                color: #e6521a; /* Tono de hover más oscuro */
-
-                }
-
-
-        /* Responsive para pantallas pequeñas */
-                @media (max-width: 768px) {
-                        .footer-content
-
-        {
-                            flex-direction: column;
-                            align-items: center;
-                            text-align: center;
-
-        }
-
-
-        }
-
     </style>
 </head>
 <body>
@@ -322,10 +233,12 @@
     </section>
 
     <footer class="main-footer">
+        <img src="BRIGHTWOODAI\wwwroot\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
+
         <div class="footer-content container">
             <div class="footer-column">
                 <h2>Brightwood AI</h2>
-                <p>Outcome-Driven AI for Growing Business</p>
+                <p>Outcome-Driven AI for Growing Business</p>       
                 <p>2025 Brightwood AI All rights reserved.</p>
             </div>
             <div class="footer-column">
@@ -347,7 +260,10 @@
             <div class="footer-column">
                 <h2>Contact</h2>
                 <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank">LinkedIn</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-twitter"></i> X</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-instagram"></i> Instagrm</a></p>
                 <p><a href="#">Terms and conditions</a></p>
             </div>
         </div>
