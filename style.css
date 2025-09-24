@@ -1,4 +1,6 @@
-﻿:root {
+﻿
+
+:root {
     --color-bg: #121212;
     --color-header: #1E1E1E;
     --color-hero-bg: #181818;
@@ -18,7 +20,6 @@
     margin: 0;
     padding: 0;
 }
-
 /* BASE */
 body {
     background: var(--color-bg);
@@ -200,11 +201,6 @@ nav {
         margin: 0 auto;
     }
 
-/* FOOTER */
-.main-footer {
-    background: var(--color-header);
-    padding: 20px 0;
-}
 
 .footer-content {
     max-width: 1200px;
@@ -773,6 +769,13 @@ background: var(--color-card-bg);
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
     }
+    .info-section ul li::before {
+        content: ''; /* O un ícono de tu elección, si tienes Font Awesome, por ejemplo */
+        position: absolute;
+        left: 0;
+        color: #ff9900;
+        font-size: 1.2em;
+    }
 }
 .main-header {
     background-color: #1a1a1a;
@@ -784,9 +787,11 @@ background: var(--color-card-bg);
 }
 
 .logo-img {
-    height: 40px;
+    height: 100px;
 }
-
+.scheduling-info{
+    text-align: center;
+}
 .navbar .nav-list {
     list-style: none;
     display: flex;
@@ -932,7 +937,7 @@ a {
 /* --- Botones Genéricos --- */
 .btn-orange, .btn-primary {
     display: inline-block;
-    background-color: var(--orange-bright);
+    background-color: var(--orange-dark);
     color: var(--light-text);
     padding: 12px 25px;
     border-radius: 5px;
@@ -1167,7 +1172,7 @@ header {
 .hero-contact {
     background-color: var(--dark-background);
     color: var(--light-text);
-    padding: 80px 5%;
+    padding: 80px 5% 10px;
     text-align: center;
 }
 
@@ -1188,7 +1193,7 @@ header {
     }
 
 .contact-form-container {
-    padding: 60px 5%;
+    padding: 10px 5% 60px;
     background-color: var(--dark-background);
     display: flex;
     justify-content: center;
@@ -1520,7 +1525,9 @@ header {
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
-
+/*___________________________________________
+                Footer
+_____________________________________________*/
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -1549,11 +1556,13 @@ header {
 
 .main-footer p {
     margin: 5px 0;
-    color: var(--light-text);
+    /*color: var(--light-text);*/
+    color: #fff;
 }
 
 .main-footer a {
-    color: var(--yellow-accent);
+    /*color: var(--yellow-accent);*/
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -2186,7 +2195,7 @@ header {
 .hero-contact {
     background-color: var(--dark-background);
     color: var(--light-text);
-    padding: 80px 5%;
+    padding: 80px 5% 10px;
     text-align: center;
 }
 
@@ -2207,7 +2216,7 @@ header {
     }
 
 .contact-form-container {
-    padding: 60px 5%;
+    padding: 10px 5% 60px;
     background-color: var(--dark-background);
     display: flex;
     justify-content: center;
@@ -2775,11 +2784,13 @@ header {
 
 .main-footer p {
     margin: 5px 0;
-    color: var(--light-text);
+    /*color: var(--light-text);*/
+    color: #fff;
 }
 
 .main-footer a {
-    color: var(--yellow-accent);
+    /*color: var(--yellow-accent);*/
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
