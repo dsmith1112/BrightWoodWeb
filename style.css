@@ -40,7 +40,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 40px;
+    padding: 5px 5%;
     background: var(--color-header);
 }
 
@@ -89,7 +89,7 @@ nav {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     z-index: 100;
     border-radius: 4px;
-    top: 100%;
+    top: calc(100% - 5px);
     left: 0;
     padding: 8px 0; /* Padding vertical para los elementos del desplegable */
 }
@@ -542,6 +542,9 @@ nav {
     .button-primary:hover {
         opacity: 0.9;
     }
+.hero-section{
+    padding: 80px 5%;
+}
 
 .steps-indicator {
     display: inline-flex;
@@ -579,7 +582,7 @@ nav {
 header {
     display: flex;
     align-items: center;
-    padding: 20px 40px;
+    padding: 5px 5%;
     background: var(--color-header);
 }
 
@@ -960,7 +963,7 @@ a {
 /* --- Header --- */
 header {
     background-color: var(--dark-background);
-    padding: 20px 5%;
+    padding: 5px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1012,7 +1015,7 @@ header {
     z-index: 1;
     border-radius: 5px;
     padding: 10px 0;
-    top: calc(100% + 10px); /* Espacio debajo del botón */
+    top: calc(100% - 5px); /* Espacio debajo del botón */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -2035,7 +2038,7 @@ header {
     z-index: 1;
     border-radius: 5px;
     padding: 10px 0;
-    top: calc(100% + 10px); /* Espacio debajo del botón */
+    top: calc(100% - 5px); /* Espacio debajo del botón */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
