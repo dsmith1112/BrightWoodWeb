@@ -12,7 +12,70 @@
     --color-on-card-text: #1D2A33;
     --font-base: 'Inter', sans-serif;
 }
+    .acordeon {
+      max-width: 600px;
+      gap: 2em;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
+    .item {
+      border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+
+    .titulo {
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contenido {
+      max-height: 0;
+      color: white;
+      opacity: 0;
+      padding: 0 15px;
+      transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+      text-decoration: none;
+    }
+    .item:hover .contenido {
+      max-height: 300px;
+      opacity: 1;
+      padding: 15px;
+    }
+
+    .contenido ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+    }
+/* 🌐 Responsividad */
+    @media (max-width: 600px) {
+      .acordeon {
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .titulo {
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      .contenido {
+        font-size: 14px;
+        padding: 0 12px;
+      }
+
+      .item:hover .contenido {
+        padding: 12px;
+      }
+    }
 
 /* RESET */
 *, *::before, *::after {
@@ -48,6 +111,42 @@ header {
     height: 400px;
     width: 400;
 }
+.acordeon{
+    background: var(--card-background);
+}
+    .acordeon-container {
+      width: 300px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .acordeon-item {
+      background-color: #f0f0f0;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .acordeon-header {
+      padding: 15px;
+      font-weight: bold;
+      background-color: #ddd;
+    }
+
+    .acordeon-content {
+      max-height: 0;
+      padding: 0 15px;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+
+    .acordeon-item:hover .acordeon-content {
+      max-height: 200px;
+      opacity: 1;
+      padding: 15px;
+    }
 
 nav {
     margin: 0 auto;
@@ -2170,7 +2269,7 @@ header {
     background-color: var(--card-background); /* Fondo de tarjeta oscuro */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
-    padding: 30px;
+    padding: 5px 15px 5px 15px;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid var(--border-color); /* Borde sutil */

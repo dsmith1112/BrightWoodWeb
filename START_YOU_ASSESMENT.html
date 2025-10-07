@@ -146,8 +146,8 @@ input[type="radio"] {
 
     <section class="assessment-hero">
         <div class="hero-content">
-            <h1>Discover Where AI Can Move the Needle—Fast</h1>
-            <p>Get a tailored assessment using our AIM³ Framework to identify your best-fit AI opportunities—no commitment, no complexity.</p>
+            <h1>Discover Where AI Can Move the Needle Fast</h1>
+            <p>Get a tailored assessment using our AIM³ Framework to identify your best fit AI opportunities no commitment, no complexity.</p>
         </div>
     </section>
     <Section class="assessment-content">
@@ -543,7 +543,7 @@ input[type="radio"] {
             } else if (normalizedScore > 45 && normalizedScore <= 74) {
                 tierName = "Momentum Phase";
                 tierTitle = "You’re ready to pilot or prioritize AI initiatives";
-                tierDescription = "You’ve laid the groundwork. You’re AI-ready—but strategic focus matters.";
+                tierDescription = "You’ve laid the groundwork. You’re AI-ready but strategic focus matters.";
                 tierQuote = "Now’s the time to prioritize use cases with fast ROI and low technical complexity.";
                 ctaText = "Schedule a Discovery Session";
                 ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
@@ -566,7 +566,7 @@ input[type="radio"] {
             document.getElementById('resultsPage').classList.remove('hidden-form');
             document.getElementById('formTitle').textContent = 'Your AI Readiness Score';
 
-            document.getElementById('resultsHeadline').textContent = `You’re in the ${tierName} — Score: ${normalizedScore}/100`;
+            document.getElementById('resultsHeadline').textContent = `You’re in the ${tierName} Score: ${normalizedScore}/100`;
             const scoreVisual = document.getElementById('scoreVisual');
             scoreVisual.className = 'score-meter ' + tierClass;
             scoreVisual.textContent = normalizedScore;
