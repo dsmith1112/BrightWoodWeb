@@ -1,4 +1,6 @@
-﻿:root {
+﻿
+
+:root {
     --color-bg: #121212;
     --color-header: #1E1E1E;
     --color-hero-bg: #181818;
@@ -10,7 +12,70 @@
     --color-on-card-text: #1D2A33;
     --font-base: 'Inter', sans-serif;
 }
+    .acordeon {
+      max-width: 600px;
+      gap: 2em;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
+    .item {
+      border-bottom: 1px solid var(--border-color);
+      overflow: hidden;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+
+    .titulo {
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contenido {
+      max-height: 0;
+      color: white;
+      opacity: 0;
+      padding: 0 15px;
+      transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+      text-decoration: none;
+    }
+    .item:hover .contenido {
+      max-height: 300px;
+      opacity: 1;
+      padding: 15px;
+    }
+
+    .contenido ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style: none;
+    }
+/* 🌐 Responsividad */
+    @media (max-width: 600px) {
+      .acordeon {
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .titulo {
+        font-size: 16px;
+        padding: 12px;
+      }
+
+      .contenido {
+        font-size: 14px;
+        padding: 0 12px;
+      }
+
+      .item:hover .contenido {
+        padding: 12px;
+      }
+    }
 
 /* RESET */
 *, *::before, *::after {
@@ -18,7 +83,6 @@
     margin: 0;
     padding: 0;
 }
-
 /* BASE */
 body {
     background: var(--color-bg);
@@ -39,7 +103,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 40px;
+    padding: 5px 5%;
     background: var(--color-header);
 }
 
@@ -47,6 +111,42 @@ header {
     height: 400px;
     width: 400;
 }
+.acordeon{
+    background: var(--card-background);
+}
+    .acordeon-container {
+      width: 300px;
+      margin: 20px auto;
+      font-family: Arial, sans-serif;
+    }
+
+    .acordeon-item {
+      background-color: #f0f0f0;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .acordeon-header {
+      padding: 15px;
+      font-weight: bold;
+      background-color: #ddd;
+    }
+
+    .acordeon-content {
+      max-height: 0;
+      padding: 0 15px;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+
+    .acordeon-item:hover .acordeon-content {
+      max-height: 200px;
+      opacity: 1;
+      padding: 15px;
+    }
 
 nav {
     margin: 0 auto;
@@ -88,7 +188,7 @@ nav {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
     z-index: 100;
     border-radius: 4px;
-    top: 100%;
+    top: calc(100% - 5px);
     left: 0;
     padding: 8px 0; /* Padding vertical para los elementos del desplegable */
 }
@@ -200,11 +300,6 @@ nav {
         margin: 0 auto;
     }
 
-/* FOOTER */
-.main-footer {
-    background: var(--color-header);
-    padding: 20px 0;
-}
 
 .footer-content {
     max-width: 1200px;
@@ -546,6 +641,9 @@ nav {
     .button-primary:hover {
         opacity: 0.9;
     }
+.hero-section{
+    padding: 80px 5%;
+}
 
 .steps-indicator {
     display: inline-flex;
@@ -583,7 +681,7 @@ nav {
 header {
     display: flex;
     align-items: center;
-    padding: 20px 40px;
+    padding: 5px 5%;
     background: var(--color-header);
 }
 
@@ -773,14 +871,13 @@ background: var(--color-card-bg);
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
     }
-
     .info-section ul li::before {
-                    content: ''; /* O un ícono de tu elección, si tienes Font Awesome, por ejemplo */
-                    position: absolute;
-                    left: 0;
-                    color: #ff9900;
-                    font-size: 1.2em;
-                }
+        content: ''; /* O un ícono de tu elección, si tienes Font Awesome, por ejemplo */
+        position: absolute;
+        left: 0;
+        color: #ff9900;
+        font-size: 1.2em;
+    }
 }
 .main-header {
     background-color: #1a1a1a;
@@ -791,6 +888,12 @@ background: var(--color-card-bg);
     flex-wrap: wrap;
 }
 
+.logo-img {
+    height: 100px;
+}
+.scheduling-info{
+    text-align: center;
+}
 .navbar .nav-list {
     list-style: none;
     display: flex;
@@ -803,7 +906,7 @@ background: var(--color-card-bg);
     text-decoration: none;
     color: #ffff66;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .header-cta {
@@ -936,7 +1039,7 @@ a {
 /* --- Botones Genéricos --- */
 .btn-orange, .btn-primary {
     display: inline-block;
-    background-color: var(--orange-bright);
+    background-color: var(--orange-dark);
     color: var(--light-text);
     padding: 12px 25px;
     border-radius: 5px;
@@ -959,7 +1062,7 @@ a {
 /* --- Header --- */
 header {
     background-color: var(--dark-background);
-    padding: 20px 5%;
+    padding: 5px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -970,7 +1073,7 @@ header {
 }
 
 .logo img {
-    height: 100px; /* Ajusta según sea necesario */
+    height: 40px; /* Ajusta según sea necesario */
     filter: brightness(0) invert(1); /* Si el logo es oscuro y necesitas que se vea blanco */
 }
 
@@ -1011,7 +1114,7 @@ header {
     z-index: 1;
     border-radius: 5px;
     padding: 10px 0;
-    top: calc(100% + 10px); /* Espacio debajo del botón */
+    top: calc(100% - 5px); /* Espacio debajo del botón */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -1171,7 +1274,7 @@ header {
 .hero-contact {
     background-color: var(--dark-background);
     color: var(--light-text);
-    padding: 50px 5% 20px;
+    padding: 80px 5% 10px;
     text-align: center;
 }
 
@@ -1192,7 +1295,7 @@ header {
     }
 
 .contact-form-container {
-    padding: 10px 5%;
+    padding: 10px 5% 60px;
     background-color: var(--dark-background);
     display: flex;
     justify-content: center;
@@ -1524,7 +1627,9 @@ header {
     text-align: center;
     border-top: 1px solid var(--border-color);
 }
-
+/*___________________________________________
+                Footer
+_____________________________________________*/
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -1553,11 +1658,13 @@ header {
 
 .main-footer p {
     margin: 5px 0;
-    color: var(--light-text);
+    /*color: var(--light-text);*/
+    color: #fff;
 }
 
 .main-footer a {
-    color: var(--yellow-accent);
+    /*color: var(--yellow-accent);*/
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -2030,7 +2137,7 @@ header {
     z-index: 1;
     border-radius: 5px;
     padding: 10px 0;
-    top: calc(100% + 10px); /* Espacio debajo del botón */
+    top: calc(100% - 5px); /* Espacio debajo del botón */
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -2162,7 +2269,7 @@ header {
     background-color: var(--card-background); /* Fondo de tarjeta oscuro */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
-    padding: 30px;
+    padding: 5px 15px 5px 15px;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid var(--border-color); /* Borde sutil */
@@ -2190,7 +2297,7 @@ header {
 .hero-contact {
     background-color: var(--dark-background);
     color: var(--light-text);
-    padding: 20px 5%;
+    padding: 80px 5% 10px;
     text-align: center;
 }
 
@@ -2211,7 +2318,7 @@ header {
     }
 
 .contact-form-container {
-    padding: 10px 5%;
+    padding: 10px 5% 60px;
     background-color: var(--dark-background);
     display: flex;
     justify-content: center;
@@ -2779,11 +2886,13 @@ header {
 
 .main-footer p {
     margin: 5px 0;
-    color: var(--light-text);
+    /*color: var(--light-text);*/
+    color: #fff;
 }
 
 .main-footer a {
-    color: var(--yellow-accent);
+    /*color: var(--yellow-accent);*/
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -3052,7 +3161,6 @@ header {
         .services-grid {
             grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
         }
-        
     }
     
 

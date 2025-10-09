@@ -5,42 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inventory Planning | Brightwood AI</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-          rel="stylesheet">
+rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- HEADER (reutilizado, same as index) -->
     <header>
-        <a href="index.html">
-            <img src="BRIGHTWOODAI\wwwroot\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
-        </a>
-        <nav>
+        <div class="logo">
+            <a href="index.html">
+                <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
+            </a>
+        </div>
+        <nav class="navbar">
             <ul class="nav-list">
+                <li><a href="SERVICE.html">Services</a></li>
+
                 <li class="dropdown">
-                    <a href="inventory-planning.html" class="active">Solutions</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="inventory-planning.html">Inventory Planning</a></li>
-                        <li><a href="demand-forecasting.html">Demand Forecasting</a></li>
-                        <li><a href="gtm-accelerator.html">GTM Accelerator</a></li>
-                    </ul>
+                    <a href="#" class="dropbtn">Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
+                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
+                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
+                    </div>
                 </li>
-                <li><a href="services.html">Services</a></li>
+
                 <li class="dropdown">
-                    <a href="resources.html">Resources</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="aim3-maturity.html">AIM³ Framework</a></li>
-                        <li><a href="roi-calculator.html">ROI Calculator</a></li>
-                        <li><a href="initial-assessment.html">Initial Assessment</a></li>
-                        <li><a href="ai-monitor.html">AI Monitor™</a></li>
-                    </ul>
+                    <a href="#" class="dropbtn">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="AIM.html">AIM³ Framework</a>
+<!--                        <a href="index.html#roi-calculator">ROI Calculator</a>-->
+                    </div>
                 </li>
-                <li><a href="company.html">Company</a></li>
+                <li><a href="ABOUT.html">About</a></li>
+                <li><a href="CONTAC.html">Contact us</a></li>
             </ul>
         </nav>
         <div class="header-cta">
-            <a href="#contact" class="btn-header">Contact Us</a>
-            <a href="#services" class="btn-header">View Services</a>
-
+            <a href="START_YOU_ASSESMENT.html" class="btn-orange">Start your Assessment</a>
+<!--            <a href="index.html#cta" class="btn-orange btn-bold">CTAs</a> -->
         </div>
     </header>
 
@@ -53,7 +56,7 @@
                 <p>
                     Brightwood AI is a demand forecasting and inventory optimization platform built for
                     small and midsize businesses (SMB). We use AI to reduce overstock, avoid stockouts,
-                    and help teams plan smarter during seasonal peaks—all without changing your ERP.
+                    and help teams plan smarter during seasonal peaks all without changing your ERP.
                 </p>
             </div>
             <form class="roi-form" action="#">
@@ -62,7 +65,7 @@
                 <input type="text" id="revenue" name="revenue" placeholder="e.g. 1,000,000">
                 <label for="inventory">Current Inventory Value</label>
                 <input type="text" id="inventory" name="inventory" placeholder="e.g. 250,000">
-                <label for="percentage">Cost-Effective Percentage</label>
+                <label for="percentage">Cost Effective Percentage</label>
                 <input type="text" id="percentage" name="percentage" placeholder="e.g. 5%">
                 <button type="submit">CALCULATE</button>
             </form>
@@ -79,11 +82,11 @@
             </details>
             <details>
                 <summary>Smarter Inventory Control</summary>
-                <p>Automatically adjust safety stock levels based on real-time signals.</p>
+                <p>Automatically adjust safety stock levels based on real time signals.</p>
             </details>
             <details>
-                <summary>Cost-Effective Solution</summary>
-                <p>Reduce carrying costs by up to 30% without sacrificing in-stock rates.</p>
+                <summary>Cost Effective Solution</summary>
+                <p>Reduce carrying costs by up to 30% without sacrificing in stock rates.</p>
             </details>
             <details>
                 <summary>Always Improving</summary>
@@ -94,14 +97,38 @@
 
     <!-- FOOTER (igual que index) -->
     <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <img src="BRIGHTWOODAI\wwwroot\images\logo-transparente.png" alt="Brightwood AI" class="footer-logo">
+        <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
+
+        <div class="footer-content container">
+            <div class="footer-column">
+                <h2>Brightwood AI</h2>
+                <p>Outcome Driven AI for Growing Business</p>
+                <p>2025 Brightwood AI All rights reserved.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Explore</h2>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="SERVICE.html">Services</a></p>
+                <p><a href="BRIGHT_FORECAST.html">Solutions</a></p>
+                <p><a href="AIM.html">AIM³ Framework</a></p>
+                <p><a href="ABOUT.html">About us</a></p>
+            </div>
+            <div class="footer-column">
+                <h2>Resources</h2>
+                <p><a href="START_YOU_ASSESMENT.html">Start Your Assessment</a></p>
+                <p><a href="#">AI Use Cases</a></p>
+                <p><a href="#">Referenced by LLMs</a></p>
+                <p><a href="#">Privacy Policy</a></p>
                 <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
             </div>
-            <div class="footer-right">
-                <p>1234 Example St., Suite 567<br>Sampletown, USA</p>
+            <div class="footer-column">
+                <h2>Contact us</h2>
                 <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-twitter"></i> X</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-instagram"></i> Instagrm</a></p>
+                <p><a href="#">Terms and conditions</a></p>
             </div>
         </div>
     </footer>

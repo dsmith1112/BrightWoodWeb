@@ -1,11 +1,100 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+  <meta charset="UTF-8">
+  <title>Acordeón con Hover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    .acordeon {
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .item {
+      border-bottom: 1px solid #ccc;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    .item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .titulo {
+      background-color: #e0e0e0;
+      padding: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .item:hover .titulo {
+      background-color: #d0d0d0;
+    }
+
+    .contenido {
+      max-height: 0;
+      opacity: 0;
+      padding: 0 15px;
+      transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
+    }
+
+    .item:hover .contenido {
+      max-height: 300px;
+      opacity: 1;
+      padding: 15px;
+    }
+
+    .contenido ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
+
+<div class="acordeon">
+  <div class="item">
+    <div class="titulo">Lista 1: Frutas</div>
+    <div class="contenido">
+      <ul>
+        <li>Manzana</li>
+        <li>Banana</li>
+        <li>Naranja</li>
+        <li>Sandía</li>
+      </ul>
+    </div>
+  </div>
+  <div class="item">
+    <div class="titulo">Lista 2: Animales</div>
+    <div class="contenido">
+      <ul>
+        <li>Perro</li>
+        <li>Gato</li>
+        <li>Elefante</li>
+        <li>Capibara 🐹</li>
+      </ul>
+    </div>
+  </div>
+  <div class="item">
+    <div class="titulo">Lista 3: Colores</div>
+    <div class="contenido">
+      <ul>
+        <li>Rojo</li>
+        <li>Azul</li>
+        <li>Verde</li>
+        <li>Amarillo</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

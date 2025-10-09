@@ -1,4 +1,4 @@
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contactForm");
 
     form.addEventListener("submit", function (e) {
@@ -11,8 +11,8 @@
       })
       .then(response => {
         if (response.ok) {
+          form.style.display = "none";
           alert("¡Correo enviado exitosamente!");
-          form.reset();
         } else {
           alert("Hubo un error al enviar el formulario.");
         }
