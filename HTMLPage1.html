@@ -1,100 +1,104 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Acordeón con Hover</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background-color: #f9f9f9;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid de Textos con Descripción</title>
+<style>
+  /* Grid general */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+  }
 
-    .acordeon {
-      max-width: 500px;
-      margin: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  /* Tarjeta individual */
+  .item {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
 
-    .item {
-      border-bottom: 1px solid #ccc;
-      overflow: hidden;
-      transition: background-color 0.3s ease;
-    }
+  .item:hover {
+    background: #222;
+    transform: scale(1.05);
+  }
 
-    .item:hover {
-      background-color: #f0f0f0;
-    }
+  /* Texto principal */
+  .titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
 
-    .titulo {
-      background-color: #e0e0e0;
-      padding: 15px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+  /* Descripción oculta */
+  .descripcion {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    border-radius: 12px;
+  }
 
-    .item:hover .titulo {
-      background-color: #d0d0d0;
-    }
+  .item:hover .descripcion {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    .contenido {
-      max-height: 0;
-      opacity: 0;
-      padding: 0 15px;
-      transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.3s ease;
-    }
-
-    .item:hover .contenido {
-      max-height: 300px;
-      opacity: 1;
-      padding: 15px;
-    }
-
-    .contenido ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-  </style>
+  .item:hover .titulo {
+    opacity: 0;
+  }
+</style>
 </head>
 <body>
 
-<div class="acordeon">
-  <div class="item">
-    <div class="titulo">Lista 1: Frutas</div>
-    <div class="contenido">
-      <ul>
-        <li>Manzana</li>
-        <li>Banana</li>
-        <li>Naranja</li>
-        <li>Sandía</li>
-      </ul>
+  <h2>📚 Sección 1</h2>
+  <div class="galeria">
+    <div class="item">
+      <div class="titulo">Introducción</div>
+      <div class="descripcion">Esta sección presenta los conceptos básicos y el objetivo principal del tema.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Capítulo 1</div>
+      <div class="descripcion">Aquí se analiza el contexto histórico y las primeras teorías relevantes.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Capítulo 2</div>
+      <div class="descripcion">Exploramos los elementos clave y sus implicaciones prácticas.</div>
     </div>
   </div>
-  <div class="item">
-    <div class="titulo">Lista 2: Animales</div>
-    <div class="contenido">
-      <ul>
-        <li>Perro</li>
-        <li>Gato</li>
-        <li>Elefante</li>
-        <li>Capibara 🐹</li>
-      </ul>
+
+  <h2>🧠 Sección 2</h2>
+  <div class="galeria">
+    <div class="item">
+      <div class="titulo">Conclusión</div>
+      <div class="descripcion">Resumen final con las conclusiones y perspectivas futuras del tema.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Referencias</div>
+      <div class="descripcion">Listado de fuentes y materiales utilizados para la elaboración del contenido.</div>
     </div>
   </div>
-  <div class="item">
-    <div class="titulo">Lista 3: Colores</div>
-    <div class="contenido">
-      <ul>
-        <li>Rojo</li>
-        <li>Azul</li>
-        <li>Verde</li>
-        <li>Amarillo</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

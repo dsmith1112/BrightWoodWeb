@@ -193,19 +193,19 @@ nav {
     padding: 8px 0; /* Padding vertical para los elementos del desplegable */
 }
 
-    .dropdown-content a {
-        color: var(--color-text);
-        padding: 10px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
-        font-weight: 500;
-    }
+.dropdown-content a {
+    color: var(--color-text);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+}
 
-        .dropdown-content a:hover {
-            background-color: var(--color-hero-bg);
-            color: var(--color-accent);
-        }
+.dropdown-content a:hover {
+    background-color: var(--color-hero-bg);
+    color: var(--color-accent);
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
@@ -288,17 +288,17 @@ nav {
     text-align: center;
 }
 
-    .section h2 {
-        color: var(--color-accent);
-        font-size: 2em;
-        margin-bottom: 20px;
-    }
+.section h2 {
+    color: var(--color-accent);
+    font-size: 2em;
+    margin-bottom: 20px;
+}
 
-    .section p {
-        font-size: 1.1em;
-        max-width: 800px;
-        margin: 0 auto;
-    }
+.section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 
 .footer-content {
@@ -335,6 +335,69 @@ nav {
     margin: 0;
     font-size: 0.9rem;
     color: var(--color-text);
+}
+/* Grid general */
+.galeria {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 20px;
+width: 100%;
+max-width: 1100px;
+}
+
+/* Tarjeta individual */
+.item {
+position: relative;
+background: #1a1a1a;
+border-radius: 12px;
+overflow: hidden;
+height: 180px;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.item:hover {
+background: #222;
+transform: scale(1.05);
+}
+
+/* Texto principal */
+.titulo {
+font-size: 1.2rem;
+font-weight: bold;
+text-align: center;
+color: #fff;
+z-index: 2;
+transition: opacity 0.3s ease;
+}
+
+/* Descripción oculta */
+.descripcion {
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.85);
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+opacity: 0;
+transform: translateY(20px);
+transition: opacity 0.4s ease, transform 0.4s ease;
+border-radius: 12px;
+}
+
+.item:hover .descripcion {
+opacity: 1;
+transform: translateY(0);
+}
+
+.item:hover .titulo {
+opacity: 0;
 }
 
 /* RESPONSIVE */
