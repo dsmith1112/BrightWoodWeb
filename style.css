@@ -3661,9 +3661,110 @@ header {
             margin-bottom: 15px;
         }
     }
+}
+/* ====== FORZAR LAYOUT DE ESCRITORIO EN MÓVIL (al final del CSS) ====== */
+@media (max-width: 768px) {
+    /* Header en fila, como desktop */
+    header {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
 
+        /* Mantener navbar visible y en horizontal */
+        header .navbar {
+            display: block !important;
+        }
 
+            header .navbar .nav-list {
+                flex-direction: row !important;
+                width: auto !important;
+                gap: 24px !important;
+                align-items: center !important;
+            }
 
+    /* Dropdown usable con toque además de hover */
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
 
+    /* CTA del header a la derecha, sin ocupar toda la fila */
+    header .header-cta {
+        display: flex !important;
+        width: auto !important;
+        margin-left: auto !important;
+        margin-top: 0 !important;
+        gap: 10px !important;
+        justify-content: flex-end !important;
+    }
 
+    /* Ajuste de tamaño de logo para no romper el header */
+    .logo-img, header .logo img {
+        height: 56px !important;
+        width: auto !important;
+    }
+
+    /* Evita que los enlaces del nav crezcan en bloque */
+    .nav-list a {
+        padding: 8px 12px !important;
+        display: inline-block !important;
+    }
+}
+/* ====== FIX FINAL: Centrar header y hero en cualquier tamaño ====== */
+@media (max-width: 1024px) {
+
+    /* Centra completamente el header */
+    header {
+        justify-content: center !important;
+        text-align: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+    }
+
+        header .logo {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        header .navbar {
+            flex-basis: 100%;
+            display: flex !important;
+            justify-content: center !important;
+        }
+
+            header .navbar .nav-list {
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+            }
+
+        header .header-cta {
+            flex-basis: 100%;
+            display: flex !important;
+            justify-content: center !important;
+            margin: 8px 0 0 0 !important;
+        }
+
+    /* Centra el contenido principal del hero */
+    .hero,
+    .hero-content,
+    .section,
+    .inventory-hero,
+    .hero-service {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+        .hero h1, .hero p {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+    /* Asegura que los botones del hero también estén centrados */
+    .cta-buttons {
+        justify-content: center !important;
+    }
 }
