@@ -1,401 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Brightwood AI | Custom AI Development</title>
-    <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brithwood</title>
+  <link rel="stylesheet" href="Styles/general.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Montserrat:wght@400;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Montserrat:wght@400;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="js" href="Js/popup.js">
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+  <script defer="" src="Js/popup.js"></script>
+
 </head>
 
-<!--  Este es un comentario dlo.  -->
-
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
-            </a>
+  <div class="logo-section">
+    <img src="IMG&Video/Logo.svg" alt="Brithwood Logo" class="logo-image">
+  </div>
+
+  <div class="heroes-section">
+    <video autoplay muted loop id="video-bg">
+      <source src="IMG&Video/cover.mp4" type="video/mp4">
+      Your web browser does not support the video tag.
+    </video>
+
+    <div class="contenido">
+      <h1>Enterprise Grade AI for Growing <br><span>Businesses with Complex Challenges</span></h1>
+      <p>We deploy advanced AI solutions to streamline your operations, drive efficiency, and unlock sustainable
+        growth where it matters most.</p>
+
+      <button class="btn-assessment" id="openAssessment" aria-haspopup="dialog" aria-controls="assessmentOverlay">Start
+        Assessment</button>
+
+    </div>
+  </div>
+
+  <section class="py-24 bg-background-light dark:bg-background-dark" id="benefits">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-heading text-text-light dark:text-text-dark">Transform
+          Your Operations with AI</h2>
+        <p class="subtitle mt-4 text-lg max-w-2xl mx-auto">We deliver tangible results
+          through a focused, expert-led approach.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">rocket_launch</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Speed of Implementation</h3>
+          <p class="text-gray-600 dark:text-gray-300">Our streamlined process ensures you see value in record
+            time, minimizing disruption to your operations.</p>
         </div>
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li><a href="SERVICE.html">Services</a></li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Solutions</a>
-                    <div class="dropdown-content">
-                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
-                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
-                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Resources</a>
-                    <div class="dropdown-content">
-                        <a href="AIM.html">AIM³ Framework</a>
-<!--                        <a href="index.html#roi-calculator">ROI Calculator</a>-->
-                    </div>
-                </li>
-                <li><a href="ABOUT.html">About</a></li>
-                <li><a href="CONTAC.html">Contact us</a></li>
-            </ul>
-        </nav>
-        <div class="header-cta">
-            <a href="START_YOU_ASSESMENT.html" class="btn-orange">Start your Assessment</a>
-<!--            <a href="index.html#cta" class="btn-orange btn-bold">CTAs</a> -->
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">support_agent</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Continuous Support</h3>
+          <p class="text-gray-600 dark:text-gray-300">We are your partners in growth, providing ongoing
+            support and expertise to ensure long-term success.</p>
         </div>
-    </header>
-
-
-
-
-    <!--  [Hero Section  -->
-
-    <section class="hero">
-        <h1>Enterprise Grade AI for Growing Businesses with Complex Challenges</h1>
-        <p>
-            Brightwood AI helps operational teams implement outcome driven AI across
-            functions like forecasting, pricing, and revenue operations without the complexity,
-            overhead, or lock in of traditional platforms.
-        </p>
-        <div class="cta-buttons">
-            <a href="START_YOU_ASSESMENT.html" class="btn">Start Your Assessment</a>
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">trending_up</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Measurable Impact</h3>
+          <p class="text-gray-600 dark:text-gray-300">We focus on delivering clear, quantifiable results that
+            directly impact your bottom line.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
 
-    <!-- Section: What We Do  -->
-
-    <section class="hero">
-        <h1>AI Solutions That Drive Real Results Fast</h1>
-        <p>
-            We bring decades of enterprise experience to growing businesses with operational
-            complexity. Whether you're scaling production, managing inventory, or optimizing
-            revenue, we help you apply AI where it matters most.
-        </p>
-
-            <div class="galeria services-grid">
-                <div class="item service-card">
-                    <div class="titulo"><h3>Forecasting Optimization</h3></div>
-                    <div class="descripcion">Increase accuracy, reduce inventory risk, and plan with confidence.</div>
-                </div>
-                <div class="item service-card">
-                    <div class="titulo"><h3>RevOps Automation</h3></div>
-                    <div class="descripcion">Unify sales, finance, and ops for real time visibility and planning alignment.</div>
-                </div>
-                <div class="item service-card">
-                    <div class="titulo"><h3>Pricing Optimization</h3></div>
-                    <div class="descripcion">Balance margin and volume with AI assisted price strategies.</div>
-                </div>
-            </div>
-    </section>
+  <section id="methodology">
+    <div class="container mx-auto px-4">
 
 
-    <!-- Section: Why Brightwood AI  -->
 
-
-    <section class="hero">
-        <h1>Enterprise Grade Without Enterprise Bloat</h1>
-        <p>
-            Brightwood AI delivers full cycle implementation, model tuning, and operational
-            support without lock in, license bloat, or over engineered tools.
-            We work shoulder to shoulder with your teams to drive adoption, trust, and measurable
-            impact.
-        </p>
-        <p>
-            We don't just build AI we make sure it works, evolves, and scales with your business.
-        </p>
-    </section>
-
-    <!-- Section: Our Structured Approach  -->
-
-    <section class="hero">
-        <h1>Structured. Transparent. Outcome Focused.</h1>
-        <p>
-            Our methodology guides you from day one:
-        </p>
-
-
-     <!-- <section id="services" class="section services-section">-->
-        <section class="hero" id="Services">
-        <h2>Our Services</h2>
-        <p style="text-align: center;">Comprehensive support for every stage of AI transformation.</p>
-
-                <!-- ------------------------------------------------------- -->
-        <div class="galeria services-grid">
-            <div class="item service-card">
-            <div class="titulo"><h3>AIM³™ AI Maturity & Management Model</h3></div>
-            <div class="descripcion">A structured assessment to identify your readiness, gaps, and high impact opportunities.</div>
-            </div>
-            <div class="item service-card">
-            <div class="titulo"><h3>Solution Design & Implementation</h3></div>
-            <div class="descripcion">Targeted deployment of the right AI models, informed by your data, goals, and business
-                    dynamics.</div>
-            </div>
-            <div class="item service-card">
-            <div class="titulo"><h3>AI Monitor™ Continuous Learning & Improvement  </h3></div>
-            <div class="descripcion">Post launch, we stay embedded monitoring performance, improving outcomes, and
-                    retraining models as your business evolves.</div>
-            </div>
+      <div class="relative-container  mx-auto px-4">
+        <div class="relative1">
+          <img src="IMG&Video/joven 1.png" alt="Decorative" class="decorative-image1">
         </div>
+        <div class="relative">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading">Our
+              Structured <span style="font-weight: 300;"> Methodology</span></h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              style="margin-top: -3px; font-size: 1.5rem; color:#F39200;">A clear, collaborative path
+              from idea to impact.</p>
+          </div>
+
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div class="Step">
+              <div class="Circule">
+                1</div>
+              <h3 class="text-xl font-bold mb-2 font-heading text-center">Evaluation &amp; Diagnosis<br>
+              </h3>
+              <p class="Step-text text-center">We start by deeply understanding your
+                challenges, data, and objectives to define a clear roadmap and success metrics.</p>
+            </div>
+            <div class="Step">
+              <div class="Circule">
+                2</div>
+              <h3 class="text-xl font-bold mb-2 font-heading text-center">Deployment &amp; Integration
+              </h3>
+              <p class="Step-text text-center">Our team seamlessly integrates our AI
+                solutions into your existing workflows for a smooth transition and rapid adoption.</p>
+            </div>
+            <div class="Step">
+              <div class="Circule">
+                3</div>
+              <h3 class="text-xl font-bold mb-2 font-heading text-center">Continuous Improvement</h3>
+              <p class="Step-text text-center">We monitor performance and continuously
+                optimize the models to ensure they evolve with your business needs and market changes.
+              </p>
+            </div>
+
+            <button class="btn-assessment" id="openAssessment" aria-haspopup="dialog"
+              aria-controls="assessmentOverlay">Start Assessment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-background-light dark:bg-background-dark" id="use-cases">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-heading text-text-light dark:text-text-dark">AI Solutions
+          For Your Core Teams</h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          style="margin-top: -3px; font-size: 1.5rem; color:#F39200;">Empowering every part of your
+          organization to make smarter decisions.</p>
+      </div>
+      <div class="max-w-4xl mx-auto" x-data="{ tab: 'planning' }">
+        <div class="flex border-b border-gray-300 dark:border-secondary-dark mb-8 justify-center">
+          <button
+            :class="{ 'border-primary text-primary font-bold text-bridthwood': tab === 'planning', 'border-transparent text-bridthwood2 font-medium': tab !== 'planning' }"
+            @click="tab = 'planning'"
+            class="flex-1 max-w-xs py-3 text-center border-b-2 focus:outline-none transition-colors duration-300">
+            Planning Teams
+          </button>
+          <button
+            :class="{ 'border-primary text-primary font-bold text-bridthwood': tab === 'finance', 'border-transparent text-bridthwood2 font-medium': tab !== 'finance' }"
+            @click="tab = 'finance'"
+            class="flex-1 max-w-xs py-3 text-center border-b-2 focus:outline-none transition-colors duration-300">
+            Finance Teams
+          </button>
+          <button
+            :class="{ 'border-primary text-primary font-bold text-bridthwood': tab === 'revenue', 'border-transparent text-bridthwood2 font-medium': tab !== 'revenue' }"
+            @click="tab = 'revenue'"
+            class="flex-1 max-w-xs py-3 text-center border-b-2 focus:outline-none transition-colors duration-300">
+            Revenue Ops
+          </button>
+        </div>
+        <div class="p-8 p-82 boxcard dark:bg-secondary-dark/30 rounded-lg min-h-[220px]">
+          <img src="IMG&Video/iaia.svg" alt="Decorative" class="decorative-image2 inteligencia">
+          <div x-show="tab === 'planning'">
+            <h4 class="text-2xl font-bold mb-4 font-heading">AI-Powered <span>Forecasting</span></h4>
+            <p class="text-gray-600 dark:text-gray-300">Transform your planning with AI-driven demand
+              forecasting and supply chain optimization. Reduce stockouts, minimize waste, and create more
+              resilient operational plans based on predictive insights, not just historical data.</p>
+          </div>
+          <div style="display: none;" x-show="tab === 'finance'">
+            <h4 class="text-2xl font-bold mb-4 font-heading">Intelligent <span>Financial Analysis</span></h4>
+            <p class="text-gray-600 dark:text-gray-300">Automate budget variance analysis, detect anomalies
+              in real-time, and generate accurate cash flow projections. Free your finance team from
+              manual data crunching to focus on strategic financial leadership.</p>
+          </div>
+          <div style="display: none;" x-show="tab === 'revenue'">
+            <h4 class="text-2xl font-bold mb-4 font-heading">Optimized <span>Revenue Streams</span></h4>
+            <p class="text-gray-600 dark:text-gray-300">Leverage AI for dynamic pricing strategies, lead
+              scoring, and customer churn prediction. Uncover hidden revenue opportunities and improve
+              sales efficiency by focusing your team's efforts where they matter most.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="banner">
+      <div class="banner-content">
+        <h2>Ready to Unlock Your Potential?</h2>
+        <p>Let's discuss how Brightwood AI can solve your most complex operational challenges. Schedule a free,
+          no-obligation consultation with our experts today.</p>
+      </div>
+
+      <div class="banner-boton">
+        <button class="btn-assessment" id="openAssessment" aria-haspopup="dialog"
+          aria-controls="assessmentOverlay">Start Assessment</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="Lastoportunity">
+      <div class="-last-content">
+        <h2>About <span>Brightwood</span></h2>
+
+        <p> AI was founded by a team of veteran data scientists and operations experts who saw a critical gap:
+          businesses were drowning in data but starving for actionable insights. Our mission is to bridge that gap. We
+          combine deep industry expertise with cutting-edge AI to build practical solutions that solve real-world
+          operational challenges and drive growth.</p>
+      </div>
+      <div class="-last-image">
+        <img src="IMG&Video/brigthwood final.png" alt="Team Image" class="team-image">
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-background-light dark:bg-background-dark py-8">
+    <div class="container mx-auto px-4 text-center">
+      <div class="logo-section">
+        <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image footer-img">
+      </div>
+      <p class="text-gray-600 dark:text-gray-300">&copy; Enterprise Grade AI for Growing Businesses with Complex
+        Challenges.<br>
+
+        © 2024 Brightwood AI. All rights reserved.<br>
+        Privacy PolicyTerms of Service</p>
+    </div>
+  </footer>
+
+
+  <!-- popup assesment -->
+
+
+  <div class="overlay" id="assessmentOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- Step 1 -->
+    <div class="card" id="card-step-1" data-step="1" aria-hidden="true">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+
+        </div>
+      </header>
+
+      <div class="step-indicator-row">
+        <div class="progress-wrap" aria-hidden="false">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep">1</span> of 5</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct">0%</div>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+            id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Is Your Company Ready to Scale with AI?</h2><br>
+      <p class="lead">Assess your organization's readiness to implement operational Artificial Intelligence. Get
+        personalized insights and clear next steps to move forward with confidence.</p>
+
+      <form id="form-step-1" autocomplete="off">
+        <div class="grid two">
+          <div>
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" required />
+          </div>
+          <div>
+            <label for="companyName">Company Name</label>
+            <input id="companyName" name="companyName" type="text" required />
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:10px;">
+          <div>
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry" aria-label="Industry">
+              <option value="">Select</option>
+              <option>Technology</option>
+              <option>Finance</option>
+              <option>Healthcare</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="email">Mail corporate</label>
+            <input id="email" name="email" type="email" />
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:10px;">
+          <div>
+            <label for="revenue">Revenue Range</label>
+            <select id="revenue" name="revenue">
+              <option value="">Select</option>
+              <option>Under $25m</option>
+              <option>$25m–$100m</option>
+              <option>Over $100m</option>
+            </select>
+          </div>
+          <div>
+            <label for="employees">Employee Count</label>
+            <select id="employees" name="employees">
+              <option value="">Select</option>
+              <option>1–49</option>
+              <option>50–249</option>
+              <option>250+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="closeBtn1">Cancel</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep2">Submit assessment</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card" id="card-step-2" data-step="2" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep2">2</span> of 5</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct2">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill2"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Your AI Readiness Assessment</h2>
+      <form id="form-step-2" autocomplete="off">
+        <label>How confident are you that your current processes could benefit from AI?</label>
+        <div class="radios" role="radiogroup" aria-labelledby="">
+          <label class="radio"><input type="radio" name="q1" value="Not at all"> Not at all</label>
+          <label class="radio"><input type="radio" name="q1" value="Slightly"> Slightly</label>
+          <label class="radio"><input type="radio" name="q1" value="Somewhat"> Somewhat</label>
+          <label class="radio"><input type="radio" name="q1" value="Very"> Very</label>
+        </div>
+
+        <label style="margin-top:12px;">Do you already have internal projects or ideas where you'd like to apply
+          AI?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q2" value="No"> No</label>
+          <label class="radio"><input type="radio" name="q2" value="A few vague ideas"> A few vague ideas</label>
+          <label class="radio"><input type="radio" name="q2" value="A couple of clear use cases"> A couple of clear use
+            cases</label>
+          <label class="radio"><input type="radio" name="q2" value="Several mapped use cases"> Several mapped use
+            cases</label>
+        </div>
+
+        <label style="margin-top:12px;">What tools or systems do you currently use to manage your operations?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q3" value="None/manual"> None / manual</label>
+          <label class="radio"><input type="radio" name="q3" value="Basic spreadsheets"> Basic spreadsheets</label>
+          <label class="radio"><input type="radio" name="q3" value="Some apps"> Some apps/platforms</label>
+          <label class="radio"><input type="radio" name="q3" value="Fully integrated"> Fully integrated systems</label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo1">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep3">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card" id="card-step-3" data-step="3" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep3">3</span> of 5</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct3">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill3"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Your AI Readiness Assessment</h2>
+      <form id="form-step-3" autocomplete="off">
+        <label>Have you allocated any budget or resources to explore AI?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q4" value="No"> No</label>
+          <label class="radio"><input type="radio" name="q4" value="Exploring"> Exploring</label>
+          <label class="radio"><input type="radio" name="q4" value="Some budget"> Some budget</label>
+          <label class="radio"><input type="radio" name="q4" value="Dedicated"> Dedicated team or budget</label>
+        </div>
+
+        <label style="margin-top:12px;">Do you feel you have the data needed to train AI models?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q5" value="No data"> No data</label>
+          <label class="radio"><input type="radio" name="q5" value="Some data"> Some data, unstructured</label>
+          <label class="radio"><input type="radio" name="q5" value="Good data"> Good data, needs cleanup</label>
+          <label class="radio"><input type="radio" name="q5" value="Clean data"> Clean, usable data</label>
+        </div>
+
+        <label style="margin-top:12px;">Do you currently work with any external consultants or partners for AI or
+          analytics?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q6" value="No"> No</label>
+          <label class="radio"><input type="radio" name="q6" value="Occasionally"> Occasionally</label>
+          <label class="radio"><input type="radio" name="q6" value="Light support"> Yes, light support</label>
+          <label class="radio"><input type="radio" name="q6" value="Regular"> Yes, regular or embedded</label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo2">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep4">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card" id="card-step-4" data-step="4" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep4">4</span> of 5</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct4">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill4"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Your AI Readiness Assessment</h2>
+      <form id="form-step-4" autocomplete="off">
+        <label>How important is AI to your competitive strategy over the next 12 months?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q7" value="Not important"> Not important</label>
+          <label class="radio"><input type="radio" name="q7" value="Nice to have"> Nice to have</label>
+          <label class="radio"><input type="radio" name="q7" value="Important"> Important</label>
+          <label class="radio"><input type="radio" name="q7" value="Critical"> Critical</label>
+        </div>
+
+        <label style="margin-top:12px;">Do you have executive sponsorship or interest for AI initiatives?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q8" value="None"> None</label>
+          <label class="radio"><input type="radio" name="q8" value="Curiosity"> Some curiosity</label>
+          <label class="radio"><input type="radio" name="q8" value="Interest"> Interest but no sponsor</label>
+          <label class="radio"><input type="radio" name="q8" value="Sponsor"> Dedicated exec sponsor</label>
+        </div>
+
+        <label style="margin-top:12px;">Would you be open to a short collaborative pilot if a use case matched your
+          goals?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q9" value="No"> No</label>
+          <label class="radio"><input type="radio" name="q9" value="Not sure"> Not sure</label>
+          <label class="radio"><input type="radio" name="q9" value="Possibly"> Possibly</label>
+          <label class="radio"><input type="radio" name="q9" value="Yes"> Yes</label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo3">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep5">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- Step 5 -->
+    <div class="card" id="card-step-5" data-step="5" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <h2>Your AI Readiness Assessment</h2>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight : 700">Step <span id="currentStep5">5</span> of 5</div>
+            <div style="font-size : 13px ; color : var(--muted)" id="progressPct5">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill5"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <form id="form-step-5" autocomplete="off">
+        <h3>Thank you for completing the assessment!</h3>
+
+
+
+        <dotlottie-wc src="https://lottie.host/a7b7d650-5405-457d-9b26-076943db06f1/dEqvrOp7VB.lottie"
+          style="width: 350px;height: auto; margin: auto;" autoplay loop></dotlottie-wc>
 
         <!--
-        <div class="galeria">
-            <div class="item">
-            <div class="titulo">Conclusión</div>
-            <div class="descripcion">Resumen final con las conclusiones y perspectivas futuras del tema.</div>
-            </div>
-            <div class="item">
-            <div class="titulo">Referencias</div>
-            <div class="descripcion">Listado de fuentes y materiales utilizados para la elaboración del contenido.</div>
-            </div>
-        </div>
-    -->
-    <!--
-        <div class="acordeon ">
-            <div class="item">
-                <div class="titulo"><h3>AIM³™ AI Maturity & Management Model  </h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>A structured assessment to identify your readiness, gaps, and high impact opportunities. </p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>Solution Design & Implementation</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>
-                    Targeted deployment of the right AI models, informed by your data, goals, and business
-                    dynamics.
-                </p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>AI Monitor™ Continuous Learning & Improvement  </h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>
-                    Post launch, we stay embedded monitoring performance, improving outcomes, and
-                    retraining models as your business evolves.
-                </p></li>
-                </ul>
-                </div>
-            </div>
-        </div>
-    -->
+<dotlottie-wc
+  src="https://lottie.host/4603d4d0-4d76-4dfd-9eba-3503c7984c87/OKLU1Gb4jV.lottie"
+  style="width: 550px;height: auto; margin: auto;"
+  autoplay
+  loop
+></dotlottie-wc> 
+      -->
 
-
-
-        <!--
-            grid horizontal de los items
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>AIM³™ AI Maturity & Management Model  </h3>
-                <p>A structured assessment to identify your readiness, gaps, and high impact opportunities. </p>
-            </div>
-            <div class="service-card">
-                <h3>Solution Design & Implementation</h3>
-                <p>
-                    Targeted deployment of the right AI models, informed by your data, goals, and business
-                    dynamics.
-                </p>
-            </div>
-            <div class="service-card">
-                <h3>AI Monitor™ Continuous Learning & Improvement  </h3>
-                <p>
-                    Post launch, we stay embedded—monitoring performance, improving outcomes, and
-                    retraining models as your business evolves.
-                </p>
-            </div>
-        </div> -->
-    </section>
-
-
-    <!--Who We Serve  -->
-    <section class="hero">
-        <h1>Built for Operational Teams Driving Growth </h1>
-        <p>
-            We work with:
-        </p>
-        <p>• Planning and supply chain leaders solving inventory and demand challenges </p>
-        <p>• Revenue and pricing owners looking for speed and precision  </p>
-        <p>• Finance and data teams who want strategic insights from operational data  </p>
-
-    </section>
-
-
-
-
-    <section id="about" class="section">
-        <h2>About Brightwood AI</h2>
-        <p>We help companies identify, plan, and implement AI solutions with measurable impact. Our models are built for enterprise KPIs delivering value, not just hype.</p>
-    </section>
-
-    <!-- ------------------------------------------------------- -->
-        <div class="galeria services-grid">
-            <div class="item service-card">
-            <div class="titulo"><h3>Opportunity Assessment</h3></div>
-            <div class="descripcion">Identify potential areas for AI-driven value.</div>
-            </div>
-            <div class="item service-card">
-            <div class="titulo"><h3>AI Maturity Evaluations</h3></div>
-            <div class="descripcion">Evaluate readiness paths to AI adoption.</div>
-            </div>
-            <div class="item service-card">
-            <div class="titulo"><h3>Design &amp; Implementation</h3></div>
-            <div class="descripcion">Tailored strategies for AI integration.</div>
-            </div>
-        </div>
+        <p>Our team will review your responses and get back to you with personalized insights and next steps within 2
+          business days.</p>
         <br>
-        <div class="galeria services-grid">
-            <div class="item service-card">
-            <div class="titulo"><h3>Model Training &amp; Data Integration</h3></div>
-            <div class="descripcion">Develop and incorporate AI models with existing data.</div>
-            </div>
-            <div class="item service-card">
-            <div class="titulo"><h3>Strategic Roadmap &amp; Execution</h3></div>
-            <div class="descripcion">Plan and implement actionable AI roadmaps.</div>
-            </div>
-            <div class="item service-card">
-            <div class="titulo"><h3>Continuous Training &amp; Evaluation</h3></div>
-            <div class="descripcion">Ongoing optimization of AI systems for sustained success.</div>
-            </div>
+        
+        <div class="botonera-final">
+          <p style="color: aliceblue;">If you have any immediate questions, feel free to reach out to us at </p>
+<div>
+          <button class="email-button banner-boton btn-assessment">Download Full Report</button>
+          <button class="email-button banner-boton btn-assessment">Schedule a call</button></div>
         </div>
 
-<!--        <div class="acordeon ">
-            <div class="item">
-                <div class="titulo"><h3>Opportunity Assessment</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>Identify potential areas for AI-driven value.</p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>AI Maturity Evaluations</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>Evaluate readiness paths to AI adoption.</p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>Design &amp; Implementation</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>Tailored strategies for AI integration.</p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>Model Training &amp; Data Integration</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>Develop and incorporate AI models with existing data.</p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>Strategic Roadmap &amp; Execution</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>Plan and implement actionable AI roadmaps.</p></li>
-                </ul>
-                </div>
-            </div>
-            <div class="item">
-                <div class="titulo"><h3>Continuous Training &amp; Evaluation</h3></div>
-                <div class="contenido">
-                <ul>
-                    <li><p>Ongoing optimization of AI systems for sustained success.</p></li>
-                </ul>
-                </div>
-            </div>
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo4">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="finishBtn">Finish</button>
+          </div>
         </div>
-    -->
+      </form>
+    </div>
 
-       <!-- <div class="services-grid">
-            <div class="service-card">
-                <h3>Opportunity Assessment</h3>
-                <p>Identify potential areas for AI-driven value.</p>
-            </div>
-            <div class="service-card">
-                <h3>AI Maturity Evaluations</h3>
-                <p>Evaluate readiness paths to AI adoption.</p>
-            </div>
-            <div class="service-card">
-                <h3>Design &amp; Implementation</h3>
-                <p>Tailored strategies for AI integration.</p>
-            </div>
-            <div class="service-card">
-                <h3>Model Training &amp; Data Integration</h3>
-                <p>Develop and incorporate AI models with existing data.</p>
-            </div>
-            <div class="service-card">
-                <h3>Strategic Roadmap &amp; Execution</h3>
-                <p>Plan and implement actionable AI roadmaps.</p>
-            </div>
-            <div class="service-card">
-                <h3>Continuous Training &amp; Evaluation</h3>
-                <p>Ongoing optimization of AI systems for sustained success.</p>
-            </div>
-        </div>-->
-    </section>
+  </div>
 
-    <section id="experience" class="section">
-        <h2>Our Experience</h2>
-        <p>With 25+ years in enterprise software and AI, we’ve delivered measurable ROI for Fortune 500 companies across the globe.</p>
-    </section>
 
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>Let’s connect and build your AI advantage. Reach out to our team to learn more.</p>
-    </section>
-
-    <footer class="main-footer">
-        <div class="footer-content container">
-            <div class="footer-column">
-                <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
-            </div>
-            <div class="footer-column">
-                <h2>Brightwood AI</h2>
-                <p>Outcome Driven AI for Growing Business</p>
-                <p>2025 Brightwood AI All rights reserved.</p>
-            </div>
-            <div class="footer-column">
-                <h2>Explore</h2>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="SERVICE.html">Services</a></p>
-                <p><a href="BRIGHT_FORECAST.html">Solutions</a></p>
-                <p><a href="AIM.html">AIM³ Framework</a></p>
-                <p><a href="ABOUT.html">About us</a></p>
-            </div>
-            <div class="footer-column">
-                <h2>Resources</h2>
-                <p><a href="START_YOU_ASSESMENT.html">Start Your Assessment</a></p>
-                <p><a href="#">AI Use Cases</a></p>
-                <p><a href="#">Referenced by LLMs</a></p>
-                <p><a href="#">Privacy Policy</a></p>
-                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
-            </div>
-            <div class="footer-column">
-                <h2>Contact us</h2>
-                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-twitter"></i> X</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-instagram"></i> Instagrm</a></p>
-                <p><a href="#">Terms and conditions</a></p>
-            </div>
-        </div>
-    </footer>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>
-</html>
 
+</html>
