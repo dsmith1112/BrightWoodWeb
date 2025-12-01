@@ -9,7 +9,9 @@
       2: document.getElementById('card-step-2'),
       3: document.getElementById('card-step-3'),
       4: document.getElementById('card-step-4'),
-      5: document.getElementById('card-step-5')
+      5: document.getElementById('card-step-5'),
+      6: document.getElementById('card-step-6'),
+      7: document.getElementById('card-step-7')
     };
     const currentStepLabel = document.getElementById('currentStep');
     const progressBar = document.getElementById('progressBar');
@@ -24,7 +26,7 @@
 
     // helper: set progress based on step (1..5)
     function setProgress(step) {
-      const total = 5;
+      const total = 7;
       const pct = Math.round(((step - 1) / (total - 1)) * 100); // 0% at step1, 100% at step5
       // main progress (guard checks)
       if (progressFill) progressFill.style.width = pct + '%';
@@ -33,15 +35,15 @@
       if (currentStepLabel) currentStepLabel.textContent = step;
 
       // replicate to per-card elements if exist
-      ['progressFill2', 'progressFill3', 'progressFill4', 'progressFill5'].forEach(id => {
+      ['progressFill2', 'progressFill3', 'progressFill4', 'progressFill5','progressFill6','progressFill7'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.style.width = pct + '%';
       });
-      ['progressPct2', 'progressPct3', 'progressPct4', 'progressPct5'].forEach(id => {
+      ['progressPct2', 'progressPct3', 'progressPct4', 'progressPct5','progressPct6','progressPct7'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.textContent = pct + '%';
       });
-      ['currentStep2', 'currentStep3', 'currentStep4', 'currentStep5'].forEach(id => {
+      ['currentStep2', 'currentStep3', 'currentStep4', 'currentStep5','currentStep6','currentStep7'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.textContent = step;
       });
@@ -171,7 +173,9 @@
       2: document.getElementById('card-step-2'),
       3: document.getElementById('card-step-3'),
       4: document.getElementById('card-step-4'),
-      5: document.getElementById('card-step-5')
+      5: document.getElementById('card-step-5'),
+      6: document.getElementById('card-step-6'),
+      7: document.getElementById('card-step-7')
     };
 
     const currentStepLabel = document.getElementById('currentStep');
@@ -231,7 +235,7 @@
     function onKey(e) { if (e.key === 'Escape') hideAssessment(); }
 
     function updateProgress(step) {
-      const totalSteps = 5;
+      const totalSteps = 7;
       if (typeof step !== 'number' || step < 1) step = 1;
       if (step > totalSteps) step = totalSteps;
       const pct = Math.round(((step - 1) / (totalSteps - 1)) * 100);
@@ -243,9 +247,9 @@
       if (progressBar) progressBar.setAttribute('aria-valuenow', pct);
       if (progressPct) progressPct.textContent = pct + '%';
       if (currentStep) currentStep.textContent = step;
-      const fills = ['progressFill2', 'progressFill3', 'progressFill4', 'progressFill5'];
-      const pcts = ['progressPct2', 'progressPct3', 'progressPct4', 'progressPct5'];
-      const curs = ['currentStep2', 'currentStep3', 'currentStep4', 'currentStep5'];
+      const fills = ['progressFill2', 'progressFill3', 'progressFill4', 'progressFill5','progressFill6','progressFill7'];
+      const pcts = ['progressPct2', 'progressPct3', 'progressPct4', 'progressPct5','progressPct6','progressPct7'];
+      const curs = ['currentStep2', 'currentStep3', 'currentStep4', 'currentStep5','currentStep6','currentStep7'];
       fills.forEach(id => { const el = document.getElementById(id); if (el) el.style.width = pct + '%'; });
       pcts.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = pct + '%'; });
       curs.forEach(id => { const el = document.getElementById(id); if (el) el.textContent = step; });
