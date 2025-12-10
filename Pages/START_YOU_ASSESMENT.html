@@ -476,6 +476,7 @@ input[type="radio"] {
         };
 
         document.getElementById('showQuestionsBtn').addEventListener('click', function () {
+            // validar email
             const workEmailInput = document.getElementById('workEmail');
             const email = workEmailInput.value;
             const emailDomain = email.substring(email.indexOf('@') + 1);
@@ -485,7 +486,9 @@ input[type="radio"] {
                 workEmailInput.focus();
                 return;
             }
+            // fin validar email
 
+            // ---------------------------
             // Oculta el formulario inicial
             document.getElementById('initialForm').style.display = 'none';
             document.getElementById('formTitle').textContent = 'Your AI Readiness Assessment';

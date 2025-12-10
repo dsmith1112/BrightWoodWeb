@@ -98,10 +98,19 @@
 
     const toStep2 = safeGet('toStep2');
     const backTo1 = safeGet('backTo1');
+    
     const toStep3 = safeGet('toStep3');
     const backTo2 = safeGet('backTo2');
+    
     const toStep4 = safeGet('toStep4');
     const backTo3 = safeGet('backTo3');
+
+    const toStep5 = safeGet('toStep5');
+    const backTo4 = safeGet('backTo4');
+
+    const toStep6 = safeGet('toStep6');
+    const backTo5 = safeGet('backTo5');
+    
     const finishBtn = safeGet('finishBtn');
     const closeBtn1 = safeGet('closeBtn1');
 
@@ -119,6 +128,11 @@
     if (backTo2) backTo2.addEventListener('click', () => showStep(2));
     if (toStep4) toStep4.addEventListener('click', () => showStep(4));
     if (backTo3) backTo3.addEventListener('click', () => showStep(3));
+    if (toStep5) toStep5.addEventListener('click', () => showStep(5));
+    if (backTo4) backTo4.addEventListener('click', () => showStep(4));
+    if (toStep5) toStep6.addEventListener('click', () => showStep(6));
+    if (backTo5) backTo5.addEventListener('click', () => showStep(5));
+   
     if (finishBtn) finishBtn.addEventListener('click', () => {
       const payload = {
         fullName: (document.getElementById('fullName') || {}).value || '',
@@ -129,7 +143,9 @@
         employees: (document.getElementById('employees') || {}).value || '',
         q1: getRadio('q1'), q2: getRadio('q2'), q3: getRadio('q3'),
         q4: getRadio('q4'), q5: getRadio('q5'), q6: getRadio('q6'),
-        q7: getRadio('q7'), q8: getRadio('q8'), q9: getRadio('q9')
+        q7: getRadio('q7'), q8: getRadio('q8'), q9: getRadio('q9'),
+        q10: getRadio('q10'), q11: getRadio('q11'), q12: getRadio('q12'),
+        q13: getRadio('q13'), q14: getRadio('q14'), q15: getRadio('q15')
       };
 
       hideOverlay();
@@ -344,3 +360,112 @@
     console.error('[popup.js] multiTrigger IIFE error:', err);
   }
 })();
+
+
+// Función para obtener los valores seleccionados
+  function obtenerValores() {
+    let respuestas = [];
+    // Ajusta el rango según el número total de preguntas
+    for (let i = 1; i <= 15; i++) {
+      let seleccion = document.querySelector(`input[name="q${i}"]:checked`);
+      if (seleccion) {
+        respuestas.push(parseInt(seleccion.value));
+      } else {
+        respuestas.push(0); // Si no respondió, se guarda 0
+      }
+    }
+    return respuestas;
+  }
+
+function ObtenerPyR() {
+  let resultados = [];
+  // Selecciona todos los labels con id="ask"
+  let preguntas = document.querySelectorAll('label#ask');
+
+  preguntas.forEach((preguntaLabel, index) => {
+    let pregunta = preguntaLabel.textContent.trim();
+
+    // El grupo de radios está justo después del label
+    let radios = preguntaLabel.nextElementSibling.querySelectorAll('input[type="radio"]');
+    let seleccion = Array.from(radios).find(r => r.checked);
+
+    if (seleccion) {
+      resultados.push({
+        pregunta: pregunta,
+        respuesta: seleccion.parentNode.textContent.trim() // texto de la opción elegida
+      });
+    } else {
+      resultados.push({
+        pregunta: pregunta,
+        respuesta: "No respondida"
+      });
+    }
+  });
+  return resultados;
+}
+
+
+  // Función para calcular porcentaje
+  function calcularPorcentaje() {
+    let respuestas = obtenerValores();
+    let puntaje = respuestas.reduce((a, b) => a + b, 0);
+    let maximo = 15 * 4; // 15 preguntas, valor máximo 4
+    let porcentaje = (puntaje / maximo) * 100;
+
+    // Mostrar resultado en consola o en pantalla
+    console.log("Respuestas:", respuestas);
+    console.log("Puntaje total:", puntaje);
+    console.log("Porcentaje:", porcentaje.toFixed(2) + "%");
+
+    // obtener el tier
+     if (puntaje <= 30) {
+      // Tier 1
+                Headline = "You’re in the Emerging Stage — High Opportunity for Quick Wins";
+                Summary  = "Your current processes show strong potential for AI-driven improvement. Many workflows rely on manual effort or unpredictable forecasting — which is exactly where practical AI delivers immediate value.";
+                TopRec1="1.	Automate your most time-consuming manual workflows.";
+                TopRec2="2.	Improve forecast predictability by consolidating key inputs.";
+                TopRec3="3.	Identify 1–2 high-impact growth levers (lead scoring, pricing).";
+                cta="Get Your Quick-Win Action Plan (30–60 Days)";
+                ctaLink = "#"; // Enlace al PDF
+                tierClass = "foundation-tier";
+            } else if (puntaje > 30 && puntaje <= 45) {
+      // Tier 2
+                Headline = "You’re in the Building Stage — Ready for Optimization & Automation";
+                Summary  = "You’ve laid an important foundation. Now it’s time to focus on operational efficiency, automated workflows, and predictive intelligence.";
+                TopRec1="1.	Deploy workflow automation where manual steps remain.";
+                TopRec2="2.	Add predictive forecasting to improve accuracy.";
+                TopRec3="3.	Align revenue teams using shared metrics and data.";
+                cta="Get Your Optimization Blueprint";
+                ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
+                tierClass = "momentum-tier";
+            } else {
+      // Tier 3
+                Headline = "You’re in the Accelerating Stage — Ready to Scale AI Across the Business";
+                Summary  = "Your organization already has strong data practices and mature workflows. You’re ready for advanced AI agents, real-time intelligence, and continuous improvement cycles.";
+                TopRec1="1.	Deploy AI agents for decision support and document automation.";
+                TopRec2="2.	Build continuous improvement cycles using AIM³.";
+                TopRec3="3.	Integrate forecasting, pricing, and operations into one decision layer.";
+                cta="Build Your AI Scaling Plan";
+                ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
+                tierClass = "acceleration-tier";
+            }
+    
+    // Cambiar informacion del modal del resultado
+    document.getElementById("cal_result_Headline").textContent = Headline;
+    document.getElementById("cal_result_Summary").textContent = Summary;
+    document.getElementById("cal_result_rec1").textContent = TopRec1;
+    document.getElementById("cal_result_rec2").textContent = TopRec2;
+    document.getElementById("cal_result_rec3").textContent = TopRec3;
+    document.getElementById("btnTier").textContent = cta;
+
+    // Ejemplo: mostrar en un div
+    let resultadoDiv = document.getElementById("resultado");
+    if (resultadoDiv) {
+      resultadoDiv.textContent = "Tu porcentaje es: " + porcentaje.toFixed(2) + "%";
+    } else {
+      alert("Tu porcentaje es: " + porcentaje.toFixed(2) + "%");
+    }
+  }
+
+  // Puedes llamar calcularPorcentaje() al dar clic en "Next" del último paso
+  document.getElementById("toStep7").addEventListener("click",  () => {calcularPorcentaje();ObtenerPyR();});;

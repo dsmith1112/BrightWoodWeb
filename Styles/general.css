@@ -142,6 +142,11 @@
       margin-top: 20px;
     }
 
+    .boxcard lu li {
+      text-align: left !important;
+      color: white;
+    }
+
     #methodology {
       background-image: url('../IMG&Video/fondo-2.jpg');
       background-position: center;
@@ -444,12 +449,13 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100%;
+      height: 100vh;
       background: rgba(0, 0, 0, 0.6);
       display: none;
+      /* display: flex; */
       justify-content: center;
       align-items: center;
-      z-index: 1000;
+      z-index: 9999;
     }
 
     .popup {
@@ -547,6 +553,7 @@
       position: fixed;
       inset: 0;
       display: none;
+      /* display: flex; */
       /* shown via JS */
       background: rgba(2, 6, 23, 0.55);
       backdrop-filter: blur(4px);
@@ -560,12 +567,14 @@
     .card {
       width: 100%;
       max-width: var(--max-width);
+      max-height: 95vh;
       background: var(--bg);
       border-radius: var(--card-radius);
       box-shadow: 0 12px 40px rgba(2, 6, 23, 0.18);
       padding: 20px;
       transform: translateY(-8px);
       opacity: 0;
+      overflow: auto;
       transition: opacity .22s ease, transform .22s ease;
     }
 
@@ -618,6 +627,10 @@
 
     form {
       margin-top: 30px;
+    }
+    #form-step-7{
+      height: 100vh !important;
+      overflow-y: auto !important;
     }
 
     .grid {
