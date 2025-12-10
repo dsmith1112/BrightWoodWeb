@@ -361,6 +361,8 @@
   }
 })();
 
+// ------------------------------------------------------Aqui se obtiene las respuestas y el calculo-------------------------------------------------------------
+
 
 // Función para obtener los valores seleccionados
   function obtenerValores() {
@@ -378,11 +380,12 @@
   }
 
 function ObtenerPyR() {
-  let resultados = [];
+  let resultados = []; // seguimos usando array para acumular
+
   // Selecciona todos los labels con id="ask"
   let preguntas = document.querySelectorAll('label#ask');
 
-  preguntas.forEach((preguntaLabel, index) => {
+  preguntas.forEach((preguntaLabel) => {
     let pregunta = preguntaLabel.textContent.trim();
 
     // El grupo de radios está justo después del label
@@ -390,18 +393,14 @@ function ObtenerPyR() {
     let seleccion = Array.from(radios).find(r => r.checked);
 
     if (seleccion) {
-      resultados.push({
-        pregunta: pregunta,
-        respuesta: seleccion.parentNode.textContent.trim() // texto de la opción elegida
-      });
+      resultados.push(`Pregunta: ${pregunta}\nRespuesta: ${seleccion.parentNode.textContent.trim()}`);
     } else {
-      resultados.push({
-        pregunta: pregunta,
-        respuesta: "No respondida"
-      });
+      resultados.push(`Pregunta: ${pregunta}\nRespuesta: No respondida`);
     }
   });
-  return resultados;
+
+  // Convertimos el array en un solo bloque de texto plano
+  return resultados.join("\n\n");
 }
 
 
@@ -469,3 +468,44 @@ function ObtenerPyR() {
 
   // Puedes llamar calcularPorcentaje() al dar clic en "Next" del último paso
   document.getElementById("toStep7").addEventListener("click",  () => {calcularPorcentaje();ObtenerPyR();});;
+
+
+  // --------------------------------------------------------Aqui empieza el formspre------------------------------------------------------------------
+  document.addEventListener("DOMContentLoaded", function () {
+    const mainForm = document.getElementById("form-step-1"); // el que sí se envía
+    const completeBtn = document.getElementById("finishBtn"); // botón del último paso
+
+
+    completeBtn.addEventListener("click", function () {
+
+    // Generar el texto plano de preguntas y respuestas
+    const resultadosTexto = ObtenerPyR();
+    document.getElementById("respuestasField").value = resultadosTexto;
+
+    fetch(mainForm.action, {
+      method: mainForm.method,
+      body: new FormData(mainForm),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+          mainForm.style.display = "none";
+          alert("¡Correo enviado exitosamente!");
+        } else {
+          alert("Hubo un error al enviar el formulario.");
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("Error de red. Intenta nuevamente.");
+      });
+    });
+  });
+
+
+  /*---------Send notify from calendly----------*/
+window.addEventListener('message', function(e) {
+    if (e.data.event === 'calendly.event_scheduled') {
+      alert("¡Gracias por agendar tu cita!");
+    }
+  });

@@ -13,6 +13,10 @@
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- --------------Calendly------------- -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link
@@ -338,7 +342,10 @@
             </select>
           </div>
         </div>
-
+        <div class="grid">
+            <!-- campo oculto para resultados -->
+            <input type="hidden" name="respuestas" id="respuestasField">
+        </div>
         <div class="actions">
           <div class="left">
             <button type="button" class="btn secondary" id="closeBtn1">Cancel</button>
@@ -690,7 +697,7 @@
           <p style="color: aliceblue;">If you have any immediate questions, feel free to reach out to us at </p>
           <div style="text-align: center;">
             <button class="email-button banner-boton btn-assessment">Download Full Report</button>
-            <button class="email-button banner-boton btn-assessment">Schedule a call</button>
+            <button class="email-button banner-boton btn-assessment"> <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});return false;" target="_blank">Schedule a call</a></button>
             <button class="email-button banner-boton btn-assessment" id="btnTier"></button>
           </div>
         </div>
