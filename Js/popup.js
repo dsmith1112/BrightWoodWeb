@@ -4,6 +4,8 @@
     // Elements (guardados en const para evitar re-definición)
     const openBtn = document.getElementById('openAssessment');
     const overlay = document.getElementById('assessmentOverlay');
+    const openbtn1 = document.getElementById("openAssessment1");
+  
     const cards = {
       1: document.getElementById('card-step-1'),
       2: document.getElementById('card-step-2'),
@@ -11,12 +13,14 @@
       4: document.getElementById('card-step-4'),
       5: document.getElementById('card-step-5'),
       6: document.getElementById('card-step-6'),
-      7: document.getElementById('card-step-7')
+      7: document.getElementById('card-step-7'),
+      8: document.getElementById('card-step-8')
     };
     const currentStepLabel = document.getElementById('currentStep');
     const progressBar = document.getElementById('progressBar');
     const progressFill = document.getElementById('progressFill');
     const progressPct = document.getElementById('progressPct');
+    const modalOverlay = document.getElementById("modalOverlay");
 
     // safety: if overlay missing, abort this IIFE gracefully
     if (!overlay) {
@@ -147,11 +151,18 @@
         q10: getRadio('q10'), q11: getRadio('q11'), q12: getRadio('q12'),
         q13: getRadio('q13'), q14: getRadio('q14'), q15: getRadio('q15')
       };
+      // Mostrar modal
+      modalOverlay.style.display = "flex";
+      // Ocultar automáticamente después de 3 segundos
+      setTimeout(() => {
+        modalOverlay.style.display = "none";
+      }, 2000);
 
+      sendForm();
       hideOverlay();
     });
     if (closeBtn1) closeBtn1.addEventListener('click', hideOverlay);
-    if (openBtn) openBtn.addEventListener('click', showOverlay);
+    if (openBtn) openBtn.addEventListener('click', openBtn);
 
     function getRadio(name) {
       const el = document.querySelector('input[name="' + name + '"]:checked');
@@ -461,51 +472,102 @@ function ObtenerPyR() {
     let resultadoDiv = document.getElementById("resultado");
     if (resultadoDiv) {
       resultadoDiv.textContent = "Tu porcentaje es: " + porcentaje.toFixed(2) + "%";
-    } else {
-      alert("Tu porcentaje es: " + porcentaje.toFixed(2) + "%");
-    }
+    } 
   }
 
   // Puedes llamar calcularPorcentaje() al dar clic en "Next" del último paso
   document.getElementById("toStep7").addEventListener("click",  () => {calcularPorcentaje();ObtenerPyR();});;
 
-
-  // --------------------------------------------------------Aqui empieza el formspre------------------------------------------------------------------
-  document.addEventListener("DOMContentLoaded", function () {
-    const mainForm = document.getElementById("form-step-1"); // el que sí se envía
-    const completeBtn = document.getElementById("finishBtn"); // botón del último paso
-
-
-    completeBtn.addEventListener("click", function () {
-
-    // Generar el texto plano de preguntas y respuestas
-    const resultadosTexto = ObtenerPyR();
-    document.getElementById("respuestasField").value = resultadosTexto;
-
-    fetch(mainForm.action, {
-      method: mainForm.method,
-      body: new FormData(mainForm),
-      headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-        if (response.ok) {
-          mainForm.style.display = "none";
-          alert("¡Correo enviado exitosamente!");
-        } else {
-          alert("Hubo un error al enviar el formulario.");
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Error de red. Intenta nuevamente.");
-      });
-    });
-  });
-
-
+   
   /*---------Send notify from calendly----------*/
 window.addEventListener('message', function(e) {
     if (e.data.event === 'calendly.event_scheduled') {
       alert("¡Gracias por agendar tu cita!");
     }
   });
+  // --------------------------------------------------------Aqui empieza el formspre------------------------------------------------------------------
+  const form = document.getElementById("form-step-1");
+  const statuss = document.getElementById("my-form-status");
+  const externalButton = document.getElementById("finishBtn");
+
+  async function sendForm() {
+    document.getElementById("respuestasField").value = ObtenerPyR();
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        statuss.innerHTML = "¡Gracias por tu envío!";
+        form.reset();
+      } else {
+        const result = await response.json();
+        if (result.errors) {
+          statuss.innerHTML = result.errors.map(err => err.message).join(", ");
+        } else {
+          statuss.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
+        }
+      }
+    } catch (error) {
+      statuss.innerHTML = "Error de red. Intenta nuevamente.";
+    }
+  }
+
+  // Botón interno → usa submit
+  // form.addEventListener("submit", function(e) {
+  //   e.preventDefault();
+  //   sendForm();
+  // });
+
+  // Botón externo → usa click
+  // externalButton.addEventListener("click", function(e) {
+  //   e.preventDefault();
+  //   sendForm();
+  // });
+
+// Copy number phone
+const enlace = document.getElementById("copyNumber");
+
+    enlace.addEventListener("click", function(event) {
+      event.preventDefault();
+
+      const numero = "+1 619 845 7397";
+      navigator.clipboard.writeText(numero).then(() => {
+        // Crear tooltip
+        const tooltip = document.createElement("div");
+        tooltip.className = "tooltip";
+        tooltip.textContent = "Copy number!";
+        document.body.appendChild(tooltip);
+
+        // Posicionar en el puntero
+        tooltip.style.left = event.clientX + "px";
+        tooltip.style.top = event.clientY + "px";
+
+        // Mostrar
+        requestAnimationFrame(() => {
+          tooltip.style.opacity = 1;
+        });
+
+        // Desaparecer después de 1 segundo
+        setTimeout(() => {
+          tooltip.style.opacity = 0;
+          setTimeout(() => tooltip.remove(), 200);
+        }, 1000);
+      });
+    });
+
+    // __________________________________________________________________________________________________
+    // Modal  js
+    
+    // finishBtn.addEventListener("click", () => {
+    //   // Mostrar modal
+    //   modalOverlay.style.display = "flex";
+    //   // Ocultar automáticamente después de 3 segundos
+    //   setTimeout(() => {
+    //     modalOverlay.style.display = "none";
+    //   }, 2000);
+    // });

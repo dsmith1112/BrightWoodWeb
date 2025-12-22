@@ -16,6 +16,8 @@
 <!-- --------------Calendly------------- -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -27,6 +29,50 @@
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
   <script defer="" src="Js/popup.js"></script>
 
+  <!-- Creacion de gestion de la pagina al momento de compartir y uso de palabras claves para el motor de busqueda -->
+  <!--  Meta description (muy importante) -->
+  <meta
+    name="description"
+    content="AI Inventory Manager: controls stock, generates shopping list, reports and forecasts. Ideal for restaurants, stores and businesses in the United States and Mexico."
+  />
+
+  <!-- (Opcional) Meta keywords: no es clave para Google, pero puede servir para otros motores -->
+  <meta
+    name="keywords"
+    content=""
+  />
+
+  <!--  Canonical (evita contenido duplicado si hay varias URLs) -->
+  <link rel="canonical" href="Brightwood.ai/" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (para compartir en WhatsApp/Facebook) -->
+  <meta property="og:title" content="Management IA" />
+  <meta property="og:description" content="Control stock, shopping lists, reports, and forecasts with AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="Brightwood.ai/" />
+  <meta property="og:image" content="Brightwood.ai/og-image.png" />
+
+  <!--  Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Management IA" />
+  <meta name="twitter:description" content="AI-powered inventory and purchasing management for businesses." />
+  <meta name="twitter:image" content="Brightwood.ai/og-image.png" />
+
+  <!--  Schema.org (muy recomendable) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Management IA",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Management of AI-powered applications.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "US" }
+    }
+  </script>
 </head>
 
 <body>
@@ -115,9 +161,6 @@
 
   <section id="methodology">
     <div class="container mx-auto px-4">
-
-
-
       <div class="relative-container  mx-auto px-4">
         <div class="relative1">
           <img src="IMG&Video/joven 1.png" alt="Decorative" class="decorative-image1">
@@ -238,18 +281,65 @@
     </div>
   </section>
 
-  <footer class="bg-background-light dark:bg-background-dark py-8">
+
+  <footer class="bg-background-light dark:bg-background-dark py-4">
+      <div class="logo-section">
+        <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image footer-img">
+      </div>
+      <section style="background: #000;">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="boxcard flex flex-col items-center text-center p-3 rounded-xl" style="background: #000; font-size: 16px;">
+              <h3 class="text-xl font-bold mb-2 font-heading">Brightwood AI</h3>
+              <div class="container mx-auto px-4 text-center">
+                <p class="text-gray-600 dark:text-gray-300">&copy; Brightwood AI, LLC <br> <a href="Terms.html">Terms & Conditions</a> | <a href="Privacy.html">Privacy Policy</a></p>
+              </div>
+            </div>
+            <div class="boxcard flex flex-col items-center text-center p-3 rounded-xl" style="background: #000; font-size: 16px;">
+              <h3 class="text-xl font-bold mb-2 font-heading">Explore</h3>
+              <p class="text-gray-600 dark:text-gray-300">
+                Eliminate manual work and streamline workflows.</p>
+            </div>
+            <div class="boxcard flex flex-col items-center text-center p-3 rounded-xl" style="background: #000; font-size: 16px;">
+              <h3 class="text-xl font-bold mb-2 font-heading">Resources</h3>
+              <a class="cls_footer_a" id="openAssessment" aria-haspopup="dialog" aria-controls="assessmentOverlay" style="background: #000; color: #fff; padding: 0px;"><h5>Start Your Assessment</h5></a>
+                
+            </div>
+            <div class="boxcard flex flex-col items-center text-center p-3 rounded-xl" style="background: #000; font-size: 16px;">
+              <h3 class="text-xl font-bold mb-2 font-heading">Contact us</h3>
+                <a class="cls_footer_a" href="mailto:legal@brightwood.ai" target="_blank"><i class="fa-regular fa-envelope"></i><h5>legal@brightwood.ai</h5></a>
+                <a class="cls_footer_a" href="mailto:privacy@brightwood.ai" target="_blank"><i class="fa-regular fa-envelope"></i><h5>privacy@brightwood.ai</h5></a>
+                <a class="cls_footer_a" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A108573044&keywords=brightwood%20technologies&origin=RICH_QUERY_SUGGESTION&position=0&searchId=6a10db50-49ce-4c06-bd7d-f21c69063b2b&sid=%3Atl&spellCorrectionEnabled=false" target="_blank"><i class="fab fa-linkedin-in"></i><h5>LinkedIn</h5></a>
+                <a class="cls_footer_a" href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-square-facebook"></i><h5>FaceBook</h5></a>
+                <a class="cls_footer_a" href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i><h5>Tiwtter</h5></a>
+                <a class="cls_footer_a" id="copyNumber" href="#" target="_blank"><i class="fa-solid fa-phone"></i><h5>+1 619 845 7397</h5></a>
+            </div>
+          </div>
+        </div>
+      </section>
+  </footer>
+  
+
+  <!-- <footer class="bg-background-light dark:bg-background-dark py-8">
     <div class="container mx-auto px-4 text-center">
       <div class="logo-section">
         <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image footer-img">
       </div>
+
+      <div>
+        
+      </div>
       <p class="text-gray-600 dark:text-gray-300">&copy; Enterprise Grade AI for Growing Businesses with Complex
         Challenges.<br>
-
+        <a class="cls_footer_a" href="mailto:info@brightwood.ai">info@brightwood.ai</a><br>
+        <a class="cls_footer_a" href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a class="cls_footer_a" href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a class="cls_footer_a" href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-twitter"></i> </a>
+        <a class="cls_footer_a" href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-instagram"></i></a><br>
         © 2024 Brightwood AI. All rights reserved.<br>
         Privacy PolicyTerms of Service</p>
     </div>
-  </footer>
+  </footer> -->
 
 
   <!-- popup assesment -->
@@ -280,7 +370,8 @@
       <p class="lead">Assess your organization's readiness to implement operational Artificial Intelligence. Get
         personalized insights and clear next steps to move forward with confidence.</p>
 
-      <form id="form-step-1" autocomplete="off">
+      <!-- <form id="form-step-1" action="https://formspree.io/f/xgvyrwkb" method="POST" autocomplete="off"> -->
+        <form id="form-step-1" action="https://formspree.io/f/xgvyrwkb" method="POST">
         <div class="grid two">
           <div>
             <label for="fullName">Full Name</label>
@@ -289,6 +380,7 @@
           <div>
             <label for="companyName">Company Name</label>
             <input id="companyName" name="companyName" type="text" required />
+            <p id="my-form-status"></p>
           </div>
         </div>
 
@@ -344,7 +436,7 @@
         </div>
         <div class="grid">
             <!-- campo oculto para resultados -->
-            <input type="hidden" name="respuestas" id="respuestasField">
+            <input type="hidden" name="respuestas" id="respuestasField" style="display: none;">
         </div>
         <div class="actions">
           <div class="left">
@@ -707,15 +799,21 @@
             <button type="button" class="btn secondary" id="backTo6">Back</button>
           </div>
           <div>
-            <button type="button" class="btn primary" id="finishBtn">Finish</button>
+            <button class="btn primary" id="finishBtn">Finish</button>
           </div>
         </div>
       </form>
     </div>
+      <!-- _________________________Contact Us________________________ -->
 
   </div>
 
-
+    <!-- Overlay y modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      By submitting this assessment, you agree to Brightwood AI’s Terms & Conditions and Privacy Policy.
+    </div>
+  </div>
   <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>
