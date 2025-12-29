@@ -48,6 +48,11 @@
       transition: opacity 0.2s ease;
       z-index: 9999;
     }
+    .terms{
+      color: #f3f4f6;
+      font-size: 11px;
+      text-align: justify;
+    }
 
 
   footer a {

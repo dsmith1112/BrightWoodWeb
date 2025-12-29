@@ -4,7 +4,6 @@
     // Elements (guardados en const para evitar re-definición)
     const openBtn = document.getElementById('openAssessment');
     const overlay = document.getElementById('assessmentOverlay');
-    const openbtn1 = document.getElementById("openAssessment1");
   
     const cards = {
       1: document.getElementById('card-step-1'),
@@ -88,6 +87,7 @@
       });
       const card = cards[n];
       card.style.display = 'block';
+      
       setTimeout(() => card.classList.add('show'), 16);
       card.setAttribute('aria-hidden', 'false');
       const first = card.querySelector('input, select, button, textarea, [tabindex]');
@@ -136,7 +136,7 @@
     if (backTo4) backTo4.addEventListener('click', () => showStep(4));
     if (toStep5) toStep6.addEventListener('click', () => showStep(6));
     if (backTo5) backTo5.addEventListener('click', () => showStep(5));
-   
+  
     if (finishBtn) finishBtn.addEventListener('click', () => {
       const payload = {
         fullName: (document.getElementById('fullName') || {}).value || '',
@@ -150,13 +150,7 @@
         q7: getRadio('q7'), q8: getRadio('q8'), q9: getRadio('q9'),
         q10: getRadio('q10'), q11: getRadio('q11'), q12: getRadio('q12'),
         q13: getRadio('q13'), q14: getRadio('q14'), q15: getRadio('q15')
-      };
-      // Mostrar modal
-      modalOverlay.style.display = "flex";
-      // Ocultar automáticamente después de 3 segundos
-      setTimeout(() => {
-        modalOverlay.style.display = "none";
-      }, 2000);
+      }
 
       sendForm();
       hideOverlay();
@@ -183,8 +177,8 @@
 })();
 
 /* Multi-trigger popup bootstrap
-   - Mantengo la lógica delegada original y la hago tolerante
-   - No borro funciones; si ya están definidas arriba, esta IIFE sólo actúa si overlay existe
+- Mantengo la lógica delegada original y la hago tolerante
+- No borro funciones; si ya están definidas arriba, esta IIFE sólo actúa si overlay existe
 */
 (function multiTriggerBootstrap() {
   try {
@@ -235,6 +229,7 @@
         if (f) f.focus();
       }, 60);
       document.addEventListener('keydown', onKey);
+            
     }
     function hideAssessment() {
       overlay.style.display = 'none';
@@ -252,6 +247,15 @@
       });
       const card = cards[n];
       card.style.display = 'block';
+      if(n == 1){
+        // Mostrar modal
+      modalOverlay.style.display = "flex";
+      // Ocultar automáticamente después de 3 segundos
+      setTimeout(() => {
+        modalOverlay.style.display = "none";
+      }, 4000);
+      }
+      
       setTimeout(() => card.classList.add('show'), 16);
       card.setAttribute('aria-hidden', 'false');
       const first = card.querySelector('input, select, button, textarea, [tabindex]');
@@ -373,8 +377,6 @@
 })();
 
 // ------------------------------------------------------Aqui se obtiene las respuestas y el calculo-------------------------------------------------------------
-
-
 // Función para obtener los valores seleccionados
   function obtenerValores() {
     let respuestas = [];
@@ -428,7 +430,7 @@ function ObtenerPyR() {
     console.log("Porcentaje:", porcentaje.toFixed(2) + "%");
 
     // obtener el tier
-     if (puntaje <= 30) {
+    if (puntaje <= 30) {
       // Tier 1
                 Headline = "You’re in the Emerging Stage — High Opportunity for Quick Wins";
                 Summary  = "Your current processes show strong potential for AI-driven improvement. Many workflows rely on manual effort or unpredictable forecasting — which is exactly where practical AI delivers immediate value.";
@@ -472,13 +474,12 @@ function ObtenerPyR() {
     let resultadoDiv = document.getElementById("resultado");
     if (resultadoDiv) {
       resultadoDiv.textContent = "Tu porcentaje es: " + porcentaje.toFixed(2) + "%";
-    } 
+    }
   }
 
   // Puedes llamar calcularPorcentaje() al dar clic en "Next" del último paso
   document.getElementById("toStep7").addEventListener("click",  () => {calcularPorcentaje();ObtenerPyR();});;
 
-   
   /*---------Send notify from calendly----------*/
 window.addEventListener('message', function(e) {
     if (e.data.event === 'calendly.event_scheduled') {
