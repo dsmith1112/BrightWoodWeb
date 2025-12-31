@@ -15,6 +15,13 @@
       7: document.getElementById('card-step-7'),
       8: document.getElementById('card-step-8')
     };
+    const forms = {
+      2: document.getElementById("form-step-2"),
+      3: document.getElementById("form-step-3"),
+      4: document.getElementById("form-step-4"),
+      5: document.getElementById("form-step-5"),
+      6: document.getElementById("form-step-6")
+    }
     const currentStepLabel = document.getElementById('currentStep');
     const progressBar = document.getElementById('progressBar');
     const progressFill = document.getElementById('progressFill');
@@ -118,15 +125,25 @@
     const finishBtn = safeGet('finishBtn');
     const closeBtn1 = safeGet('closeBtn1');
 
-    if (toStep2) toStep2.addEventListener('click', () => {
-      const name = (document.getElementById('fullName') || {}).value || '';
-      const company = (document.getElementById('companyName') || {}).value || '';
-      if (!name.trim() || !company.trim()) {
-        alert('Please complete Full Name and Company Name.');
-        return;
-      }
-      showStep(2);
-    });
+    // if (toStep2) toStep2.addEventListener('click', () => {
+    //   const name = (document.getElementById('fullName') || {}).value || '';
+    //   const company = (document.getElementById('companyName') || {}).value || '';
+    //   if (!name.trim() || !company.trim()) {
+    //     alert('Please complete Full Name and Company Name.');
+    //     return;
+    //   }
+    //   showStep(2);
+    // });
+    // if (toStep3) toStep3.addEventListener('click', () => {
+    //   const form = forms[2]; // el form actual
+    //   if (!radiosCompletos(form)) {
+    //     alert("Responde todas las preguntas antes de continuar 11.");
+    //     return
+    //   } else {
+    //     showStep(3);
+    //   }
+    // });
+
     if (backTo1) backTo1.addEventListener('click', () => showStep(1));
     if (toStep3) toStep3.addEventListener('click', () => showStep(3));
     if (backTo2) backTo2.addEventListener('click', () => showStep(2));
@@ -162,12 +179,10 @@
       const el = document.querySelector('input[name="' + name + '"]:checked');
       return el ? el.value : null;
     }
-
     // close overlay by clicking outside card
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) hideOverlay();
     });
-
     // init hidden
     hideOverlay();
     console.info('[popup.js] primary IIFE initialized');
@@ -197,6 +212,13 @@
       5: document.getElementById('card-step-5'),
       6: document.getElementById('card-step-6'),
       7: document.getElementById('card-step-7')
+    };
+    const forms = {
+      2: document.getElementById("form-step-2"),
+      3: document.getElementById("form-step-3"),
+      4: document.getElementById("form-step-4"),
+      5: document.getElementById("form-step-5"),
+      6: document.getElementById("form-step-6")
     };
 
     const currentStepLabel = document.getElementById('currentStep');
@@ -247,15 +269,16 @@
       });
       const card = cards[n];
       card.style.display = 'block';
+
       if(n == 1){
         // Mostrar modal
       modalOverlay.style.display = "flex";
       // Ocultar automáticamente después de 3 segundos
       setTimeout(() => {
         modalOverlay.style.display = "none";
-      }, 4000);
+      }, 3000);
       }
-      
+    
       setTimeout(() => card.classList.add('show'), 16);
       card.setAttribute('aria-hidden', 'false');
       const first = card.querySelector('input, select, button, textarea, [tabindex]');
@@ -305,11 +328,25 @@
           if (m) step = Number(m[1]);
         }
         if (step) {
+          // Validación especial para Step 2
           if (step === 2) {
             const name = (document.getElementById('fullName') || {}).value || '';
             const company = (document.getElementById('companyName') || {}).value || '';
-            if (!name.trim() || !company.trim()) { alert('Please complete Full Name and Company Name.'); return; }
+            if (!name.trim() || !company.trim()) {
+              alert('Please complete Full Name and Company Name.');
+              return;
+            }
           }
+          const currentform = step - 1;
+          if(currentform >= 2){
+            // 🔹 Validación general de radios en cualquier step
+            const form = forms[currentform];
+            if (form && !radiosCompletos(form)) {
+              alert("Por favor responde todas las preguntas antes de continuar.");
+              return;
+            }
+          }
+          // Si todo está correcto, avanza
           showStep(step);
           return;
         }
@@ -517,19 +554,6 @@ window.addEventListener('message', function(e) {
       statuss.innerHTML = "Error de red. Intenta nuevamente.";
     }
   }
-
-  // Botón interno → usa submit
-  // form.addEventListener("submit", function(e) {
-  //   e.preventDefault();
-  //   sendForm();
-  // });
-
-  // Botón externo → usa click
-  // externalButton.addEventListener("click", function(e) {
-  //   e.preventDefault();
-  //   sendForm();
-  // });
-
 // Copy number phone
 const enlace = document.getElementById("copyNumber");
 
@@ -560,15 +584,13 @@ const enlace = document.getElementById("copyNumber");
         }, 1000);
       });
     });
-
-    // __________________________________________________________________________________________________
-    // Modal  js
-    
-    // finishBtn.addEventListener("click", () => {
-    //   // Mostrar modal
-    //   modalOverlay.style.display = "flex";
-    //   // Ocultar automáticamente después de 3 segundos
-    //   setTimeout(() => {
-    //     modalOverlay.style.display = "none";
-    //   }, 2000);
-    // });
+function radiosCompletos(form) {
+  const grupos = form.querySelectorAll(".radios");
+  for (let grupo of grupos) {
+    const seleccionado = grupo.querySelector("input[type=radio]:checked");
+    if (!seleccionado) {
+      return; // falta una respuesta
+    }
+  }
+  return true;
+}
