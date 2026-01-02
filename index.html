@@ -1,242 +1,805 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Brightwood AI | Custom AI Development</title>
-    <!-- Google Font: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brithwood</title>
+  <link rel="stylesheet" href="Styles/general.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Montserrat:wght@400;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- --------------Calendly------------- -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Montserrat:wght@400;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="js" href="Js/popup.js">
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.5/dist/dotlottie-wc.js" type="module"></script>
+  <script defer="" src="Js/popup.js"></script>
+
+  <!-- Creacion de gestion de la pagina al momento de compartir y uso de palabras claves para el motor de busqueda -->
+  <!--  Meta description (muy importante) -->
+  <meta
+    name="description"
+    content="AI Inventory Manager: controls stock, generates shopping list, reports and forecasts. Ideal for restaurants, stores and businesses in the United States and Mexico."
+  />
+
+  <!-- (Opcional) Meta keywords: no es clave para Google, pero puede servir para otros motores -->
+  <meta
+    name="keywords"
+    content="AI consulting, AI consulting services, Applied AI consulting, AI strategy consulting, AI readiness assessment, AI maturity model, AI implementation consulting, Business AI strategy, AI demand forecasting, AI inventory optimization, AI supply chain optimization, AI operations planning, Forecasting automation, Inventory planning automation, AI for revenue operations, AI sales forecasting, Revenue optimization with AI, AI consulting for growing businesse, AI consulting for mid-market companie, AI consulting for manufacturing, AI consulting for retail and CPG, AI consulting for inventory-heavy businesses, Open-source AI consulting, ROI-driven AI, AI business case development, Brightwood Technologies, Brightwood AI, AIM³ framework, AI readiness for companies, How to prepare for AI adoption, AI adoption readiness, AI use cases for business, AI for operations teams, AI for operational decision-making, How AI improves demand forecastin, AI use cases for inventory-heavy businesse, AI for planning and forecasting, AI for GTM strateg, AI lead scoring and prioritization How, AI improves sales efficiency, Practical AI for business, AI without vendor lock-in, AI governance and monitoring, AIM³ maturity model, Brightwood AI readines"
+  />
+
+  <!--  Canonical (evita contenido duplicado si hay varias URLs) -->
+  <link rel="canonical" href="Brightwood.ai/" />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (para compartir en WhatsApp/Facebook) -->
+  <meta property="og:title" content="Brightwood IA" />
+  <meta property="og:description" content="Control stock, shopping lists, reports, and forecasts with AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="Brightwood.ai/" />
+  <meta property="og:image" content="Brightwood.ai/og-image.png" />
+
+  <!--  Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brightwood IA" />
+  <meta name="twitter:description" content="AI-powered inventory and purchasing Brightwood for businesses." />
+  <meta name="twitter:image" content="Brightwood.ai/og-image.png" />
+
+  <!--  Schema.org (muy recomendable) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Brightwood IA",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Brightwood of AI-powered applications.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "US" }
+    }
+
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Mi Sitio Web",
+      "url": "https://www.Brightwood.ai",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.Brightwood.ai/buscar?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+
+  </script>
 </head>
 
-<!--  Este es un comentario dlo.  -->
-
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
-            </a>
+  <div class="logo-section">
+    <a href="Index.html"><img src="IMG&Video/Logo.svg" alt="Brithwood Logo" class="logo-image"></a>
+  </div>
+
+  <div class="heroes-section">
+    <video autoplay muted loop id="video-bg">
+      <source src="IMG&Video/cover.mp4" type="video/mp4">
+      Your web browser does not support the video tag.
+    </video>
+
+    <div class="contenido">
+      <h1>Enterprise Grade AI for Growing <br><span>Businesses with Complex Challenges</span></h1>
+      <p>We deploy advanced AI solutions to streamline your operations, drive efficiency, and unlock sustainable
+        growth where it matters most.</p>
+
+      <button class="btn-assessment" id="openAssessment" aria-haspopup="dialog" aria-controls="assessmentOverlay">Start
+        Assessment</button>
+
+    </div>
+  </div>
+
+  <section class="py-24 bg-background-light dark:bg-background-dark" id="benefits">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-heading text-text-light dark:text-text-dark">Practical AI designed for operators, not data scientists.</h2>
+        <p class="subtitle mt-4 text-lg max-w-2xl mx-auto">We focus on real outcomes — fewer manual processes, better forecasts, and more predictable revenue — delivered with fast, nearshore execution that fits your existing systems.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">rocket_launch</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Decision Intelligence</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Make faster, clearer, data-driven decisions.</p>
+            <lu>
+              <li>Forecasting</li>
+              <li>Scenario Planning</li>
+              <li>KPIs</li>
+              <li>Predictive Alerts</li>
+            </lu>
+          
         </div>
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li><a href="SERVICE.html">Services</a></li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Solutions</a>
-                    <div class="dropdown-content">
-                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
-                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
-                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
-                    </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Resources</a>
-                    <div class="dropdown-content">
-                        <a href="AIM.html">AIM³ Framework</a>
-<!--                        <a href="index.html#roi-calculator">ROI Calculator</a>-->
-                    </div>
-                </li>
-                <li><a href="ABOUT.html">About</a></li>
-                <li><a href="CONTAC.html">Contact us</a></li>
-            </ul>
-        </nav>
-        <div class="header-cta">
-            <a href="START_YOU_ASSESMENT.html" class="btn-orange">Start your Assessment</a>
-<!--            <a href="index.html#cta" class="btn-orange btn-bold">CTAs</a> -->
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">support_agent</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Operational Efficiency</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Eliminate manual work and streamline workflows.</p>
+            <lu>
+              <li>AI Agents</li>
+              <li>Workflow Automation</li>
+              <li>Document/PO Automation</li>
+              <li>Exception Handling</li>
+            </lu>
         </div>
-    </header>
-
-
-
-
-    <!--  [Hero Section  -->
-
-    <section class="hero">
-        <h1>Enterprise Grade AI for Growing Businesses with Complex Challenges</h1>
-        <p>
-            Brightwood AI helps operational teams implement outcome driven AI across
-            functions like forecasting, pricing, and revenue operations—without the complexity,
-            overhead, or lock in of traditional platforms.
-        </p>
-        <div class="cta-buttons">
-            <a href="START_YOU_ASSESMENT.html" class="btn">Start Your Assessment</a>
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">add_task</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Growth Enablement</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Grow revenue with smarter targeting and customer insight.</p>
+            <lu>
+              <li>Lead Scoring</li>
+              <li>Pricing AI</li>
+              <li>Churn Prediction</li>
+              <li>Revenue Forecasting</li>
+            </lu>
         </div>
-    </section>
-
-
-    <!-- Section: What We Do  -->
-
-    <section class="hero">
-        <h1>AI Solutions That Drive Real Results—Fast</h1>
-        <p>
-            We bring decades of enterprise experience to growing businesses with operational
-            complexity. Whether you're scaling production, managing inventory, or optimizing
-            revenue, we help you apply AI where it matters most.
-        </p>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Forecasting Optimization </h3>
-                <p>Increase accuracy, reduce inventory risk, and plan with confidence. </p>
-            </div>
-            <div class="service-card">
-                <h3>RevOps Automation</h3>
-                <p>Unify sales, finance, and ops for real-time visibility and planning alignment.</p>
-            </div>
-            <div class="service-card">
-                <h3>Pricing Optimization </h3>
-                <p>Balance margin and volume with AI assisted price strategies.</p>
-            </div>
-    </section>
-
-
-    <!-- Section: Why Brightwood AI  -->
-
-
-    <section class="hero">
-        <h1>Enterprise Grade Without Enterprise Bloat</h1>
-        <p>
-            Brightwood AI delivers full cycle implementation, model tuning, and operational
-            support—without lock in, license bloat, or over engineered tools.
-            We work shoulder to shoulder with your teams to drive adoption, trust, and measurable
-            impact.
-        </p>
-        <p>
-            We don't just build AI—we make sure it works, evolves, and scales with your business.
-        </p>
-    </section>
-
-    <!-- Section: Our Structured Approach  -->
-
-    <section class="hero">
-        <h1>Structured. Transparent. Outcome Focused.</h1>
-        <p>
-            Our methodology guides you from day one:
-        </p>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>AIM³™ AI Maturity & Management Model  </h3>
-                <p>A structured assessment to identify your readiness, gaps, and high impact opportunities. </p>
-            </div>
-            <div class="service-card">
-                <h3>Solution Design & Implementation</h3>
-                <p>
-                    Targeted deployment of the right AI models, informed by your data, goals, and business
-                    dynamics.
-                </p>
-            </div>
-            <div class="service-card">
-                <h3>AI Monitor™ Continuous Learning & Improvement  </h3>
-                <p>
-                    Post launch, we stay embedded—monitoring performance, improving outcomes, and
-                    retraining models as your business evolves.
-                </p>
-            </div>
-    </section>
-
-
-    <!--Who We Serve  -->
-    <section class="hero">
-        <h1>Built for Operational Teams Driving Growth </h1>
-        <p>
-            We work with:
-        </p>
-        <p>• Planning and supply chain leaders solving inventory and demand challenges </p>
-        <p>• Revenue and pricing owners looking for speed and precision  </p>
-        <p>• Finance and data teams who want strategic insights from operational data  </p>
-
-    </section>
-
-
-
-
-    <section id="about" class="section">
-        <h2>About Brightwood AI</h2>
-        <p>We help companies identify, plan, and implement AI solutions with measurable impact. Our models are built for enterprise KPIs — delivering value, not just hype.</p>
-    </section>
-
-    <section id="services" class="section services-section">
-        <h2>Our Services</h2>
-        <p>Comprehensive support for every stage of AI transformation.</p>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Opportunity Assessment</h3>
-                <p>Identify potential areas for AI-driven value.</p>
-            </div>
-            <div class="service-card">
-                <h3>AI Maturity Evaluations</h3>
-                <p>Evaluate readiness paths to AI adoption.</p>
-            </div>
-            <div class="service-card">
-                <h3>Design &amp; Implementation</h3>
-                <p>Tailored strategies for AI integration.</p>
-            </div>
-            <div class="service-card">
-                <h3>Model Training &amp; Data Integration</h3>
-                <p>Develop and incorporate AI models with existing data.</p>
-            </div>
-            <div class="service-card">
-                <h3>Strategic Roadmap &amp; Execution</h3>
-                <p>Plan and implement actionable AI roadmaps.</p>
-            </div>
-            <div class="service-card">
-                <h3>Continuous Training &amp; Evaluation</h3>
-                <p>Ongoing optimization of AI systems for sustained success.</p>
-            </div>
+        <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
+          <span class="material-symbols-outlined text-primary text-4xl mb-4">swipe_left</span>
+          <h3 class="text-xl font-bold mb-2 font-heading">Enterprise System Modernization (SAP-Specialized)</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Make your enterprise systems AI-ready with nearshore SAP engineering.</p>
+            <lu>
+              <li>ABAP Modernization</li>
+              <li>BTP/Datasphere Pipelines</li>
+              <li>Embedded AI</li>
+              <li>SAP Copilots</li>
+              <li>SAP → AI Integrations</li>
+            </lu>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience" class="section">
-        <h2>Our Experience</h2>
-        <p>With 25+ years in enterprise software and AI, we’ve delivered measurable ROI for Fortune 500 companies across the globe.</p>
-    </section>
 
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>Let’s connect and build your AI advantage. Reach out to our team to learn more.</p>
-    </section>
-
-    <footer class="main-footer">
-        <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
-
-        <div class="footer-content container">
-            <div class="footer-column">
-                <h2>Brightwood AI</h2>
-                <p>Outcome Driven AI for Growing Business</p>
-                <p>2025 Brightwood AI All rights reserved.</p>
-            </div>
-            <div class="footer-column">
-                <h2>Explore</h2>
-                <p><a href="index.html">Home</a></p>
-                <p><a href="SERVICE.html">Services</a></p>
-                <p><a href="BRIGHT_FORECAST.html">Solutions</a></p>
-                <p><a href="AIM.html">AIM³ Framework</a></p>
-                <p><a href="ABOUT.html">About us</a></p>
-            </div>
-            <div class="footer-column">
-                <h2>Resources</h2>
-                <p><a href="START_YOU_ASSESMENT.html">Start Your Assessment</a></p>
-                <p><a href="#">AI Use Cases</a></p>
-                <p><a href="#">Referenced by LLMs</a></p>
-                <p><a href="#">Privacy Policy</a></p>
-                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
-            </div>
-            <div class="footer-column">
-                <h2>Contact us</h2>
-                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-twitter"></i> X</a></p>
-                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-instagram"></i> Instagrm</a></p>
-                <p><a href="#">Terms and conditions</a></p>
-            </div>
+  <section id="methodology">
+    <div class="container mx-auto px-4">
+      <div class="relative-container  mx-auto px-4">
+        <div class="relative1">
+          <img src="IMG&Video/joven 1.png" alt="Decorative" class="decorative-image1">
         </div>
-    </footer>
+        <div class="relative">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading">AIM³ METHODOLOGY <!--<span style="font-weight: 300;"> Methodology</span>--></h2> 
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+              style="margin-top: -3px; font-size: 1.5rem; color:#F39200;">A recursive cycle of Assess → Implement → Monitor that compounds in value over time.</p>
+          </div>
+
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div class="Step">
+              <div class="Circule">
+                1</div>
+              <h3 class="text-xl font-bold mb-2 font-heading text-center">Assess<br>
+              </h3>
+              <p class="Step-text text-center">Roadmap, quick wins, opportunity sizing.</p>
+            </div>
+            <div class="Step">
+              <div class="Circule">
+                2</div>
+              <h3 class="text-xl font-bold mb-2 font-heading text-center">Implement</h3>
+              <p class="Step-text text-center">Fast deployments for forecasting, automation, and revenue intelligence.</p>
+            </div>
+            <div class="Step">
+              <div class="Circule">
+                3</div>
+              <h3 class="text-xl font-bold mb-2 font-heading text-center">Monitor (Continuously)</h3>
+              <p class="Step-text text-center">Model improvement, process optimization, new AI capabilities, open-source model updates.</p>
+            </div>
+
+            <button class="btn-assessment" id="openAssessment" aria-haspopup="dialog"
+              aria-controls="assessmentOverlay">Start Assessment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-background-light dark:bg-background-dark" id="use-cases">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold font-heading text-text-light dark:text-text-dark">AI SOLUTIONS FOR CORE TEAMS</h2>
+        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          style="margin-top: -3px; font-size: 1.5rem; color:#F39200;">Empowering every part of your
+          organization to make smarter decisions.</p>
+      </div>
+      <div class="max-w-4xl mx-auto" x-data="{ tab: 'planning' }">
+        <div class="flex border-b border-gray-300 dark:border-secondary-dark mb-8 justify-center">
+          <button
+            :class="{ 'border-primary text-primary font-bold text-bridthwood': tab === 'planning', 'border-transparent text-bridthwood2 font-medium': tab !== 'planning' }"
+            @click="tab = 'planning'"
+            class="flex-1 max-w-xs py-3 text-center border-b-2 focus:outline-none transition-colors duration-300">
+            Planning Teams
+          </button>
+          <button
+            :class="{ 'border-primary text-primary font-bold text-bridthwood': tab === 'finance', 'border-transparent text-bridthwood2 font-medium': tab !== 'finance' }"
+            @click="tab = 'finance'"
+            class="flex-1 max-w-xs py-3 text-center border-b-2 focus:outline-none transition-colors duration-300">
+            Finance Teams
+          </button>
+          <button
+            :class="{ 'border-primary text-primary font-bold text-bridthwood': tab === 'revenue', 'border-transparent text-bridthwood2 font-medium': tab !== 'revenue' }"
+            @click="tab = 'revenue'"
+            class="flex-1 max-w-xs py-3 text-center border-b-2 focus:outline-none transition-colors duration-300">
+            Revenue Ops
+          </button>
+        </div>
+        <div class="p-8 p-82 boxcard dark:bg-secondary-dark/30 rounded-lg min-h-[220px]">
+          <img src="IMG&Video/iaia.svg" alt="Decorative" class="decorative-image2 inteligencia">
+          <div x-show="tab === 'planning'">
+            <h4 class="text-2xl font-bold mb-4 font-heading">AI-Powered <span>Forecasting</span></h4>
+            <p class="text-gray-600 dark:text-gray-300">Better forecasts, clearer plans, faster adjustments..</p>
+          </div>
+          <div style="display: none;" x-show="tab === 'finance'">
+            <h4 class="text-2xl font-bold mb-4 font-heading">Intelligent <span>Finance Teams</span></h4>
+            <p class="text-gray-600 dark:text-gray-300">Stronger visibility, better decisions, less manual work.</p>
+          </div>
+          <div style="display: none;" x-show="tab === 'revenue'">
+            <h4 class="text-2xl font-bold mb-4 font-heading">Optimized <span>Revenue Ops</span></h4>
+            <p class="text-gray-600 dark:text-gray-300">Smarter targeting, better pricing, predictable revenue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="banner">
+      <div class="banner-content">
+        <h2>Ready to Unlock Your Potential?</h2>
+        <p>Let's discuss how Brightwood AI can solve your most complex operational challenges. Schedule a free,
+          no-obligation consultation with our experts today.</p>
+      </div>
+
+      <div class="banner-boton">
+        <button class="btn-assessment" id="openAssessment" aria-haspopup="dialog"
+          aria-controls="assessmentOverlay">Start Assessment</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="Lastoportunity">
+      <div class="-last-content">
+        <h2>About <span>Brightwood</span><br><h3 style="font-style: italic; text-align: center; font-size: 25px;">Practical AI for operators who need clarity, speed, and measurable results.</h3></h2>
+        <p style="text-align: center;"> Brightwood delivers fast-to-deploy AI systems that improve predictability, efficiency, and scalability.<br>
+            U.S. leadership + nearshore engineering.<br>
+            Optional SAP modernization. <br>
+            Continuous improvement via AIM³.
+          </p>
+      </div>
+      <div class="-last-image">
+        <img src="IMG&Video/brigthwood final.png" alt="Team Image" class="team-image">
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="bg-background-light dark:bg-background-dark py-2">
+      <div class="logo-section" >
+        <a href="Index.html">
+            <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image footer-img">
+        </a>
+      </div>
+      <section style="background: #000;">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="boxcard flex-col items-center text-center p-3 rounded-xl" style="background: #000; font-size: 16px;">
+              <h3 class="text-xl font-bold mb-2 font-heading">Brightwood AI</h3>
+              <div class="container mx-auto px-4 text-center">
+                <p class="text-gray-600 dark:text-gray-300">&copy; Brightwood AI, LLC <a href="Terms.html">Terms & Conditions</a> | <a href="Privacy.html">Privacy Policy</a></p>
+                <div class="terms">
+                  All content on this website, including assessments, frameworks, and materials, is provided for informational purposes only and does not constitute professional advice.
+                  Use of this site does not create a client or consulting relationship.
+                  Assessment results are indicative and non-exhaustive, and no outcomes or results are guaranteed.
+                </div>
+              </div>
+            </div>
+
+            <div class="boxcard flex-col items-center text-center p-3 rounded-xl" style="background: #000; font-size: 16px;">
+              <h3 class="text-xl font-bold mb-2 font-heading">Contact us</h3>
+              <div class="flex flex-wrap justify-center gap-4">
+                <a class="cls_footer_a flex items-center gap-2" href="mailto:david.smith@brightwood.ai" target="_blank">
+                  <i class="fa-regular fa-envelope"></i><h5>david.smith@brightwood.ai</h5>
+                </a>
+                <a class="cls_footer_a flex items-center gap-2" href="https://www.linkedin.com/company/brightwood-technologies/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i><h5>LinkedIn</h5>
+                </a>
+                <a class="cls_footer_a flex items-center gap-2" id="copyNumber" href="#" target="_blank">
+                  <i class="fa-solid fa-phone"></i><h5>+1 619 845 7397</h5>
+                </a>
+              </div>
+            </div>
+            </div>
+          </div>
+
+      </section>
+  </footer>
+  
+
+  <!-- popup assesment -->
+  <div class="overlay" id="assessmentOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <!-- Step 1 -->
+    <div class="card" id="card-step-1" data-step="1" aria-hidden="true">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+
+        </div>
+      </header>
+
+      <div class="step-indicator-row">
+        <div class="progress-wrap" aria-hidden="false">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep">1</span> of 7</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct">0%</div>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+            id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Is Your Company Ready to Scale with AI?</h2><br>
+      <p class="lead">Assess your organization's readiness to implement operational Artificial Intelligence. Get
+        personalized insights and clear next steps to move forward with confidence.</p>
+
+      <!-- <form id="form-step-1" action="https://formspree.io/f/xgvyrwkb" method="POST" autocomplete="off"> -->
+        <form id="form-step-1" action="https://formspree.io/f/xgvyrwkb" method="POST">
+        <div class="grid two">
+          <div>
+            <label for="fullName">Full Name</label>
+            <input id="fullName" name="fullName" type="text" required />
+          </div>
+          <div>
+            <label for="companyName">Company Name</label>
+            <input id="companyName" name="companyName" type="text" required />
+            <p id="my-form-status"></p>
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:10px;">
+          <div>
+            <label for="industry">Industry</label>
+            <select id="industry" name="industry" aria-label="Industry">
+                <option value="">Select Industry</option>
+                <option value="Technology">Technology</option>
+                <option value="Manufacturing">Manufacturing</option>
+                <option value="Retail & eCommerce">Retail & eCommerce</option>
+                <option value="Logistics & Supply Chain">Logistics & Supply Chain</option>
+                <option value="Financial Services">Financial Services</option>
+                <option value="Healthcare & Life Sciences">Healthcare & Life Sciences</option>
+                <option value="Consumer Goods">Consumer Goods</option>
+                <option value="Energy & Utilities">Energy & Utilities</option>
+                <option value="Professional Services">Professional Services</option>
+                <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="email">Mail corporate</label>
+            <input id="email" name="email" type="email" />
+          </div>
+        </div>
+
+        <div class="grid two" style="margin-top:10px;">
+          <div>
+            <label for="revenue">Revenue Range</label>
+            <select id="revenue" name="revenue">
+                <option value="">Select Revenue</option>
+                <option value="Under $25M">Under $25M</option>
+                <option value="$25M–$50M">$25M–$50M</option>
+                <option value="$50M–$100M">$50M–$100M</option>
+                <option value="$100M–$500M">$100M–$500M</option>
+                <option value="Over $500M">Over $500M</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label for="employees">Employee Count</label>
+            <select id="employees" name="employees">
+              <option value="">Select Employee Count</option>
+                <option value="1–49">1–49</option>
+                <option value="50–199">50–199</option>
+                <option value="200–499">200–499</option>
+                <option value="500–999">500–999</option>
+                <option value="1,000–5,000">1,000–5,000</option>
+                <option value="Over 5,000">Over 5,000</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid">
+            <!-- campo oculto para resultados -->
+            <input type="hidden" name="respuestas" id="respuestasField" style="display: none;">
+        </div>
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="closeBtn1">Cancel</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep2">Submit assessment</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card" id="card-step-2" data-step="2" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep2">2</span> of 7</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct2">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill2"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Section 1 — Decision Intelligence</h2>
+      <form id="form-step-2" autocomplete="off">
+        <label id="ask">Q1. How predictable are your forecasts today (sales, demand, inventory, revenue)?</label>
+        <div class="radios" role="radiogroup" aria-labelledby="">
+          <label class="radio"><input type="radio" name="q1" value="1" required> Very unpredictable</label>
+          <label class="radio"><input type="radio" name="q1" value="2" required> Somewhat unpredictable</label>
+          <label class="radio"><input type="radio" name="q1" value="3" required> Somewhat predictable</label>
+          <label class="radio"><input type="radio" name="q1" value="4" required> Very predictable</label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q2. How consistently are your core KPIs tracked and shared across teams?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q2" value="1" required> Not tracked </label>
+          <label class="radio"><input type="radio" name="q2" value="2" required> Tracked inconsistently </label>
+          <label class="radio"><input type="radio" name="q2" value="3" required> Mostly tracked </label>
+          <label class="radio"><input type="radio" name="q2" value="4" required> Fully tracked and aligned </label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q3. How much of your reporting still relies on spreadsheets or manual updates?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q3" value="1" required> All manual</label>
+          <label class="radio"><input type="radio" name="q3" value="2" required> Mostly manual</label>
+          <label class="radio"><input type="radio" name="q3" value="3" required> Mix of manual and automated</label>
+          <label class="radio"><input type="radio" name="q3" value="4" required> Mostly automated</label>
+        </div>
+        
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo1">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep3">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card" id="card-step-3" data-step="3" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep3">3</span> of 7</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct3">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill3"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Section 1 — Decision Intelligence</h2>
+      <form id="form-step-3" autocomplete="off">
+        <label id="ask">Q4. How quickly can leaders access reliable data for decision-making?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q4" value="1" required> More than a week</label>
+          <label class="radio"><input type="radio" name="q4" value="2" required> A few days</label>
+          <label class="radio"><input type="radio" name="q4" value="3" required> Within a day</label>
+          <label class="radio"><input type="radio" name="q4" value="4" required> Real-time or automated refresh</label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q5. How often do teams rely on gut feel instead of data-driven planning?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q5" value="1" required> Almost always</label>
+          <label class="radio"><input type="radio" name="q5" value="2" required> Often</label>
+          <label class="radio"><input type="radio" name="q5" value="3" required> Sometimes</label>
+          <label class="radio"><input type="radio" name="q5" value="4" required> Rarely</label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q6. How much manual effort exists in daily workflows (approvals, POs, reporting)?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q6" value="1" required> Very high</label>
+          <label class="radio"><input type="radio" name="q6" value="2" required> High</label>
+          <label class="radio"><input type="radio" name="q6" value="3" required> Moderate</label>
+          <label class="radio"><input type="radio" name="q6" value="4" required> Low</label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo2">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep4">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card" id="card-step-4" data-step="4" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep4">4</span> of 7</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct4">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill4"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Section 2 — Operational Efficiency</h2>
+      <form id="form-step-4" autocomplete="off">
+        <label id="ask">Q7. How standardized or automated are your key processes?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q7" value="1" required> Very inconsistent</label>
+          <label class="radio"><input type="radio" name="q7" value="2" required> Mostly manual</label>
+          <label class="radio"><input type="radio" name="q7" value="3" required> Some automation</label>
+          <label class="radio"><input type="radio" name="q7" value="4" required> Highly automated</label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q8. How often do delays or errors occur due to manual steps or disconnected systems?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q8" value="1" required> Very often</label>
+          <label class="radio"><input type="radio" name="q8" value="2" required> Often</label>
+          <label class="radio"><input type="radio" name="q8" value="3" required> Sometimes</label>
+          <label class="radio"><input type="radio" name="q8" value="4" required> Rarely</label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q9. How integrated are your current tools, systems, and data sources?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q9" value="1" required> Very siloed</label>
+          <label class="radio"><input type="radio" name="q9" value="2" required> Partially connected</label>
+          <label class="radio"><input type="radio" name="q9" value="3" required> Mostly integrated</label>
+          <label class="radio"><input type="radio" name="q9" value="4" required> Fully integrated</label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo3">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep5">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+    <!-- Step 5 -->
+    <div class="card" id="card-step-5" data-step="5" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep5">5</span> of 7</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct5">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill5"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Section 3 — Growth Enablement</h2>
+      <form id="form-step-5" autocomplete="off">
+        <label id="ask">Q10. How many hours per week do teams spend on repetitive tasks that could be automated?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q10" value="1" required> 20+ hours </label>
+          <label class="radio"><input type="radio" name="q10" value="2" required> 10–20 hours </label>
+          <label class="radio"><input type="radio" name="q10" value="3" required> 5–10 hours </label>
+          <label class="radio"><input type="radio" name="q10" value="4" required> Less than 5 hours </label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q11. How effective is your lead prioritization or targeting process today?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q11" value="1" required>	Very ineffective  </label>
+          <label class="radio"><input type="radio" name="q11" value="2" required>	Somewhat ineffective  </label>
+          <label class="radio"><input type="radio" name="q11" value="3" required>	Somewhat effective  </label>
+          <label class="radio"><input type="radio" name="q11" value="4" required>	Very effective  </label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q12. How confidently do you set or adjust pricing based on customer or market signals?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q12" value="1" required>	Very low confidence </label>
+          <label class="radio"><input type="radio" name="q12" value="2" required>	Low confidence </label>
+          <label class="radio"><input type="radio" name="q12" value="3" required>	Moderate confidence </label>
+          <label class="radio"><input type="radio" name="q12" value="4" required>	High confidence </label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo4">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep6">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="card" id="card-step-6" data-step="6" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight:700">Step <span id="currentStep6">6</span> of 7</div>
+            <div style="font-size:13px;color:var(--muted)" id="progressPct6">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill6"></div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Section 3 — Growth Enablement</h2>
+      <form id="form-step-6" autocomplete="off">
+        <label id="ask">Q13. How clearly can you identify customer churn risks or customer health?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q13" value="1" required>	No visibility </label>
+          <label class="radio"><input type="radio" name="q13" value="2" required>	Limited visibility </label>
+          <label class="radio"><input type="radio" name="q13" value="3" required>	Moderate visibility </label>
+          <label class="radio"><input type="radio" name="q13" value="4" required>	Strong predictive visibility </label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q14. How predictable is your revenue or pipeline forecasting today?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q14" value="1" required>	Very unpredictable </label>
+          <label class="radio"><input type="radio" name="q14" value="2" required>	Somewhat unpredictable </label>
+          <label class="radio"><input type="radio" name="q14" value="3" required>	Somewhat predictable </label>
+          <label class="radio"><input type="radio" name="q14" value="4" required>	Highly predictable </label>
+        </div>
+
+        <label style="margin-top:12px;" id="ask">Q15. How aligned are Sales, Marketing, and RevOps around shared data and metrics?</label>
+        <div class="radios">
+          <label class="radio"><input type="radio" name="q15" value="1" required>	Very siloed</label>
+          <label class="radio"><input type="radio" name="q15" value="2" required>	Somewhat siloed</label>
+          <label class="radio"><input type="radio" name="q15" value="3" required>	Mostly aligned</label>
+          <label class="radio"><input type="radio" name="q15" value="4" required>	Fully aligned</label>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo5">Back</button>
+          </div>
+          <div>
+            <button type="button" class="btn primary" id="toStep7">Next</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="card" id="card-step-7" data-step="7" aria-hidden="true" style="display:none">
+      <header class="card-header">
+        <div class="brand">
+          <img src="IMG&Video/logo 2.svg" alt="Brithwood Logo" class="logo-image assessment-logo">
+        </div>
+      </header>
+
+      <h2>Each tier maps to a total score range</h2>
+
+      <div class="step-indicator-row" aria-hidden="true">
+        <div class="progress-wrap" aria-hidden="true">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+            <div style="font-weight : 700">Step <span id="currentStep7">7</span> of 7</div>
+            <div style="font-size : 13px ; color : var(--muted)" id="progressPct7">0%</div>
+          </div>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" id="progressFill7"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <form id="form-step-7" autocomplete="off">
+        <h3 id="cal_result">Thank you for completing the assessment!</h3>
+        <h2 id="cal_result_Headline"></h2>
+
+        <dotlottie-wc src="https://lottie.host/a7b7d650-5405-457d-9b26-076943db06f1/dEqvrOp7VB.lottie"
+          style="width: 350px;height: auto; margin: auto;" autoplay loop></dotlottie-wc>
+
+        <p id="cal_result_Summary" style="text-align: center;"></p>
+        <br>
+          <p id="cal_result_rec1" style="text-align: left; margin-left: 40px; margin-right: 40px;"></p>
+          <p id="cal_result_rec2" style="text-align: left; margin-left: 40px; margin-right: 40px;"></p>
+          <p id="cal_result_rec3" style="text-align: left; margin-left: 40px; margin-right: 40px;"></p>
+        <br>
+        <p id="">Our team will review your responses and get back to you with personalized insights and next steps within 2
+          business days.</p>
+          <br>
+        
+        <div class="botonera-final">
+          <p style="color: aliceblue;">If you have any immediate questions, feel free to reach out to us at </p>
+          <div style="text-align: center;">
+            <button class="email-button banner-boton btn-assessment" style="display: none;">Download Full Report</button>
+            <button class="email-button banner-boton btn-assessment"> <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});return false;" target="_blank">Schedule a call</a></button>
+            <button class="email-button banner-boton btn-assessment" id="btnTier" style="display: none;"></button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="left">
+            <button type="button" class="btn secondary" id="backTo6">Back</button>
+          </div>
+          <div>
+            <button class="btn primary" id="finishBtn">Finish</button>
+          </div>
+        </div>
+      </form>
+    </div>
+      <!-- _________________________Contact Us________________________ -->
+<!-- Overlay y modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      By submitting this assessment, you agree to Brightwood AI’s Terms & Conditions and Privacy Policy.
+    </div>
+  </div>
+  </div>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>
-</html>
 
+</html>

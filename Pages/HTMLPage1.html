@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid de Textos con Descripción</title>
+<style>
+  /* Grid general */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  /* Tarjeta individual */
+  .item {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .item:hover {
+    background: #222;
+    transform: scale(1.05);
+  }
+
+  /* Texto principal */
+  .titulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Descripción oculta */
+  .descripcion {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    border-radius: 12px;
+  }
+
+  .item:hover .descripcion {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .item:hover .titulo {
+    opacity: 0;
+  }
+</style>
+</head>
+<body>
+
+  <h2>📚 Sección 1</h2>
+  <div class="galeria">
+    <div class="item">
+      <div class="titulo">Introducción</div>
+      <div class="descripcion">Esta sección presenta los conceptos básicos y el objetivo principal del tema.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Capítulo 1</div>
+      <div class="descripcion">Aquí se analiza el contexto histórico y las primeras teorías relevantes.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Capítulo 2</div>
+      <div class="descripcion">Exploramos los elementos clave y sus implicaciones prácticas.</div>
+    </div>
+  </div>
+
+  <h2>🧠 Sección 2</h2>
+  <div class="galeria">
+    <div class="item">
+      <div class="titulo">Conclusión</div>
+      <div class="descripcion">Resumen final con las conclusiones y perspectivas futuras del tema.</div>
+    </div>
+    <div class="item">
+      <div class="titulo">Referencias</div>
+      <div class="descripcion">Listado de fuentes y materiales utilizados para la elaboración del contenido.</div>
+    </div>
+  </div>
+
+</body>
+</html>

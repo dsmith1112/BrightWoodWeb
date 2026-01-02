@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brightwood AI | Our Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+
+
+        /* Estilos generales para el cuerpo y los elementos principales */
+                body {
+                        background-color: #1a1a1a;
+                        color: #fff;
+                        font-family: 'Inter', sans-serif;
+                        margin: 0;
+                        padding: 0;
+
+        }
+
+                .navbar .nav-list {
+                        list-style: none;
+                        display: flex;
+                        margin: 0;
+                        padding: 0;
+
+        }
+
+                    .navbar .nav-list li a, .header-cta a {
+                            text-decoration: none;
+                            color: #fff;
+                            font-weight: 600;
+                            padding: 10px 15px;
+                            transition: color 0.3s ease;
+
+            }
+
+                        .navbar .nav-list li a:hover {
+                                color: #FF5E1F; /* Nuevo color naranja para hover en nav */
+
+                }
+
+                .header-cta .btn-orange {
+                        background-color: #FF5E1F; /* Nuevo color naranja */
+                        color: #1a1a1a;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                        transition: background-color 0.3s ease;
+
+        }
+
+                    .header-cta .btn-orange:hover {
+                            background-color: #e6521a; /* Tono de hover más oscuro */
+
+            }
+
+                .hero-service {
+                        text-align: center;
+                        padding: 100px 20px;
+                        background-color: #1a1a1a;
+                        color: #fff;
+                        max-width: 800px;
+                        margin: 0 auto;
+
+        }
+
+                    .hero-service h1 {
+                            font-size: 3em;
+                            margin-bottom: 20px;
+                            font-weight: 800;
+
+            }
+
+                    .hero-service p {
+                            font-size: 1.2em;
+                            line-height: 1.6;
+                            margin-bottom: 30px;
+
+            }
+
+                    .hero-service .btn-orange {
+                            background-color: #FF5E1F; /* Nuevo color naranja */
+                            color: #1a1a1a;
+                            padding: 15px 30px;
+                            border-radius: 5px;
+                            text-decoration: none;
+                            font-weight: bold;
+                            transition: background-color 0.3s ease;
+
+            }
+
+                        .hero-service .btn-orange:hover {
+                                background-color: #e6521a; /* Tono de hover más oscuro */
+
+                }
+
+                .services-grid-container {
+                        padding: 80px 20px;
+                        background-color: #1a1a1a;
+                        text-align: center;
+
+        }
+
+                    .services-grid-container h2 {
+                            color: #FF5E1F; /* Nuevo color naranja */
+                            font-size: 2em;
+                            margin-bottom: 10px;
+
+            }
+
+                    .services-grid-container .intro-paragraph {
+                            font-size: 1.1em;
+                            color: #ccc;
+                            margin-bottom: 50px;
+
+            }
+
+                .services-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        gap: 20px;
+                        max-width: 1000px;
+                        margin: 0 auto;
+
+        }
+
+
+                    .service-card h3 {
+                            font-size: 1.2em;
+                            margin-top: 0;
+                            margin-bottom: 10px;
+                            font-weight: 700;
+                            color: #1a1a1a; /* Título oscuro */
+
+            }
+
+                    .service-card p {
+                            font-size: 0.95em;
+                            color: #fff; /* Párrafo más claro, pero aún oscuro */
+                            line-height: 1.5;
+
+            }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
+            </a>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="SERVICE.html">Services</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="BRIGHT_FORECAST.html">BrightForecast™</a>
+                        <a href="BRIGHT_REVENUE.html">BrightRevenue™</a>
+                        <a href="BRIGHT_PRICE.html">BrightPrice™</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="AIM.html">AIM³ Framework</a>
+<!--                        <a href="index.html#roi-calculator">ROI Calculator</a>-->
+                    </div>
+                </li>
+                <li><a href="ABOUT.html">About</a></li>
+                <li><a href="CONTAC.html">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="START_YOU_ASSESMENT.html" class="btn-orange">Start your Assessment</a>
+<!--            <a href="index.html#cta" class="btn-orange btn-bold">CTAs</a> -->
+        </div>
+    </header>
+
+    <section class="hero-service">
+        <h1>Outcome Driven AI Implementation</h1>
+        <p>We guide operational teams through AI opportunity assessments, solution design, model implementation, and continuous support without the complexity or lock in of traditional platforms.</p>
+        <a href="#our-services-grid" class="btn-orange">Learn More &rarr;</a>
+    </section>
+
+    <section id="our-services-grid" class="services-grid-container">
+        <h2>Our Services</h2>
+        <p class="intro-paragraph">Comprehensive support for every stage of AI transformation.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Opportunity Assessment</h3>
+                <p>Rapidly identify high impact areas for AI based on your data, goals, and workflows.</p>
+            </div>
+            <div class="service-card">
+                <h3>AI Maturity Evaluation</h3>
+                <p>Evaluate AI readiness across data, teams, and workflows using our AIM³ Framework.</p>
+            </div>
+            <div class="service-card">
+                <h3>Design & Implementation</h3>
+                <p>Get modular, low friction AI deployments tailored to your needs and timeline.</p>
+            </div>
+            <div class="service-card">
+                <h3>Model Training & Data Integration</h3>
+                <p>Train and deploy AI models on your operational data fully visible, fully yours.</p>
+            </div>
+            <div class="service-card">
+                <h3>Strategic Roadmap & Execution</h3>
+                <p>Align AI with business priorities and build a clear path from pilot to scale.</p>
+            </div>
+            <div class="service-card">
+                <h3>Continuous Training & Evaluation</h3>
+                <p>Use AI Monitor for continuous learning keeping your models sharp, relevant, and improving over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content container">
+            <div class="footer-column">
+                <img src="BRIGHTWOODAI\resources\images\logo-transparente.png" alt="Brightwood AI" class="logo-img">
+            </div>
+            <div class="footer-column">
+                <h2>Brightwood AI</h2>
+                <p>Outcome Driven AI for Growing Business</p>
+                <p>2025 Brightwood AI All rights reserved.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Explore</h2>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="SERVICE.html">Services</a></p>
+                <p><a href="BRIGHT_FORECAST.html">Solutions</a></p>
+                <p><a href="AIM.html">AIM³ Framework</a></p>
+                <p><a href="ABOUT.html">About us</a></p>
+            </div>
+            <div class="footer-column">
+                <h2>Resources</h2>
+                <p><a href="START_YOU_ASSESMENT.html">Start Your Assessment</a></p>
+                <p><a href="#">AI Use Cases</a></p>
+                <p><a href="#">Referenced by LLMs</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
+            </div>
+            <div class="footer-column">
+                <h2>Contact us</h2>
+                <p><a href="mailto:info@brightwood.ai">info@brightwood.ai</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-twitter"></i> X</a></p>
+                <p><a href="https://www.linkedin.com/company/brightwood-ai/" target="_blank"><i class="fab fa-instagram"></i> Instagrm</a></p>
+                <p><a href="#">Terms and conditions</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
