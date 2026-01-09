@@ -317,7 +317,7 @@
 
     .Lastoportunity h2 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
 
     .Lastoportunity p {
@@ -364,7 +364,23 @@
     }
 
     /* === Ajustes responsivos sin alterar el código existente === */
+    
+    /* Estilos para pantallas pequeñas (mobile) */
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+        background-color: #ffffff;
+      }
+      .banner {
+        flex-direction: column !important;
+        text-align: center !important;
+      }
 
+      .banner-content {
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
     /* Pantallas pequeñas (móviles) */
     @media (max-width: 640px) {
       body {
@@ -437,6 +453,23 @@
         width: 100% !important;
         text-align: center !important;
       }
+      .banner-content h2 {
+        text-align: center !important;
+      }
+      .inteligencia {
+        margin-right: 0px !important;
+        opacity: 0.6;
+      }
+      .text-2xl{
+        text-align: center;
+      }
+      .btn.secondary{
+        padding: 10px 40px;
+        border-radius: 50px;
+        color: white;
+        box-shadow: 0 8px 20px rgba(0, 87, 184, 0.14);
+        width: 80%;
+      }
     }
 
     /* Pantallas medianas (tablets) */
@@ -466,14 +499,9 @@
         width: 100% !important;
       }
     }
-
-
     body {
       font-family: Arial, sans-serif;
     }
-
-
-
     .overlay {
       position: fixed;
       top: 0;
@@ -732,6 +760,7 @@
       border-radius: 50px;
       color: #203442;
       box-shadow: none;
+      width: 85%;
     }
 
     .btn.primary {
@@ -740,6 +769,7 @@
       border-radius: 50px;
       color: white;
       box-shadow: 0 8px 20px rgba(0, 87, 184, 0.14);
+      width: 85%;
     }
 
     .muted {
@@ -861,11 +891,11 @@
       color: #405866 !important;
     }
 
-    /* 
+    /*
     Modal css
      */
 
-     .modal-overlay {
+    .modal-overlay {
       display: none; /* Oculto por defecto */
       position: fixed;
       top: 0; left: 0;

@@ -116,7 +116,7 @@
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold font-heading text-text-light dark:text-text-dark">Practical AI designed for operators, not data scientists.</h2>
-        <p class="subtitle mt-4 text-lg max-w-2xl mx-auto">We focus on real outcomes — fewer manual processes, better forecasts, and more predictable revenue — delivered with fast, nearshore execution that fits your existing systems.</p>
+        <p class="subtitle mt-4 text-lg max-w-2xl mx-auto">We focus on real outcomes fewer manual processes, better forecasts, and more predictable revenue delivered with fast, nearshore execution that fits your existing systems.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="boxcard flex flex-col items-center text-center p-8 rounded-xl">
@@ -283,7 +283,8 @@
   <section>
     <div class="Lastoportunity">
       <div class="-last-content">
-        <h2>About <span>Brightwood</span><br><h3 style="font-style: italic; text-align: center; font-size: 25px;">Practical AI for operators who need clarity, speed, and measurable results.</h3></h2>
+        <h2 style="padding-bottom: 0px;">About Brightwood</h2>
+        <h2 style="font-size: 25px; padding-top: 0px;">Practical AI for operators who need clarity, speed, and measurable results.</h2>
         <p style="text-align: center;"> Brightwood delivers fast-to-deploy AI systems that improve predictability, efficiency, and scalability.<br>
             U.S. leadership + nearshore engineering.<br>
             Optional SAP modernization. <br>
@@ -399,8 +400,8 @@
             </select>
           </div>
           <div>
-            <label for="email">Mail corporate</label>
-            <input id="email" name="email" type="email" />
+            <label for="email">Company Email</label>
+            <input id="email" name="email" type="email" required />
           </div>
         </div>
 
@@ -440,7 +441,7 @@
             <button type="button" class="btn secondary" id="closeBtn1">Cancel</button>
           </div>
           <div>
-            <button type="button" class="btn primary" id="toStep2">Submit assessment</button>
+            <button type="button" class="btn primary" id="toStep2">Start Assessment</button>
           </div>
         </div>
       </form>
@@ -513,12 +514,12 @@
       </header>
 
       <div class="step-indicator-row" aria-hidden="true">
-        <div class="progress-wrap" aria-hidden="true">
+        <div class="progress-wrap">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
             <div style="font-weight:700">Step <span id="currentStep3">3</span> of 7</div>
             <div style="font-size:13px;color:var(--muted)" id="progressPct3">0%</div>
           </div>
-          <div class="progress-bar" aria-hidden="true">
+          <div class="progress-bar">
             <div class="progress-fill" id="progressFill3"></div>
           </div>
         </div>
@@ -777,7 +778,7 @@
           <p style="color: aliceblue;">If you have any immediate questions, feel free to reach out to us at </p>
           <div style="text-align: center;">
             <button class="email-button banner-boton btn-assessment" style="display: none;">Download Full Report</button>
-            <button class="email-button banner-boton btn-assessment"> <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});return false;" target="_blank">Schedule a call</a></button>
+            <button class="email-button banner-boton btn-assessment"> <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/solutions-team-uva-09/test-meeting'});return false;" target="_blank">Schedule a call</a></button>
             <button class="email-button banner-boton btn-assessment" id="btnTier" style="display: none;"></button>
           </div>
         </div>
@@ -788,9 +789,49 @@
           </div>
           <div>
             <button class="btn primary" id="finishBtn">Finish</button>
+            <!-- modify this form HTML and place wherever you want your form -->
+            
           </div>
         </div>
       </form>
+      <!-- <form
+      action="https://formspree.io/f/xgvyrwkb"
+          method="POST"
+          >
+            <label style="display: none;">
+                Your email:
+                <input id="sendEmail" type="email" name="email" value="@">
+            </label>
+            <label style="display: none;">
+                Client Info:
+                <input id="sendInfo"></input>
+            </label>
+            <label style="display: none;">
+                Client Responses:
+                <input  id="sendResponses"></input>
+            </label>
+          <button class="btn primary" type="submit" id="submitBtn">Send Questions</button>
+        </form> -->
+
+        <!-- Form HTML -->
+        <form id="my-form" action="https://formspree.io/f/xgvyrwkb" method="POST">
+          <label style="display: none;">
+                Your email:
+                <input id="sendEmail" type="email" name="email" value="@">
+            </label>
+            <label style="display: none;">
+                Client Info:
+                <input id="sendInfo"></input>
+            </label>
+            <label style="display: none;">
+                Client Responses:
+                <input  id="sendResponses"></input>
+            </label>
+          
+          <!-- <p id="my-form-status"></p> -->
+        </form>
+        <p id="my-form-status"></p>
+        <button class="btn primary" id="my-form-button">Send Questions</button>
     </div>
       <!-- _________________________Contact Us________________________ -->
 <!-- Overlay y modal -->

@@ -413,7 +413,7 @@ input[type="radio"] {
 
     <section class="cta-bottom">
         <p>Not ready yet? <a href="#" class="btn-orange">Download an explainer PDF instead</a></p>
-        <p>Just want to talk? <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});return false;" target="_blank" class="btn-orange">Schedule a discovery call</a></p>
+        <p>Just want to talk? <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/solutions-team-uva-09/test-meeting'});return false;" target="_blank" class="btn-orange">Schedule a discovery call</a></p>
     </section>
 
     <footer class="main-footer">
@@ -551,7 +551,7 @@ input[type="radio"] {
                 tierDescription = "You’ve laid the groundwork. You’re AI-ready but strategic focus matters.";
                 tierQuote = "Now’s the time to prioritize use cases with fast ROI and low technical complexity.";
                 ctaText = "Schedule a Discovery Session";
-                ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
+                ctaLink = "https://calendly.com/solutions-team-uva-09/test-meeting";
                 tierClass = "momentum-tier";
             } else {
                 tierName = "Acceleration Phase";
@@ -559,7 +559,7 @@ input[type="radio"] {
                 tierDescription = "You’re in an excellent position to scale AI across business functions.";
                 tierQuote = "Focus on replicable pilots, cross-functional collaboration, and change management.";
                 ctaText = "Book a Strategic Planning Session";
-                ctaLink = "https://calendly.com/davidsmith-uva-09/test-meeting";
+                ctaLink = "https://calendly.com/solutions-team-uva-09/test-meeting";
                 tierClass = "acceleration-tier";
             }
 
@@ -582,10 +582,10 @@ input[type="radio"] {
 
             const ctaButton = document.getElementById('ctaButton');
             ctaButton.textContent = ctaText;
-             if(normalizedScore > 44){
+            if(normalizedScore > 44){
                 ctaButton.addEventListener("click", function(e) {
                     e.preventDefault();
-                    Calendly.initPopupWidget({url: 'https://calendly.com/davidsmith-uva-09/test-meeting'});
+                    Calendly.initPopupWidget({url: 'https://calendly.com/solutions-team-uva-09/test-meeting'});
                 });
             }
             else{

@@ -1,4 +1,5 @@
 
+
 (function primaryPopup() {
   try {
     // Elements (guardados en const para evitar re-definición)
@@ -183,13 +184,49 @@
     overlay.addEventListener('click', (e) => {
       if (e.target === overlay) hideOverlay();
     });
+      const sendform = document.getElementById("my-form");
+      const status = document.getElementById("my-form-status");
+
+      async function handleSubmit(extraMessage) {
+        const getCal = calcularPorcentaje();
+        
+        const data = new FormData(sendform);
+        // Add extra info depending on the button clicked
+        data.append("extra", extraMessage);
+        data.append("Client information",getCal.ClientformData);
+        data.append("Client Responses",getCal.GetResponse);
+        try {
+          const response = await fetch(sendform.action, {
+            method: sendform.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            alert("✅ Thanks for your submission!");
+            // sendform.reset();
+          } else {
+            const result = await response.json();
+            status.innerHTML = result.errors 
+              ? result.errors.map(error => error.message).join(", ")
+              : "❌ Oops! There was a problem submitting your form.";
+          }
+        } catch (error) {
+          status.innerHTML = "❌ Oops! There was a problem submitting your form.";
+        }
+      }
+
+      
+    // Attach the same function to different buttons, with different parameters
+    document.getElementById("my-form-button").addEventListener("click", () => handleSubmit("Feedback"));
     // init hidden
     hideOverlay();
     console.info('[popup.js] primary IIFE initialized');
   } catch (err) {
     console.error('[popup.js] primary IIFE error:', err);
   }
-})();
+}
+)();
 
 /* Multi-trigger popup bootstrap
 - Mantengo la lógica delegada original y la hago tolerante
@@ -332,8 +369,9 @@
           if (step === 2) {
             const name = (document.getElementById('fullName') || {}).value || '';
             const company = (document.getElementById('companyName') || {}).value || '';
-            if (!name.trim() || !company.trim()) {
-              alert('Please complete Full Name and Company Name.');
+            const email = (document.getElementById('email') || {}).value || '';
+            if (!name.trim() || !company.trim() || !validarEmail(email)) {
+              alert('Please complete Full Name and Company Name and a valid Email..');
               return;
             }
           }
@@ -342,7 +380,7 @@
             // 🔹 Validación general de radios en cualquier step
             const form = forms[currentform];
             if (form && !radiosCompletos(form)) {
-              alert("Por favor responde todas las preguntas antes de continuar.");
+              alert("Please make sure to answer all questions before proceeding.");
               return;
             }
           }
@@ -386,7 +424,6 @@
           q4: getRadio('q4'), q5: getRadio('q5'), q6: getRadio('q6'),
           q7: getRadio('q7'), q8: getRadio('q8'), q9: getRadio('q9')
         };
-
       }
     });
 
@@ -457,6 +494,7 @@ function ObtenerPyR() {
   // Función para calcular porcentaje
   function calcularPorcentaje() {
     let respuestas = obtenerValores();
+    const GetResponse = ObtenerPyR();
     let puntaje = respuestas.reduce((a, b) => a + b, 0);
     let maximo = 15 * 4; // 15 preguntas, valor máximo 4
     let porcentaje = (puntaje / maximo) * 100;
@@ -506,16 +544,24 @@ function ObtenerPyR() {
     document.getElementById("cal_result_rec2").textContent = TopRec2;
     document.getElementById("cal_result_rec3").textContent = TopRec3;
     document.getElementById("btnTier").textContent = cta;
-
-    // Ejemplo: mostrar en un div
-    let resultadoDiv = document.getElementById("resultado");
-    if (resultadoDiv) {
-      resultadoDiv.textContent = "Tu porcentaje es: " + porcentaje.toFixed(2) + "%";
-    }
+    const payload = {
+              fullName: (document.getElementById('fullName') || {}).value || '',
+              companyName: (document.getElementById('companyName') || {}).value || '',
+              email: (document.getElementById('email') || {}).value || '',
+              industry: (document.getElementById('industry') || {}).value || '',
+              revenue: (document.getElementById('revenue') || {}).value || '',
+              employees: (document.getElementById('employees') || {}).value || ''
+        }
+        const ClientformData = `Full Name: ${payload.fullName}\nCompany: ${payload.companyName}\nIndustry: ${payload.industry}\nRevenue: ${payload.revenue}\nEmployees: ${payload.employees}\nScore Obtained: ${puntaje}\nPercent: ${porcentaje}`;
+        document.getElementById('sendEmail').value = payload.email;
+        document.getElementById("sendInfo").value = ClientformData;
+        document.getElementById("sendResponses").value = GetResponse;
+        
+    return {payload,ClientformData,GetResponse}
   }
 
   // Puedes llamar calcularPorcentaje() al dar clic en "Next" del último paso
-  document.getElementById("toStep7").addEventListener("click",  () => {calcularPorcentaje();ObtenerPyR();});;
+  document.getElementById("toStep7").addEventListener("click",  () => {calcularPorcentaje();});;
 
   /*---------Send notify from calendly----------*/
 window.addEventListener('message', function(e) {
@@ -529,7 +575,7 @@ window.addEventListener('message', function(e) {
   const externalButton = document.getElementById("finishBtn");
 
   async function sendForm() {
-    document.getElementById("respuestasField").value = ObtenerPyR();
+    document.getElementById("snedResponses").value = ObtenerPyR();
     const data = new FormData(form);
 
     try {
@@ -593,4 +639,15 @@ function radiosCompletos(form) {
     }
   }
   return true;
+}
+
+function validarEmail(email) {
+  const regex = new RegExp("^[^\s@]+@[^\s@]+\.[^\s@]+$");
+
+  if (regex.test(email)) {
+    return true;
+  } else {
+    alert("❌The email address is invalid");
+    return false;
+  }
 }
